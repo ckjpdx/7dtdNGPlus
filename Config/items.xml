@@ -16,9 +16,8 @@
 	<set xpath="/items/item[@name='resourceCloth']/property[@name='Stacknumber']/@value">500</set>
 	<set xpath="/items/item[@name='resourceBone']/property[@name='Stacknumber']/@value">500</set>
 	<set xpath="/items/item[@name='resourceLeather']/property[@name='Stacknumber']/@value">500</set>
-<!-- Lighter material stacks -->
-	<set xpath="/items/item[@name='resourceFeather']/property[@name='Stacknumber']/@value">1000</set>
-	<set xpath="/items/item[@name='resourcePaper']/property[@name='Stacknumber']/@value">1000</set>
+	<set xpath="/items/item[@name='resourceFeather']/property[@name='Stacknumber']/@value">500</set>
+	<set xpath="/items/item[@name='resourcePaper']/property[@name='Stacknumber']/@value">500</set>
 <!-- Heavier meat/water stacks -->
 	<set xpath="/items/item[@name='resourceSnowBall']/property[@name='Stacknumber']/@value">10</set>
 	<set xpath="/items/item[@name='drinkJarRiverWater']/property[@name='Stacknumber']/@value">10</set>
