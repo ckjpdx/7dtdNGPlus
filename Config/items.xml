@@ -1,0 +1,34 @@
+<configs>
+<!-- Heavier material stacks -->
+	<set xpath="/items/item[@name='ammoGasCan']/property[@name='Stacknumber']/@value">2500</set>
+	<set xpath="/items/item[@name='resourceRockSmall']/property[@name='Stacknumber']/@value">500</set>
+	<set xpath="/items/item[@name='resourceWood']/property[@name='Stacknumber']/@value">500</set>
+	<set xpath="/items/item[@name='resourcePotassiumNitratePowder']/property[@name='Stacknumber']/@value">500</set>
+	<set xpath="/items/item[@name='resourceCoal']/property[@name='Stacknumber']/@value">500</set>
+	<set xpath="/items/item[@name='resourceOilShale']/property[@name='Stacknumber']/@value">500</set>
+	<set xpath="/items/item[@name='resourceCrushedSand']/property[@name='Stacknumber']/@value">500</set>
+	<set xpath="/items/item[@name='resourceBrokenGlass']/property[@name='Stacknumber']/@value">500</set>
+	<set xpath="/items/item[@name='resourceScrapIron']/property[@name='Stacknumber']/@value">500</set>
+	<set xpath="/items/item[@name='resourceScrapBrass']/property[@name='Stacknumber']/@value">500</set>
+	<set xpath="/items/item[@name='resourceScrapLead']/property[@name='Stacknumber']/@value">500</set>
+	<set xpath="/items/item[@name='resourceClayLump']/property[@name='Stacknumber']/@value">500</set>
+	<set xpath="/items/item[@name='resourceYuccaFibers']/property[@name='Stacknumber']/@value">500</set>
+	<set xpath="/items/item[@name='resourceCloth']/property[@name='Stacknumber']/@value">500</set>
+	<set xpath="/items/item[@name='resourceBone']/property[@name='Stacknumber']/@value">100</set>
+	<set xpath="/items/item[@name='resourceLeather']/property[@name='Stacknumber']/@value">100</set>
+<!-- Lighter material stacks -->
+	<set xpath="/items/item[@name='resourceFeather']/property[@name='Stacknumber']/@value">1000</set>
+	<set xpath="/items/item[@name='resourcePaper']/property[@name='Stacknumber']/@value">1000</set>
+<!-- Heavier meat/water stacks -->
+	<set xpath="/items/item[@name='resourceSnowBall']/property[@name='Stacknumber']/@value">10</set>
+	<set xpath="/items/item[@name='drinkJarRiverWater']/property[@name='Stacknumber']/@value">10</set>
+	<set xpath="/items/item[@name='foodRawMeat']/property[@name='Stacknumber']/@value">10</set>
+	<set xpath="/items/item[@name='foodRottingFlesh']/property[@name='Stacknumber']/@value">10</set>
+<!-- Durability -->
+	<set xpath="/items/item/property[@name='DegradationBreaksAfter' and @value='false']/@value">true</set>
+	<insertAfter xpath="/items/item/effect_group/passive_effect[@name='DegradationPerUse']">
+		<passive_effect name="DegradationPerUse" operation="base_add" value="150">			
+			<requirement name="RandomRoll" seed_type="Random" min_max="0,1000" operation="LTE" value="1"/>
+		</passive_effect>
+	</insertAfter>
+</configs>

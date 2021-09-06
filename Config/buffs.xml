@@ -1,0 +1,21 @@
+<configs>
+<!-- player death -->
+	<set xpath="/buffs/buff[@name='buffDeathFoodDrinkAdjust']/effect_group/triggered_effect[@trigger='onSelfBuffUpdate'][@stat='Health']/@value">50</set>
+	<set xpath="/buffs/buff[@name='buffDeathFoodDrinkAdjust']/effect_group/triggered_effect[@trigger='onSelfBuffUpdate'][@stat='Food']/@value">50</set>
+	<set xpath="/buffs/buff[@name='buffDeathFoodDrinkAdjust']/effect_group/triggered_effect[@trigger='onSelfBuffUpdate'][@stat='Water']/@value">50</set>
+
+	<remove xpath="/buffs/buff[@name='buffNearDeathTraumaTrigger']/effect_group/triggered_effect[@buff='buffNearDeathRegen']"/>
+	
+	<!-- this is commented out because total resist is lowered in entityclasses for players -->
+	<!-- <set xpath="/buffs/buff[@name='buffStatusCheck01']/effect_group/passive_effect[@name='BuffResistance'][@operation='base_add']/@value">-.3</set> -->
+
+	<!-- injuries remain after death -->
+	<setattribute xpath="/buffs/buff[@name='buffInfectionMain']" name="remove_on_death">false</setattribute>
+	<setattribute xpath="/buffs/buff[@name='buffInjuryAbrasion']" name="remove_on_death">false</setattribute>
+	<setattribute xpath="/buffs/buff[@name='buffLaceration']" name="remove_on_death">false</setattribute>
+	<setattribute xpath="/buffs/buff[@name='buffFatigued']" name="remove_on_death">false</setattribute>
+	<setattribute xpath="/buffs/buff[@name='buffLegSprained']" name="remove_on_death">false</setattribute>
+	<setattribute xpath="/buffs/buff[@name='buffLegBroken']" name="remove_on_death">false</setattribute>
+	<setattribute xpath="/buffs/buff[@name='buffArmSprained']" name="remove_on_death">false</setattribute>
+	<setattribute xpath="/buffs/buff[@name='buffArmBroken']" name="remove_on_death">false</setattribute>
+</configs>

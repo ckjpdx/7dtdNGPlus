@@ -1,0 +1,7 @@
+<configs>
+	<append xpath="/blocks/block[@name='terrDirt']">
+		<drop event="Harvest" name="foodCropMushrooms" prob=".01" count="1,5" tag="wildCropsHarvest"/>
+		<drop event="Harvest" name="foodCropPotato" prob=".01" count="1,5" tag="wildCropsHarvest"/>
+		<drop event="Harvest" name="foodCropPumpkin" prob=".01" count="1,5" tag="wildCropsHarvest"/>
+	</append>
+</configs>

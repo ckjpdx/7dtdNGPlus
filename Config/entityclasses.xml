@@ -1,0 +1,13 @@
+<configs>
+<!-- Player -->
+	<!-- <set xpath="/entity_classes/entity_class[@name='playerMale']/effect_group/passive_effect[@name='ExpDeficitPerDeathPercentage']/@value">.5</set>
+	<set xpath="/entity_classes/entity_class[@name='playerMale']/effect_group/passive_effect[@name='ExpDeficitMaxPercentage']/@value">.5</set> -->
+	<set xpath="/entity_classes/entity_class[@name='playerMale']/effect_group/passive_effect[@name='StaminaLoss'][@tags='jumping']/@value">50</set>
+	<set xpath="/entity_classes/entity_class[@name='playerMale']/effect_group/passive_effect[@name='BuffResistance'][@operation='base_set']/@value">.93</set>
+	<set xpath="/entity_classes/entity_class[@name='playerMale']/effect_group/passive_effect[@name='CarryCapacity'][@operation='base_set']/@value">0</set>
+	
+<!-- Zombies -->
+	<set xpath="/entity_classes/entity_class[@name='zombieWightFeral']/property[@name='JumpMaxDistance']/@value">13, 15</set>
+	<set xpath="/entity_classes/entity_class[@name='zombieWightFeral']/property[@name='MoveSpeedAggro']/@value">.5, 2</set>
+
+</configs>

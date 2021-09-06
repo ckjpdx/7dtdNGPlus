@@ -1,0 +1,22 @@
+<configs>
+  <append xpath="/recipes">
+    <recipe name="drinkJarGrandpasForgettingElixir" count="1" always_unlocked="true" craft_time="600" craft_area="campfire" craft_tool="toolCookingPot" tags="resourceSilverNugget,drinkJarGrainAlcohol,foodCropBlueberries,resourceCropChrysanthemumPlant,foodCropYuccaFruit">
+      <ingredient name="resourceSilverNugget" count="1"/>
+      <ingredient name="drinkJarGrainAlcohol" count="1"/>
+      <ingredient name="foodCropBlueberries" count="1"/>
+      <ingredient name="resourceCropChrysanthemumPlant" count="1"/>
+      <ingredient name="foodCropYuccaFruit" count="1"/>
+    </recipe>
+  </append>
+<!-- foodRawMeat recipes require less meat because its heavier -->
+  <set xpath="/recipes/recipe[@name='foodCharredMeat']/ingredient[@name='foodRawMeat']/@count">3</set>
+  <set xpath="/recipes/recipe[@name='foodGrilledMeat']/ingredient[@name='foodRawMeat']/@count">3</set>
+  <set xpath="/recipes/recipe[@name='foodBoiledMeat']/ingredient[@name='foodRawMeat']/@count">3</set>
+  <set xpath="/recipes/recipe[@name='foodBaconAndEggs']/ingredient[@name='foodRawMeat']/@count">3</set>
+  <set xpath="/recipes/recipe[@name='foodMeatStew']/ingredient[@name='foodRawMeat']/@count">3</set>
+  <set xpath="/recipes/recipe[@name='foodSteakAndPotato']/ingredient[@name='foodRawMeat']/@count">3</set>
+  <set xpath="/recipes/recipe[@name='foodChiliDog']/ingredient[@name='foodRawMeat']/@count">3</set>
+<!-- foodRottingFlesh require less also -->
+  <set xpath="/recipes/recipe[@name='foodHoboStew']/ingredient[@name='foodRottingFlesh']/@count">5</set>
+  <set xpath="/recipes/recipe[@name='foodCanSham']/ingredient[@name='foodRottingFlesh']/@count">3</set>
+</configs>
