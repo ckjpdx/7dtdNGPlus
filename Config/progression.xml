@@ -1,5 +1,13 @@
 <configs>
+<!-- faster progression early game, slower mid to late game -->
     <set xpath="/progression/level/@exp_to_level">5000</set>
     <set xpath="/progression/level/@experience_multiplier">1.1</set>
     <set xpath="/progression/level/@skill_points_per_level">3</set>
+
+<!-- remove head damage from base attributes -->
+    <remove xpath="/progression/attribute[@name='attPerception']/effect_group/requirement[@name='ItemHasTags']/passive_effect[@name='DamageModifier']"/>
+    <remove xpath="/progression/attribute[@name='attStrength']/effect_group/requirement[@name='ItemHasTags']/passive_effect[@name='DamageModifier']"/>
+    <remove xpath="/progression/attribute[@name='attFortitude']/effect_group/requirement[@name='ItemHasTags']/passive_effect[@name='DamageModifier']"/>
+    <remove xpath="/progression/attribute[@name='attAgility']/effect_group/requirement[@name='ItemHasTags']/passive_effect[@name='DamageModifier']"/>
+    <remove xpath="/progression/attribute[@name='attIntellect']/effect_group/requirement[@name='ItemHasTags']/passive_effect[@name='DamageModifier']"/>
 </configs>
