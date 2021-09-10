@@ -5,9 +5,9 @@
     <set xpath="/progression/level/@skill_points_per_level">3</set>
 
 <!-- remove head damage from base attributes -->
-    <remove xpath="/progression/attribute[@name='attPerception']/effect_group/requirement[@name='ItemHasTags']/passive_effect[@name='DamageModifier']"/>
-    <remove xpath="/progression/attribute[@name='attStrength']/effect_group/requirement[@name='ItemHasTags']/passive_effect[@name='DamageModifier']"/>
-    <remove xpath="/progression/attribute[@name='attFortitude']/effect_group/requirement[@name='ItemHasTags']/passive_effect[@name='DamageModifier']"/>
-    <remove xpath="/progression/attribute[@name='attAgility']/effect_group/requirement[@name='ItemHasTags']/passive_effect[@name='DamageModifier']"/>
-    <remove xpath="/progression/attribute[@name='attIntellect']/effect_group/requirement[@name='ItemHasTags']/passive_effect[@name='DamageModifier']"/>
+    <set xpath="/progression/attributes/attribute[@name='attPerception']/effect_group/passive_effect[@name='DamageModifier']/@value">0</set>
+    <set xpath="/progression/attributes/attribute[@name='attStrength']/effect_group/passive_effect[@name='DamageModifier']/@value">0</set>
+    <set xpath="/progression/attributes/attribute[@name='attFortitude']/effect_group/passive_effect[@name='DamageModifier']/@value">0</set>
+    <set xpath="/progression/attributes/attribute[@name='attAgility']/effect_group/passive_effect[@name='DamageModifier']/@value">0</set>
+    <set xpath="/progression/attributes/attribute[@name='attIntellect']/effect_group/passive_effect[@name='DamageModifier']/@value">0</set>
 </configs>
