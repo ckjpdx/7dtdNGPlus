@@ -1,8 +1,8 @@
 <configs>
 <!-- player death -->
 	<set xpath="/buffs/buff[@name='buffDeathFoodDrinkAdjust']/effect_group/triggered_effect[@trigger='onSelfBuffUpdate'][@stat='Health']/@value">50</set>
-	<set xpath="/buffs/buff[@name='buffDeathFoodDrinkAdjust']/effect_group/triggered_effect[@trigger='onSelfBuffUpdate'][@stat='Food']/@value">50</set>
-	<set xpath="/buffs/buff[@name='buffDeathFoodDrinkAdjust']/effect_group/triggered_effect[@trigger='onSelfBuffUpdate'][@stat='Water']/@value">50</set>
+	<set xpath="/buffs/buff[@name='buffDeathFoodDrinkAdjust']/effect_group/triggered_effect[@trigger='onSelfBuffUpdate'][@stat='Food']/@value">40</set>
+	<set xpath="/buffs/buff[@name='buffDeathFoodDrinkAdjust']/effect_group/triggered_effect[@trigger='onSelfBuffUpdate'][@stat='Water']/@value">40</set>
 
 	<remove xpath="/buffs/buff[@name='buffNearDeathTraumaTrigger']/effect_group/triggered_effect[@buff='buffNearDeathRegen']"/>
 	
