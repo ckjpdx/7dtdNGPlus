@@ -46,7 +46,7 @@
 		<entity name="zombieFatHawaiianFeral" prob="0.5"/>
 		<entity name="zombieLabFeral" prob="0.5"/>
 		<entity name="zombieSoldierFeral" prob="0.5"/>
-		<entity name="zombieWightFeral" prob="1"/>
+		<entity name="zombieWightFeral" prob="3"/>
 		<entity name="zombieScreamerFeral" prob="0.5"/>
 		<entity name="zombieFemaleFatFeral" prob="0.5"/>
 		<entity name="zombieCheerleaderFeral" prob="0.5"/>

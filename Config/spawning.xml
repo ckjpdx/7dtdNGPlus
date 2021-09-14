@@ -2,8 +2,8 @@
 
 <!-- Burnt Forest -->
 	<set xpath="/spawning/biome[@name='burnt_forest']/spawn[@entitygroup='ZombiesBurntForest']/@entitygroup">ZombiesAll</set>
-	<set xpath="/spawning/biome[@name='burnt_forest']/spawn[@entitygroup='ZombiesAll']/@maxcount">1</set>
-	<set xpath="/spawning/biome[@name='burnt_forest']/spawn[@entitygroup='ZombiesAll']/@respawndelay">0.1</set>
+	<set xpath="/spawning/biome[@name='burnt_forest']/spawn[@entitygroup='ZombiesAll']/@maxcount">2</set>
+	<set xpath="/spawning/biome[@name='burnt_forest']/spawn[@entitygroup='ZombiesAll']/@respawndelay">0.2</set>
 
 	<set xpath="/spawning/biome[@name='burnt_forest']/spawn[@entitygroup='ZombiesNight']/@maxcount">5</set>
 	<set xpath="/spawning/biome[@name='burnt_forest']/spawn[@entitygroup='ZombiesNight']/@respawndelay">0.1</set>
