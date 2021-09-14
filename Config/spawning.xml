@@ -1,10 +1,6 @@
 <configs>
 
 <!-- Burnt Forest -->
-	<!-- <remove xpath="/spawning/biome[@name='burnt_forest']/spawn[@entitygroup='ZombiesBurntForest']"/>
-	<append xpath="/spawning/biome[@name='burnt_forest']">
-		<spawn maxcount="1" respawndelay="0.1" time="Day" entitygroup="ZombiesAll" />
-	</append> -->
 	<set xpath="/spawning/biome[@name='burnt_forest']/spawn[@entitygroup='ZombiesBurntForest']/@entitygroup">ZombiesAll</set>
 	<set xpath="/spawning/biome[@name='burnt_forest']/spawn[@entitygroup='ZombiesAll']/@maxcount">1</set>
 	<set xpath="/spawning/biome[@name='burnt_forest']/spawn[@entitygroup='ZombiesAll']/@respawndelay">0.1</set>
@@ -27,10 +23,6 @@
 	<set xpath="/spawning/biome[@name='desert']/spawn[@entitygroup='ZombiesNight']/@respawndelay">0.1</set>
 
 <!-- Snow -->
-	<!-- <remove xpath="/spawning/biome[@name='snow']/spawn[@entitygroup='SnowZombies']"/>
-	<append xpath="/spawning/biome[@name='snow']">
-		<spawn maxcount="4" respawndelay="0.2" time="Day" entitygroup="ZombiesAll" />
-	</append> -->
 	<set xpath="/spawning/biome[@name='snow']/spawn[@entitygroup='SnowZombies']/@entitygroup">ZombiesAll</set>
 	<set xpath="/spawning/biome[@name='snow']/spawn[@entitygroup='ZombiesAll']/@maxcount">4</set>
 	<set xpath="/spawning/biome[@name='snow']/spawn[@entitygroup='ZombiesAll']/@respawndelay">0.2</set>
