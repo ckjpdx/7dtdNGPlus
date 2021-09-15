@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configs>
+	<!-- Add Vehicle Mods -->
+	<append xpath="/lootcontainers/lootgroup[@name='automotive']">
+		<item name="modVehicleMega" prob=".1"/>
+		<item name="modVehicleFuelSaver"/>
+		<item name="modVehicleHeadlights"/>
+		<item name="modVehicleSpeed"/>
+	</append>
+</configs>
