@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configs>
+	<!-- Add Vehicle Mods -->
+	<remove xpath="/item_modifiers/item_modifier[starts-with(@name, 'modVehicle')]/property[@name='CreativeMode']"/>
+	<append xpath="/item_modifiers/item_modifier[starts-with(@name, 'modVehicle')]">
+		<property name="EconomicValue" value="1000" />
+	</append>
+</configs>
