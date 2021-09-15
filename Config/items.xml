@@ -1,5 +1,11 @@
 <configs>
-<!-- Heavier material stacks -->
+	<!-- Vehicles -->
+	<set xpath="/items/item[@name='vehicleBicyclePlaceable']/effect_group/passive_effect[@name='DegradationMax']/@value">500</set>
+	<set xpath="/items/item[@name='vehicleMinibikePlaceable']/effect_group/passive_effect[@name='DegradationMax']/@value">1000</set>
+	<set xpath="/items/item[@name='vehicleMotorcyclePlaceable']/effect_group/passive_effect[@name='DegradationMax']/@value">3000</set>
+	<set xpath="/items/item[@name='vehicle4x4TruckPlaceable']/effect_group/passive_effect[@name='DegradationMax']/@value">4000</set>
+	<set xpath="/items/item[@name='vehicleGyrocopterPlaceable']/effect_group/passive_effect[@name='DegradationMax']/@value">1000</set>
+	<!-- Heavier material stacks -->
 	<set xpath="/items/item[@name='ammoGasCan']/property[@name='Stacknumber']/@value">2500</set>
 	<set xpath="/items/item[@name='resourceRockSmall']/property[@name='Stacknumber']/@value">500</set>
 	<set xpath="/items/item[@name='resourceWood']/property[@name='Stacknumber']/@value">500</set>
@@ -18,16 +24,38 @@
 	<set xpath="/items/item[@name='resourceLeather']/property[@name='Stacknumber']/@value">500</set>
 	<set xpath="/items/item[@name='resourceFeather']/property[@name='Stacknumber']/@value">500</set>
 	<set xpath="/items/item[@name='resourcePaper']/property[@name='Stacknumber']/@value">500</set>
-<!-- Heavier meat/water stacks -->
+	<!-- Heavier meat/water stacks -->
 	<set xpath="/items/item[@name='resourceSnowBall']/property[@name='Stacknumber']/@value">10</set>
 	<set xpath="/items/item[@name='drinkJarRiverWater']/property[@name='Stacknumber']/@value">10</set>
 	<set xpath="/items/item[@name='foodRawMeat']/property[@name='Stacknumber']/@value">10</set>
 	<set xpath="/items/item[@name='foodRottingFlesh']/property[@name='Stacknumber']/@value">10</set>
-<!-- Durability -->
+	<!-- Durability -->
 	<set xpath="/items/item/property[@name='DegradationBreaksAfter' and @value='false']/@value">true</set>
 	<insertAfter xpath="/items/item/effect_group/passive_effect[@name='DegradationPerUse']">
 		<passive_effect name="DegradationPerUse" operation="base_add" value="150">			
 			<requirement name="RandomRoll" seed_type="Random" min_max="0,1000" operation="LTE" value="1"/>
 		</passive_effect>
 	</insertAfter>
+	<!-- Dysentery for rotting meat recipes -->
+	<append xpath='/items/item[@name="foodHoboStew"]/effect_group'>
+		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar=".DiseaseRoll" operation="set" value="12"/><display_value name="dDysenteryRisk" value=".12"/>
+		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar=".DiseaseRoll" operation="add" value="@$MetabolismResist"/>
+		<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffDysenteryCatchFood">
+				<requirement name="RandomRoll" seed_type="Random" min_max="1,100" operation="LTE" value="@.DiseaseRoll"/>
+		</triggered_effect>
+	</append>
+	<append xpath='/items/item[@name="foodCanSham"]/effect_group'>
+		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar=".DiseaseRoll" operation="set" value="12"/><display_value name="dDysenteryRisk" value=".12"/>
+		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar=".DiseaseRoll" operation="add" value="@$MetabolismResist"/>
+		<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffDysenteryCatchFood">
+				<requirement name="RandomRoll" seed_type="Random" min_max="1,100" operation="LTE" value="@.DiseaseRoll"/>
+		</triggered_effect>
+	</append>
+	<append xpath='/items/item[@name="foodShamChowder"]/effect_group'>
+		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar=".DiseaseRoll" operation="set" value="12"/><display_value name="dDysenteryRisk" value=".12"/>
+		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar=".DiseaseRoll" operation="add" value="@$MetabolismResist"/>
+		<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffDysenteryCatchFood">
+				<requirement name="RandomRoll" seed_type="Random" min_max="1,100" operation="LTE" value="@.DiseaseRoll"/>
+		</triggered_effect>
+	</append>
 </configs>
