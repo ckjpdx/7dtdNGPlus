@@ -29,8 +29,8 @@
   </append>
   <append xpath="/recipes">
     <recipe name="drinkJarRiverWater" count="1" always_unlocked="true" craft_area="campfire">
-      <ingredient name="drinkJarBoiledWater" count="1"/>
       <ingredient name="resourceClayLump" count="1"/>
+      <ingredient name="drinkJarBoiledWater" count="1"/>
     </recipe>
   </append>
   <append xpath="/recipes">

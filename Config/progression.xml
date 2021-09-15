@@ -13,7 +13,7 @@
     <set xpath="/progression/attributes/attribute[@name='attIntellect']/effect_group/passive_effect[@name='DamageModifier']/@value">0</set>
 
 <!-- added recipe levels -->
-  <append xpath="/progression/perks/perk[@name='perkMasterChef']/effect_group/passive_effect[@name='RecipeTagUnlocked'][@operation='base_set'][@level='2,5']/@tags">,resourceAnimalFat</append>
-  <append xpath="/progression/perks/perk[@name='perkMasterChef']/effect_group/passive_effect[@name='RecipeTagUnlocked'][@operation='base_set'][@level='3,5']/@tags">,foodCanStock</append>
+  <append xpath="/progression/perks/perk[@name='perkMasterChef']/effect_group/passive_effect[@name='RecipeTagUnlocked'][@level='2,5']/@tags">,resourceAnimalFat</append>
+  <append xpath="/progression/perks/perk[@name='perkMasterChef']/effect_group/passive_effect[@name='RecipeTagUnlocked'][@level='3,5']/@tags">,foodCanStock</append>
 
 </configs>
