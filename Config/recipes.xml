@@ -1,6 +1,7 @@
 <configs>
+<!-- RESPEC -->
   <append xpath="/recipes">
-    <recipe name="drinkJarGrandpasForgettingElixir" count="1" always_unlocked="true" craft_time="600" craft_area="campfire" craft_tool="toolCookingPot" tags="resourceSilverNugget,drinkJarGrainAlcohol,foodCropBlueberries,resourceCropChrysanthemumPlant,foodCropYuccaFruit">
+    <recipe name="drinkJarGrandpasForgettingElixir" count="1" always_unlocked="true" craft_time="300" craft_area="campfire" craft_tool="toolCookingPot" tags="resourceSilverNugget,drinkJarGrainAlcohol,foodCropBlueberries,resourceCropChrysanthemumPlant,foodCropYuccaFruit">
       <ingredient name="resourceSilverNugget" count="1"/>
       <ingredient name="drinkJarGrainAlcohol" count="1"/>
       <ingredient name="foodCropBlueberries" count="1"/>
@@ -19,4 +20,27 @@
 <!-- foodRottingFlesh require less also -->
   <set xpath="/recipes/recipe[@name='foodHoboStew']/ingredient[@name='foodRottingFlesh']/@count">5</set>
   <set xpath="/recipes/recipe[@name='foodCanSham']/ingredient[@name='foodRottingFlesh']/@count">3</set>
+
+<!-- Alternative Recipes -->
+  <append xpath="/recipes">
+    <recipe name="resourceAnimalFat" count="1" always_unlocked="true" craft_area="campfire" craft_tool="toolCookingGrill" tags="perkMasterChef">
+      <ingredient name="foodRawMeat" count="1"/>
+    </recipe>
+  </append>
+  <append xpath="/recipes">
+    <recipe name="drinkJarRiverWater" count="1" always_unlocked="true" craft_area="campfire">
+      <ingredient name="drinkJarBoiledWater" count="1"/>
+      <ingredient name="resourceClayLump" count="1"/>
+    </recipe>
+  </append>
+  <append xpath="/recipes">
+    <recipe name="foodCanStock" craft_time="40" count="1" craft_area="campfire" craft_tool="toolCookingPot" tags="perkMasterChef">
+      <ingredient name="resourceBone" count="10"/>
+      <ingredient name="drinkJarBoiledWater" count="1"/>
+      <effect_group>
+        <passive_effect name="CraftingIngredientCount" level="2,3" operation="base_add" value="-2" tags="resourceBone"/>
+        <passive_effect name="CraftingIngredientCount" level="4,5" operation="base_add" value="-4" tags="resourceBone"/>
+      </effect_group>
+    </recipe>
+  </append>
 </configs>
