@@ -1,14 +1,40 @@
 <configs>
-
-<!-- Forest Wildlife increases -->
-	<set xpath="/entitygroups/entitygroup[@name='WildGameForest']/entity[@name='invisibleAnimal']/@prob">19</set>
-	<set xpath="/entitygroups/entitygroup[@name='WildGameForest']/entity[@name='animalRabbit']/@prob">19</set>
-	<set xpath="/entitygroups/entitygroup[@name='WildGameForest']/entity[@name='animalChicken']/@prob">38</set>
-	<set xpath="/entitygroups/entitygroup[@name='WildGameForest']/entity[@name='animalBoar']/@prob">7</set>
-	<set xpath="/entitygroups/entitygroup[@name='WildGameForest']/entity[@name='animalStag']/@prob">5</set>
-	<set xpath="/entitygroups/entitygroup[@name='WildGameForest']/entity[@name='animalDoe']/@prob">10</set>
+<!-- Wildlife -->
+	<set xpath="/entitygroups/entitygroup[@name='WildGameForest']/entity[@name='invisibleAnimal']/@prob">16</set>
+	<set xpath="/entitygroups/entitygroup[@name='WildGameForest']/entity[@name='animalRabbit']/@prob">16</set>
+	<set xpath="/entitygroups/entitygroup[@name='WildGameForest']/entity[@name='animalChicken']/@prob">32</set>
+	<set xpath="/entitygroups/entitygroup[@name='WildGameForest']/entity[@name='animalBoar']/@prob">8</set>
+	<set xpath="/entitygroups/entitygroup[@name='WildGameForest']/entity[@name='animalStag']/@prob">4</set>
+	<set xpath="/entitygroups/entitygroup[@name='WildGameForest']/entity[@name='animalDoe']/@prob">8</set>
 	<set xpath="/entitygroups/entitygroup[@name='WildGameForest']/entity[@name='animalWolf']/@prob">2</set>
-<!-- ZombiesAll add variety and ferals -->
+	<append xpath="/entitygroups/entitygroup[@name='WildGameForest']"><entity name="animalBossGrace" prob="1"/></append>
+
+	<set xpath="/entitygroups/entitygroup[@name='EnemyAnimalsForest']/entity[@name='invisibleAnimalEnemy']/@prob">2</set>
+	<set xpath="/entitygroups/entitygroup[@name='EnemyAnimalsForest']/entity[@name='animalWolf']/@prob">4</set>
+	<set xpath="/entitygroups/entitygroup[@name='EnemyAnimalsForest']/entity[@name='animalBear']/@prob">1</set>
+	<set xpath="/entitygroups/entitygroup[@name='EnemyAnimalsForest']/entity[@name='animalDireWolf']/@prob">2</set>
+
+	<set xpath="/entitygroups/entitygroup[@name='EnemyAnimalsBurntForest']/entity[@name='invisibleAnimalEnemy']/@prob">2</set>
+	<set xpath="/entitygroups/entitygroup[@name='EnemyAnimalsBurntForest']/entity[@name='animalZombieDog']/@prob">4</set>
+	<set xpath="/entitygroups/entitygroup[@name='EnemyAnimalsBurntForest']/entity[@name='animalZombieBear']/@prob">1</set>
+	<set xpath="/entitygroups/entitygroup[@name='EnemyAnimalsBurntForest']/entity[@name='animalDireWolf']/@prob">2</set>
+
+	<set xpath="/entitygroups/entitygroup[@name='EnemyAnimalsWasteland']/entity[@name='animalSnake']/@prob">4</set>
+	<set xpath="/entitygroups/entitygroup[@name='EnemyAnimalsWasteland']/entity[@name='animalZombieVulture']/@prob">4</set>
+	<set xpath="/entitygroups/entitygroup[@name='EnemyAnimalsWasteland']/entity[@name='animalZombieDog']/@prob">4</set>
+	<set xpath="/entitygroups/entitygroup[@name='EnemyAnimalsWasteland']/entity[@name='animalZombieBear']/@prob">2</set>
+	<append xpath="/entitygroups/entitygroup[@name='EnemyAnimalsWasteland']"><entity name="animalZombieVultureRadiated" prob="1"/></append>
+
+	<set xpath="/entitygroups/entitygroup[@name='EnemyAnimalsDesert']/entity[@name='invisibleAnimalEnemy']/@prob">2</set>
+	<set xpath="/entitygroups/entitygroup[@name='EnemyAnimalsDesert']/entity[@name='animalCoyote']/@prob">1</set>
+	<set xpath="/entitygroups/entitygroup[@name='EnemyAnimalsDesert']/entity[@name='animalZombieVulture']/@prob">4</set>
+	<set xpath="/entitygroups/entitygroup[@name='EnemyAnimalsDesert']/entity[@name='animalSnake']/@prob">2</set>
+
+	<set xpath="/entitygroups/entitygroup[@name='EnemyAnimalsSnow']/entity[@name='invisibleAnimalEnemy']/@prob">2</set>
+	<set xpath="/entitygroups/entitygroup[@name='EnemyAnimalsSnow']/entity[@name='animalMountainLion']/@prob">1</set>
+	<set xpath="/entitygroups/entitygroup[@name='EnemyAnimalsSnow']/entity[@name='animalDireWolf']/@prob">2</set>
+	<set xpath="/entitygroups/entitygroup[@name='EnemyAnimalsSnow']/entity[@name='animalBear']/@prob">1</set>
+<!-- ZombiesAll -->
 	<set xpath="/entitygroups/entitygroup[@name='ZombiesAll']/entity[@name='zombieCheerleader']/@prob">1</set>
 	<set xpath="/entitygroups/entitygroup[@name='ZombiesAll']/entity[@name='zombieOldTimer']/@prob">1</set>
 	<set xpath="/entitygroups/entitygroup[@name='ZombiesAll']/entity[@name='zombieBiker']/@prob">1</set>
@@ -19,9 +45,6 @@
 	<set xpath="/entitygroups/entitygroup[@name='ZombiesAll']/entity[@name='zombieNurse']/@prob">1</set>
 	<set xpath="/entitygroups/entitygroup[@name='ZombiesAll']/entity[@name='zombieFatHawaiian']/@prob">1</set>
 	<append xpath="/entitygroups/entitygroup[@name='ZombiesAll']">
-		<entity name="animalZombieDog" prob="2"/>
-		<entity name="animalZombieVulture" prob="3"/>
-		<entity name="animalZombieBear" prob="0.1"/>
 		<entity name="zombieBurnt"/>
 		<entity name="zombieMaleHazmat"/>
 		<entity name="zombieSoldier"/>
@@ -54,7 +77,7 @@
 		<entity name="zombieFatCop" prob="0.2"/>
 		<entity name="zombieDemolition" prob="0.1"/>
 	</append>
-<!-- ZombiesNight variety increase and ferals and radiated -->
+<!-- ZombiesNight -->
 	<set xpath="/entitygroups/entitygroup[@name='ZombiesNight']/entity[@name='animalZombieDog']/@prob">4</set>
 	<set xpath="/entitygroups/entitygroup[@name='ZombiesNight']/entity[@name='zombieSpiderFeral']/@prob">.5</set>
 	<set xpath="/entitygroups/entitygroup[@name='ZombiesNight']/entity[@name='zombieBoeFeral']/@prob">.5</set>
@@ -69,10 +92,6 @@
 	<set xpath="/entitygroups/entitygroup[@name='ZombiesNight']/entity[@name='zombieNurseFeral']/@prob">.5</set>
 	<set xpath="/entitygroups/entitygroup[@name='ZombiesNight']/entity[@name='zombieFatHawaiianFeral']/@prob">.5</set>
 	<append xpath="/entitygroups/entitygroup[@name='ZombiesNight']">
-		<entity name="animalZombieVulture" prob="0.5"/>
-		<entity name="animalZombieBear" prob="0.1"/>
-		<entity name="animalDireWolf" prob="0.1"/>
-		<entity name="animalBossGrace" prob="0.05"/>
 		<entity name="zombieBurnt"/>
 		<entity name="zombieMaleHazmat"/>
 		<entity name="zombieSnow"/>
@@ -100,12 +119,10 @@
 		<entity name="zombieScreamerFeral" prob="0.5"/>
 		<entity name="zombieFemaleFatFeral" prob="0.5"/>
 	</append>
-<!-- ZombiesWasteland all burnt, wights, animals -->
+<!-- ZombiesWasteland -->
 	<remove xpath="/entitygroups/entitygroup[@name='ZombiesWasteland']"/>
 	<append xpath="/entitygroups">
 		<entitygroup name="ZombiesWasteland">
-			<entity name="animalZombieDog" prob="1"/>
-			<entity name="animalZombieVulture" prob="0.5"/>
 			<entity name="zombieBurnt" prob="1"/>
 			<entity name="zombieMaleHazmat" prob="0.5"/>
 			<entity name="zombieSoldier" prob="0.5"/>
@@ -115,12 +132,10 @@
 			<entity name="zombieDemolition" prob="0.1"/>
 		</entitygroup>
 	</append>
-<!-- ZombiesWastelandNight all burnt, wights, radiated wights-->
+<!-- ZombiesWastelandNight -->
 	<remove xpath="/entitygroups/entitygroup[@name='ZombiesWastelandNight']"/>
 	<append xpath="/entitygroups">
 		<entitygroup name="ZombiesWastelandNight">
-			<entity name="animalZombieDog" prob="1"/>
-			<entity name="animalZombieVulture" prob="0.5"/>
 			<entity name="zombieBurnt" prob="1"/>
 			<entity name="zombieMaleHazmat" prob="0.5"/>
 			<entity name="zombieSoldier" prob="0.5"/>

@@ -51,7 +51,7 @@
 			<gamestage stage="47"><spawn group="wanderingHordeStageGS82"	num="30" maxAlive="30" duration="09"/></gamestage>
 			<gamestage stage="48"><spawn group="FwanderingHordeStageGS59"	num="30" maxAlive="30" duration="09"/></gamestage>
 			<gamestage stage="49"><spawn group="FwanderingHordeStageGS64"	num="30" maxAlive="30" duration="09"/></gamestage>
-			<gamestage stage="50"><spawn group="wanderingHordeStageGS82"	num="100" maxAlive="30" duration="09"/></gamestage>
+			<gamestage stage="50"><spawn group="wanderingHordeStageGS82"	num="30" maxAlive="30" duration="09"/></gamestage>
 		</spawner>
 	</append>
 </configs>

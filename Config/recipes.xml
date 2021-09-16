@@ -23,14 +23,14 @@
 
 <!-- Alternative Recipes -->
   <append xpath="/recipes">
-    <recipe name="resourceAnimalFat" count="1" always_unlocked="true" craft_area="campfire" craft_tool="toolCookingGrill" tags="perkMasterChef">
-      <ingredient name="foodRawMeat" count="1"/>
-    </recipe>
-  </append>
-  <append xpath="/recipes">
     <recipe name="drinkJarRiverWater" count="1" always_unlocked="true" craft_area="campfire">
       <ingredient name="resourceClayLump" count="1"/>
       <ingredient name="drinkJarBoiledWater" count="1"/>
+    </recipe>
+  </append>
+  <append xpath="/recipes">
+    <recipe name="resourceAnimalFat" count="1" craft_area="campfire" craft_tool="toolCookingGrill" tags="perkMasterChef">
+      <ingredient name="foodRawMeat" count="1"/>
     </recipe>
   </append>
   <append xpath="/recipes">

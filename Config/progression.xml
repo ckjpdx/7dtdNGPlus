@@ -6,11 +6,11 @@
     <set xpath="/progression/perks/@cost_multiplier_per_level">1.3</set>
 
 <!-- remove head damage from base attributes -->
-    <set xpath="/progression/attributes/attribute[@name='attPerception']/effect_group/passive_effect[@name='DamageModifier']/@value">0</set>
-    <set xpath="/progression/attributes/attribute[@name='attStrength']/effect_group/passive_effect[@name='DamageModifier']/@value">0</set>
-    <set xpath="/progression/attributes/attribute[@name='attFortitude']/effect_group/passive_effect[@name='DamageModifier']/@value">0</set>
-    <set xpath="/progression/attributes/attribute[@name='attAgility']/effect_group/passive_effect[@name='DamageModifier']/@value">0</set>
-    <set xpath="/progression/attributes/attribute[@name='attIntellect']/effect_group/passive_effect[@name='DamageModifier']/@value">0</set>
+    <set xpath="/progression/attributes/attribute[@name='attPerception']/effect_group/passive_effect[@name='DamageModifier']/@value">0,0</set>
+    <set xpath="/progression/attributes/attribute[@name='attStrength']/effect_group/passive_effect[@name='DamageModifier']/@value">0,0</set>
+    <set xpath="/progression/attributes/attribute[@name='attFortitude']/effect_group/passive_effect[@name='DamageModifier']/@value">0,0</set>
+    <set xpath="/progression/attributes/attribute[@name='attAgility']/effect_group/passive_effect[@name='DamageModifier']/@value">0,0</set>
+    <set xpath="/progression/attributes/attribute[@name='attIntellect']/effect_group/passive_effect[@name='DamageModifier']/@value">0,0</set>
 
 <!-- added recipe levels -->
   <append xpath="/progression/perks/perk[@name='perkMasterChef']/effect_group/passive_effect[@name='RecipeTagUnlocked'][@level='2,5']/@tags">,resourceAnimalFat</append>

@@ -1,8 +1,8 @@
 <configs>
-	<!-- Vehicles -->
+	<!-- Vehicle durability -->
 	<set xpath="/items/item[@name='vehicleBicyclePlaceable']/effect_group/passive_effect[@name='DegradationMax']/@value">500</set>
 	<set xpath="/items/item[@name='vehicleMinibikePlaceable']/effect_group/passive_effect[@name='DegradationMax']/@value">1000</set>
-	<set xpath="/items/item[@name='vehicleMotorcyclePlaceable']/effect_group/passive_effect[@name='DegradationMax']/@value">3000</set>
+	<set xpath="/items/item[@name='vehicleMotorcyclePlaceable']/effect_group/passive_effect[@name='DegradationMax']/@value">2000</set>
 	<set xpath="/items/item[@name='vehicle4x4TruckPlaceable']/effect_group/passive_effect[@name='DegradationMax']/@value">4000</set>
 	<set xpath="/items/item[@name='vehicleGyrocopterPlaceable']/effect_group/passive_effect[@name='DegradationMax']/@value">1000</set>
 	<!-- Heavier material stacks -->
@@ -58,4 +58,14 @@
 				<requirement name="RandomRoll" seed_type="Random" min_max="1,100" operation="LTE" value="@.DiseaseRoll"/>
 		</triggered_effect>
 	</append>
+	<!-- more injuries -->
+	<!-- buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffLaceration,buffAbrasionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingTwo -->
+	<set xpath="/items/item[starts-with(@name, 'meleeHandZombie')]/effect_group/triggered_effect[@trigger='onSelfAttackedOther'][@action='AddBuff']/@weights">1,1,1,1,1,7,1</set>
+	<set xpath="/items/item[@name='meleeHandAnimalZombieDog']/effect_group/triggered_effect[@trigger='onSelfAttackedOther'][@action='AddBuff']/@weights">1,1,1,1,1,7,1</set>
+	<set xpath="/items/item[@name='meleeHandAnimalBear']/effect_group/triggered_effect[@trigger='onSelfAttackedOther'][@action='AddBuff']/@weights">1,1,1,1,1,7,1</set>
+	<set xpath="/items/item[@name='meleeHandAnimalZombieBear']/effect_group/triggered_effect[@trigger='onSelfAttackedOther'][@action='AddBuff']/@weights">1,1,1,1,1,7,1</set>
+	<set xpath="/items/item[@name='meleeHandAnimalZombieBearFeral']/effect_group/triggered_effect[@trigger='onSelfAttackedOther'][@action='AddBuff']/@weights">1,1,1,1,1,7,1</set>
+	<set xpath="/items/item[@name='meleeHandAnimalCoyote']/effect_group/triggered_effect[@trigger='onSelfAttackedOther'][@action='AddBuff']/@weights">1,1,1,1,1,7,1</set>
+	<set xpath="/items/item[@name='meleeHandAnimalWolf']/effect_group/triggered_effect[@trigger='onSelfAttackedOther'][@action='AddBuff']/@weights">1,1,1,1,1,7,1</set>
+	<set xpath="/items/item[@name='meleeHandAnimalDireWolf']/effect_group/triggered_effect[@trigger='onSelfAttackedOther'][@action='AddBuff']/@weights">1,1,1,1,1,7,1</set>
 </configs>
