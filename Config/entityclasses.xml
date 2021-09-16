@@ -1,9 +1,20 @@
 <configs>
 <!-- Player -->
-	<set xpath="/entity_classes/entity_class[@name='playerMale']/effect_group/passive_effect[@name='StaminaLoss'][@tags='jumping']/@value">50</set>
-	<set xpath="/entity_classes/entity_class[@name='playerMale']/effect_group/passive_effect[@name='BuffResistance'][@operation='base_set']/@value">.85</set>
+	<!-- <set xpath="/entity_classes/entity_class[@name='playerMale']/effect_group/passive_effect[@name='StaminaLoss'][@tags='jumping']/@value">50</set> -->
+	<set xpath="/entity_classes/entity_class[@name='playerMale']/effect_group/passive_effect[@name='BuffResistance'][@operation='base_set']/@value">.9</set>
 	<set xpath="/entity_classes/entity_class[@name='playerMale']/effect_group/passive_effect[@name='CarryCapacity'][@operation='base_set']/@value">0</set>
 	
+	<append xpath="/entity_classes/entity_class[@name='playerMale']">
+		<effect_group>
+			<triggered_effect trigger="onOtherDamagedSelf" action="ModifyStats" stat="Stamina" operation="subtract" value="10"></triggered_effect>
+			<triggered_effect trigger="onOtherDamagedSelf" action="AddBuff" target="self" buff="buffInjuryKnockdown01">
+				<requirement name="NotHasBuff" target="self" buff="buffInjuryKnockdown01Cooldown"/>
+				<requirement name="StatCompareCurrent" stat="Stamina" operation="LTE" value="25"/>
+				<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="25"/>
+			</triggered_effect>
+		</effect_group>
+	</append>
+
 <!-- Zombies -->
 	<!-- zombieWightFeral -->
 	<set xpath="/entity_classes/entity_class[@name='zombieWightFeral']/property[@name='JumpMaxDistance']/@value">13, 15</set>

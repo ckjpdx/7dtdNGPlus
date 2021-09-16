@@ -3,9 +3,9 @@
 	<set xpath="/buffs/buff[@name='buffDeathFoodDrinkAdjust']/effect_group/triggered_effect[@trigger='onSelfBuffUpdate'][@stat='Food']/@value">40</set>
 	<set xpath="/buffs/buff[@name='buffDeathFoodDrinkAdjust']/effect_group/triggered_effect[@trigger='onSelfBuffUpdate'][@stat='Water']/@value">40</set>
 	<!-- lower resist not working as desired -->
-	<!-- <set xpath="/buffs/buff[@name='buffStatusCheck01']/effect_group/passive_effect[@name='BuffResistance']/@value">-10</set> -->
 	<!-- lower concussion chance after stun b/c stun chance is super high now -->
-	<set xpath="/buffs/buff[@name='buffOnAnyCrit']/effect_group/requirement[@buff='buffInjuryStunned01']/../requirement[@name='RandomRoll']/@value">5</set>
+	<!-- <set xpath="/buffs/buff[@name='buffOnAnyCrit']/effect_group/requirement[@buff='buffInjuryStunned01']/../requirement[@name='RandomRoll']/@value">5</set> -->
+
 	<set xpath="/buffs/buff[@name='buffStatusCheck01']/effect_group/triggered_effect[@cvar='$infectionMaxDuration']/@value">7200</set>
 
 	<!-- no regen after respawn -->
