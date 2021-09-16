@@ -1,4 +1,6 @@
 <configs>
+	<!-- No crosshairs -->
+	<set xpath="/items//property[@name='CrosshairOnAim']/@value">false</set>
 	<!-- Vehicle durability -->
 	<set xpath="/items/item[@name='vehicleBicyclePlaceable']/effect_group/passive_effect[@name='DegradationMax']/@value">500</set>
 	<set xpath="/items/item[@name='vehicleMinibikePlaceable']/effect_group/passive_effect[@name='DegradationMax']/@value">1000</set>
