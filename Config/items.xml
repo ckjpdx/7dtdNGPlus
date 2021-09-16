@@ -29,6 +29,7 @@
 	<set xpath="/items/item[@name='drinkJarRiverWater']/property[@name='Stacknumber']/@value">10</set>
 	<set xpath="/items/item[@name='foodRawMeat']/property[@name='Stacknumber']/@value">10</set>
 	<set xpath="/items/item[@name='foodRottingFlesh']/property[@name='Stacknumber']/@value">10</set>
+
 	<!-- Durability -->
 	<set xpath="/items/item/property[@name='DegradationBreaksAfter' and @value='false']/@value">true</set>
 	<insertAfter xpath="/items/item/effect_group/passive_effect[@name='DegradationPerUse']">
@@ -36,6 +37,58 @@
 			<requirement name="RandomRoll" seed_type="Random" min_max="0,1000" operation="LTE" value="1"/>
 		</passive_effect>
 	</insertAfter>
+
+	<!-- Dysentery for low level meat recipes but increase food amount -->
+	<append xpath='/items/item[@name="foodCharredMeat"]/effect_group'>
+		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar=".DiseaseRoll" operation="set" value="12"/><display_value name="dDysenteryRisk" value=".12"/>
+		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar=".DiseaseRoll" operation="add" value="@$MetabolismResist"/>
+		<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffDysenteryCatchFood">
+				<requirement name="RandomRoll" seed_type="Random" min_max="1,100" operation="LTE" value="@.DiseaseRoll"/>
+		</triggered_effect>
+	</append>
+	<set xpath="/items/item[@name='foodCharredMeat']/effect_group/triggered_effect[@cvar='$foodAmountAdd']/@value">20</set>
+	
+	<append xpath='/items/item[@name="foodGrilledMeat"]/effect_group'>
+		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar=".DiseaseRoll" operation="set" value="12"/><display_value name="dDysenteryRisk" value=".12"/>
+		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar=".DiseaseRoll" operation="add" value="@$MetabolismResist"/>
+		<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffDysenteryCatchFood">
+				<requirement name="RandomRoll" seed_type="Random" min_max="1,100" operation="LTE" value="@.DiseaseRoll"/>
+		</triggered_effect>
+	</append>
+	<set xpath="/items/item[@name='foodGrilledMeat']/effect_group/triggered_effect[@cvar='$foodAmountAdd']/@value">20</set>
+
+	<append xpath='/items/item[@name="foodBoiledMeat"]/effect_group'>
+		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar=".DiseaseRoll" operation="set" value="12"/><display_value name="dDysenteryRisk" value=".12"/>
+		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar=".DiseaseRoll" operation="add" value="@$MetabolismResist"/>
+		<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffDysenteryCatchFood">
+				<requirement name="RandomRoll" seed_type="Random" min_max="1,100" operation="LTE" value="@.DiseaseRoll"/>
+		</triggered_effect>
+	</append>
+	<set xpath="/items/item[@name='foodBoiledMeat']/effect_group/triggered_effect[@cvar='$foodAmountAdd']/@value">20</set>
+
+	<!-- More calories from recipes! -->
+	<set xpath="/items/item[@name='foodCornOnTheCob']/effect_group/triggered_effect[@cvar='$foodAmountAdd']/@value">10</set>
+	<set xpath="/items/item[@name='foodCornBread']/effect_group/triggered_effect[@cvar='$foodAmountAdd']/@value">10</set>
+	<set xpath="/items/item[@name='foodShamSandwich']/effect_group/triggered_effect[@cvar='$foodAmountAdd']/@value">30</set>
+	<set xpath="/items/item[@name='foodMeatStew']/effect_group/triggered_effect[@cvar='$foodAmountAdd']/@value">100</set>
+	<set xpath="/items/item[@name='foodSteakAndPotato']/effect_group/triggered_effect[@cvar='$foodAmountAdd']/@value">100</set>
+	<set xpath="/items/item[@name='foodShamChowder']/effect_group/triggered_effect[@cvar='$foodAmountAdd']/@value">100</set>
+	<set xpath="/items/item[@name='foodHoboStew']/effect_group/triggered_effect[@cvar='$foodAmountAdd']/@value">120</set>
+	<set xpath="/items/item[@name='foodFishTacos']/effect_group/triggered_effect[@cvar='$foodAmountAdd']/@value">90</set>
+	<set xpath="/items/item[@name='foodChiliDog']/effect_group/triggered_effect[@cvar='$foodAmountAdd']/@value">100</set>
+	<set xpath="/items/item[@name='foodBakedPotato']/effect_group/triggered_effect[@cvar='$foodAmountAdd']/@value">10</set>
+	<set xpath="/items/item[@name='foodBlueberryPie']/effect_group/triggered_effect[@cvar='$foodAmountAdd']/@value">90</set>
+	<set xpath="/items/item[@name='foodPumpkinPie']/effect_group/triggered_effect[@cvar='$foodAmountAdd']/@value">100</set>
+	<set xpath="/items/item[@name='foodPumpkinCheesecake']/effect_group/triggered_effect[@cvar='$foodAmountAdd']/@value">80</set>
+	<set xpath="/items/item[@name='foodPumpkinBread']/effect_group/triggered_effect[@cvar='$foodAmountAdd']/@value">25</set>
+	<set xpath="/items/item[@name='foodGumboStew']/effect_group/triggered_effect[@cvar='$foodAmountAdd']/@value">225</set>
+	<set xpath="/items/item[@name='foodShepardsPie']/effect_group/triggered_effect[@cvar='$foodAmountAdd']/@value">200</set>
+	<set xpath="/items/item[@name='foodSpaghetti']/effect_group/triggered_effect[@cvar='$foodAmountAdd']/@value">240</set>
+	<set xpath="/items/item[@name='foodTunaFishGravyToast']/effect_group/triggered_effect[@cvar='$foodAmountAdd']/@value">180</set>
+	<set xpath="/items/item[@name='foodEggBoiled']/effect_group/triggered_effect[@cvar='$foodAmountAdd']/@value">20</set>
+	<set xpath="/items/item[@name='foodBaconAndEggs']/effect_group/triggered_effect[@cvar='$foodAmountAdd']/@value">70</set>
+	<set xpath="/items/item[@name='foodVegetableStew']/effect_group/triggered_effect[@cvar='$foodAmountAdd']/@value">60</set>
+
 	<!-- Dysentery for rotting meat recipes -->
 	<append xpath='/items/item[@name="foodHoboStew"]/effect_group'>
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar=".DiseaseRoll" operation="set" value="12"/><display_value name="dDysenteryRisk" value=".12"/>
