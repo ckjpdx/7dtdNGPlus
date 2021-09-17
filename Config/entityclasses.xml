@@ -1,9 +1,8 @@
 <configs>
 <!-- Player -->
-	<!-- <set xpath="/entity_classes/entity_class[@name='playerMale']/effect_group/passive_effect[@name='StaminaLoss'][@tags='jumping']/@value">50</set> -->
 	<set xpath="/entity_classes/entity_class[@name='playerMale']/effect_group/passive_effect[@name='BuffResistance'][@operation='base_set']/@value">.9</set>
 	<set xpath="/entity_classes/entity_class[@name='playerMale']/effect_group/passive_effect[@name='CarryCapacity'][@operation='base_set']/@value">0</set>
-	
+
 	<append xpath="/entity_classes/entity_class[@name='playerMale']">
 		<effect_group>
 			<triggered_effect trigger="onOtherDamagedSelf" action="ModifyStats" stat="Stamina" operation="subtract" value="10"></triggered_effect>
@@ -16,8 +15,18 @@
 	</append>
 
 <!-- Zombies -->
-	<!-- zombieWightFeral -->
+	<!-- zombieWightFeral enhanced -->
 	<set xpath="/entity_classes/entity_class[@name='zombieWightFeral']/property[@name='JumpMaxDistance']/@value">13, 15</set>
 	<set xpath="/entity_classes/entity_class[@name='zombieWightFeral']/property[@name='MoveSpeedAggro']/@value">1, 2</set>
+	<!-- Senses -->
+	<set xpath="/entity_classes/entity_class[contains(@name, 'zombie') or contains(@name, 'animal')]/property[@name='SightRange']/@value">100</set>
+	<set xpath="/entity_classes/entity_class[contains(@name, 'zombie') and not(contains(@name, 'animal'))]/property[@name='MaxViewAngle']/@value">23</set>
+	<set xpath="/entity_classes/entity_class[contains(@name, 'zombie') or contains(@name, 'animal')]/property[@name='SightLightThreshold']/@value">1,100</set>
+	<set xpath="/entity_classes/entity_class[contains(@name, 'zombie') and not(contains(@name, 'animal'))]/property[@name='SmellAlertThreshold']/@value">999</set>
+
+<!-- Animals -->
+	<append xpath="/entity_classes/entity_class[@name='animalChicken']">
+		<drop event="Harvest" name="foodEgg" tag="butcherHarvest" count="3"/>
+	</append>
 
 </configs>
