@@ -4,4 +4,16 @@
 		<drop event="Harvest" name="foodCropPotato" prob=".01" count="1,5" tag="wildCropsHarvest"/>
 		<drop event="Harvest" name="foodCropPumpkin" prob=".01" count="1,5" tag="wildCropsHarvest"/>
 	</append>
+	<append xpath="/blocks/block[@name='treePlainsTree']">
+		<drop event="Harvest" name="resourceFeather" count="5,10" prob="0.2" tag="allHarvest"/>
+		<drop event="Harvest" name="foodEgg" count="1,5" prob="0.2" tag="allHarvest"/>
+	</append>
+	<append xpath="/blocks/block[@name='treeSnowyDeadBush']">
+		<drop event="Harvest" name="resourceFeather" count="5,10" prob="0.2" tag="allHarvest"/>
+		<drop event="Harvest" name="foodEgg" count="1,5" prob="0.2" tag="allHarvest"/>
+	</append>
+	<append xpath="/blocks/block[@name='treeDeadPineLeaf']">
+		<drop event="Harvest" name="resourceFeather" count="5,10" prob="0.2" tag="allHarvest"/>
+		<drop event="Harvest" name="foodEgg" count="1,5" prob="0.2" tag="allHarvest"/>
+	</append>
 </configs>
