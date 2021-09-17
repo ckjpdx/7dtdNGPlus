@@ -9,12 +9,12 @@
 	<set xpath="/entitygroups/entitygroup[@name='WildGameForest']/entity[@name='animalWolf']/@prob">2</set>
 	<append xpath="/entitygroups/entitygroup[@name='WildGameForest']"><entity name="animalBossGrace" prob="1"/></append>
 
-	<set xpath="/entitygroups/entitygroup[@name='EnemyAnimalsForest']/entity[@name='invisibleAnimalEnemy']/@prob">2</set>
+	<set xpath="/entitygroups/entitygroup[@name='EnemyAnimalsForest']/entity[@name='invisibleAnimalEnemy']/@prob">4</set>
 	<set xpath="/entitygroups/entitygroup[@name='EnemyAnimalsForest']/entity[@name='animalWolf']/@prob">4</set>
 	<set xpath="/entitygroups/entitygroup[@name='EnemyAnimalsForest']/entity[@name='animalBear']/@prob">1</set>
 	<set xpath="/entitygroups/entitygroup[@name='EnemyAnimalsForest']/entity[@name='animalDireWolf']/@prob">2</set>
 
-	<set xpath="/entitygroups/entitygroup[@name='EnemyAnimalsBurntForest']/entity[@name='invisibleAnimalEnemy']/@prob">2</set>
+	<set xpath="/entitygroups/entitygroup[@name='EnemyAnimalsBurntForest']/entity[@name='invisibleAnimalEnemy']/@prob">4</set>
 	<set xpath="/entitygroups/entitygroup[@name='EnemyAnimalsBurntForest']/entity[@name='animalZombieDog']/@prob">4</set>
 	<set xpath="/entitygroups/entitygroup[@name='EnemyAnimalsBurntForest']/entity[@name='animalZombieBear']/@prob">1</set>
 	<set xpath="/entitygroups/entitygroup[@name='EnemyAnimalsBurntForest']/entity[@name='animalDireWolf']/@prob">2</set>
@@ -25,14 +25,14 @@
 	<set xpath="/entitygroups/entitygroup[@name='EnemyAnimalsWasteland']/entity[@name='animalZombieBear']/@prob">2</set>
 	<append xpath="/entitygroups/entitygroup[@name='EnemyAnimalsWasteland']"><entity name="animalZombieVultureRadiated" prob="1"/></append>
 
-	<set xpath="/entitygroups/entitygroup[@name='EnemyAnimalsDesert']/entity[@name='invisibleAnimalEnemy']/@prob">2</set>
+	<set xpath="/entitygroups/entitygroup[@name='EnemyAnimalsDesert']/entity[@name='invisibleAnimalEnemy']/@prob">4</set>
 	<set xpath="/entitygroups/entitygroup[@name='EnemyAnimalsDesert']/entity[@name='animalCoyote']/@prob">1</set>
 	<set xpath="/entitygroups/entitygroup[@name='EnemyAnimalsDesert']/entity[@name='animalZombieVulture']/@prob">4</set>
 	<set xpath="/entitygroups/entitygroup[@name='EnemyAnimalsDesert']/entity[@name='animalSnake']/@prob">2</set>
 
-	<set xpath="/entitygroups/entitygroup[@name='EnemyAnimalsSnow']/entity[@name='invisibleAnimalEnemy']/@prob">2</set>
+	<set xpath="/entitygroups/entitygroup[@name='EnemyAnimalsSnow']/entity[@name='invisibleAnimalEnemy']/@prob">4</set>
 	<set xpath="/entitygroups/entitygroup[@name='EnemyAnimalsSnow']/entity[@name='animalMountainLion']/@prob">1</set>
-	<set xpath="/entitygroups/entitygroup[@name='EnemyAnimalsSnow']/entity[@name='animalDireWolf']/@prob">2</set>
+	<set xpath="/entitygroups/entitygroup[@name='EnemyAnimalsSnow']/entity[@name='animalDireWolf']/@prob">4</set>
 	<set xpath="/entitygroups/entitygroup[@name='EnemyAnimalsSnow']/entity[@name='animalBear']/@prob">1</set>
 <!-- ZombiesAll -->
 	<set xpath="/entitygroups/entitygroup[@name='ZombiesAll']/entity[@name='zombieCheerleader']/@prob">1</set>
@@ -45,6 +45,8 @@
 	<set xpath="/entitygroups/entitygroup[@name='ZombiesAll']/entity[@name='zombieNurse']/@prob">1</set>
 	<set xpath="/entitygroups/entitygroup[@name='ZombiesAll']/entity[@name='zombieFatHawaiian']/@prob">1</set>
 	<append xpath="/entitygroups/entitygroup[@name='ZombiesAll']">
+		<entity name="animalZombieDog" prob="2"/>
+		<entity name="animalZombieVulture" prob="2"/>
 		<entity name="zombieBurnt"/>
 		<entity name="zombieMaleHazmat"/>
 		<entity name="zombieSoldier"/>
