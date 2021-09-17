@@ -14,7 +14,7 @@
 	<set xpath="/entitygroups/entitygroup[@name='EnemyAnimalsForest']/entity[@name='animalBear']/@prob">1</set>
 	<set xpath="/entitygroups/entitygroup[@name='EnemyAnimalsForest']/entity[@name='animalDireWolf']/@prob">2</set>
 
-	<set xpath="/entitygroups/entitygroup[@name='EnemyAnimalsBurntForest']/entity[@name='invisibleAnimalEnemy']/@prob">4</set>
+	<set xpath="/entitygroups/entitygroup[@name='EnemyAnimalsBurntForest']/entity[@name='invisibleAnimalEnemy']/@prob">16</set>
 	<set xpath="/entitygroups/entitygroup[@name='EnemyAnimalsBurntForest']/entity[@name='animalZombieDog']/@prob">4</set>
 	<set xpath="/entitygroups/entitygroup[@name='EnemyAnimalsBurntForest']/entity[@name='animalZombieBear']/@prob">1</set>
 	<set xpath="/entitygroups/entitygroup[@name='EnemyAnimalsBurntForest']/entity[@name='animalDireWolf']/@prob">2</set>
