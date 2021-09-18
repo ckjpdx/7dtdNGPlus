@@ -1,6 +1,6 @@
 <configs>
-	<!-- No crosshairs on ADS -->
-	<set xpath="/items//property[@name='CrosshairOnAim']/@value">false</set>
+	<!-- No crosshairs on ADS for guns -->
+	<set xpath="/items/item[not(contains(@name, 'Bow'))]/property[@name='CrosshairOnAim']/@value">false</set>
 	<!-- Vehicle durability -->
 	<set xpath="/items/item[@name='vehicleBicyclePlaceable']/effect_group/passive_effect[@name='DegradationMax']/@value">500</set>
 	<set xpath="/items/item[@name='vehicleMinibikePlaceable']/effect_group/passive_effect[@name='DegradationMax']/@value">1000</set>
