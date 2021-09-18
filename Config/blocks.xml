@@ -1,19 +1,21 @@
 <configs>
+	<!-- root veggies -->
 	<append xpath="/blocks/block[@name='terrDirt']">
 		<drop event="Harvest" name="foodCropMushrooms" prob=".01" count="1,5" tag="wildCropsHarvest"/>
 		<drop event="Harvest" name="foodCropPotato" prob=".01" count="1,5" tag="wildCropsHarvest"/>
 		<drop event="Harvest" name="foodCropPumpkin" prob=".01" count="1,5" tag="wildCropsHarvest"/>
 	</append>
+	<!-- eggs and feathers in shrubs -->
 	<append xpath="/blocks/block[@name='treePlainsTree']">
-		<drop event="Harvest" name="resourceFeather" count="5,10" prob="0.2" tag="allHarvest"/>
-		<drop event="Harvest" name="foodEgg" count="1,5" prob="0.2" tag="allHarvest"/>
+		<drop event="Harvest" name="resourceFeather" count="5,10" prob="0.15" tag="allHarvest"/>
+		<drop event="Harvest" name="foodEgg" count="1,5" prob="0.15" tag="allHarvest"/>
 	</append>
 	<append xpath="/blocks/block[@name='treeSnowyDeadBush']">
-		<drop event="Harvest" name="resourceFeather" count="5,10" prob="0.2" tag="allHarvest"/>
-		<drop event="Harvest" name="foodEgg" count="1,5" prob="0.2" tag="allHarvest"/>
+		<drop event="Harvest" name="resourceFeather" count="5,10" prob="0.15" tag="allHarvest"/>
+		<drop event="Harvest" name="foodEgg" count="1,5" prob="0.15" tag="allHarvest"/>
 	</append>
 	<append xpath="/blocks/block[@name='treeDeadPineLeaf']">
-		<drop event="Harvest" name="resourceFeather" count="5,10" prob="0.2" tag="allHarvest"/>
-		<drop event="Harvest" name="foodEgg" count="1,5" prob="0.2" tag="allHarvest"/>
+		<drop event="Harvest" name="resourceFeather" count="5,10" prob="0.15" tag="allHarvest"/>
+		<drop event="Harvest" name="foodEgg" count="1,5" prob="0.15" tag="allHarvest"/>
 	</append>
 </configs>
