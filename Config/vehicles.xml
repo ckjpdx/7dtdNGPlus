@@ -45,7 +45,7 @@
     </append>
     
 <!-- SPEED -->
-    <set xpath="/vehicles/vehicle[@name='vehicleMinibike']/property[@name='velocityMax']/@value">7, 14</set>
+    <set xpath="/vehicles/vehicle[@name='vehicleMinibike']/property[@name='velocityMax']/@value">10, 13</set>
     <set xpath="/vehicles/vehicle[@name='vehicleMotorcycle']/property[@name='velocityMax']/@value">10, 20</set>
-    <set xpath="/vehicles/vehicle[@name='vehicle4x4Truck']/property[@name='velocityMax']/@value">10, 20</set>
+    <set xpath="/vehicles/vehicle[@name='vehicle4x4Truck']/property[@name='velocityMax']/@value">10, 17</set>
 </configs>
