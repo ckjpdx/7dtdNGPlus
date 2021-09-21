@@ -24,15 +24,15 @@
 	<!-- Duriel's Random Zombie HP (modified) -->
 		<!--========== Adding tag to separate zombie tiers and be able to add random HP based on tiers ==========-->
 
-		<append xpath="/entity_classes/entity_class/property[@name='Tags' and contains(@value, 'walker') and not(contains(@value, 'feral')) and not(contains(@value, 'radiated'))]/@value">,slow</append>
-		<append xpath="/entity_classes/entity_class/property[@name='Tags' and contains(@value, 'feral') and not(contains(@value, 'radiated'))]/@value">,fast</append>
-		<append xpath="/entity_classes/entity_class/property[@name='Tags' and contains(@value, 'radiated' and not(contains(@value, 'vulture'))]/@value">,green</append>
+		<append xpath="/entity_classes/entity_class[not(contains(@name, 'Screamer'))]/property[@name='Tags' and contains(@value, 'walker') and not(contains(@value, 'feral')) and not(contains(@value, 'radiated'))]/@value">,slow</append>
+		<append xpath="/entity_classes/entity_class[not(contains(@name, 'Screamer'))]/property[@name='Tags' and contains(@value, 'feral') and not(contains(@value, 'radiated'))]/@value">,fast</append>
+		<append xpath="/entity_classes/entity_class[not(contains(@name, 'Screamer'))]/property[@name='Tags' and contains(@value, 'radiated') and not(contains(@value, 'vulture'))]/@value">,green</append>
 		
 		<!--========== Tier 1 Walker Zombies definition ==========-->
 		
 		<append xpath="/entity_classes/entity_class[contains (@name, 'zombie')]">
 			<effect_group name="one">
-				<passive_effect name="HealthMax" operation="base_add" value="-50">
+				<passive_effect name="HealthMax" operation="base_add" value="100">
 					<requirement name="EntityTagCompare" target="self" tags="slow"/>
 					<requirement name="RandomRoll" seed_type="Item" min_max="1,20" operation="GTE" value="10"/>
 				</passive_effect>
@@ -40,7 +40,7 @@
 		</append>
 		<append xpath="/entity_classes/entity_class[contains (@name, 'zombie')]">
 			<effect_group name="two">
-				<passive_effect name="HealthMax" operation="base_add" value="150">
+				<passive_effect name="HealthMax" operation="base_add" value="200">
 					<requirement name="EntityTagCompare" target="self" tags="slow"/>
 					<requirement name="RandomRoll" seed_type="Item" min_max="1,30" operation="GTE" value="15"/>
 				</passive_effect>
@@ -51,7 +51,7 @@
 		
 		<append xpath="/entity_classes/entity_class[contains (@name, 'zombie')]">
 			<effect_group name="one">
-				<passive_effect name="HealthMax" operation="base_add" value="-50">
+				<passive_effect name="HealthMax" operation="base_add" value="-200">
 					<requirement name="EntityTagCompare" target="self" tags="fast"/>
 					<requirement name="RandomRoll" seed_type="Item" min_max="1,20" operation="GTE" value="10"/>
 				</passive_effect>
@@ -59,7 +59,7 @@
 		</append>
 		<append xpath="/entity_classes/entity_class[contains (@name, 'zombie')]">
 			<effect_group name="two">
-				<passive_effect name="HealthMax" operation="base_add" value="150">
+				<passive_effect name="HealthMax" operation="base_add" value="400">
 					<requirement name="EntityTagCompare" target="self" tags="fast"/>
 					<requirement name="RandomRoll" seed_type="Item" min_max="1,30" operation="GTE" value="15"/>
 				</passive_effect>
@@ -70,7 +70,7 @@
 		
 		<append xpath="/entity_classes/entity_class[contains (@name, 'zombie')]">
 			<effect_group name="one">
-				<passive_effect name="HealthMax" operation="base_add" value="-200">
+				<passive_effect name="HealthMax" operation="base_add" value="-300">
 					<requirement name="EntityTagCompare" target="self" tags="green"/>
 					<requirement name="RandomRoll" seed_type="Item" min_max="1,20" operation="GTE" value="10"/>
 				</passive_effect>
@@ -78,7 +78,7 @@
 		</append>
 		<append xpath="/entity_classes/entity_class[contains (@name, 'zombie')]">
 			<effect_group name="two">
-				<passive_effect name="HealthMax" operation="base_add" value="200">
+				<passive_effect name="HealthMax" operation="base_add" value="300">
 					<requirement name="EntityTagCompare" target="self" tags="green"/>
 					<requirement name="RandomRoll" seed_type="Item" min_max="1,30" operation="GTE" value="15"/>
 				</passive_effect>
