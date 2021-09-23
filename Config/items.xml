@@ -33,6 +33,28 @@
 	<set xpath="/items/item[@name='foodRottingFlesh']/property[@name='Stacknumber']/@value">10</set>
 
 	<!-- Durability -->
+<!-- Items created with parts require parts for repair -->
+	<!-- Items -->
+	<set xpath="/items/item[contains(@name, 'Steel') and contains(@name, 'meleeTool')]/property[@name='RepairTools']/@value">meleeToolAllSteelParts</set>
+	<set xpath="/items/item[contains(@name, 'T3') and contains(@name, 'meleeTool')]/property[@name='RepairTools']/@value">meleeToolAxeT3ChainsawParts</set>
+
+	<set xpath="/items/item[@name='meleeWpnClubT3SteelClub']/property[@name='RepairTools']/@value">meleeWpnClubT3SteelClubParts</set>
+	<append xpath="/items/item[@name='meleeWpnSpearT3SteelSpear']"><property name="RepairTools" value="meleeWpnSpearT3SteelSpearParts"/></append>
+	<set xpath="/items/item[@name='meleeWpnBladeT3Machete']/property[@name='RepairTools']/@value">meleeWpnBladeT3MacheteParts</set>
+	<append xpath="/items/item[@name='meleeWpnKnucklesT3SteelKnuckles']"><property name="RepairTools" value="meleeWpnKnucklesT3SteelKnucklesParts"/></append>
+	<set xpath="/items/item[@name='meleeWpnSledgeT3SteelSledgehammer']/property[@name='RepairTools']/@value">meleeWpnSledgeT3SteelSledgehammerParts</set>
+	<set xpath="/items/item[@name='meleeWpnBatonT2StunBaton']/property[@name='RepairTools']/@value">meleeWpnBatonT2StunBatonParts</set>
+
+	<set xpath="/items/item[contains(@name, 'Bow') and contains(@name, 'Crossbow') and not(contains(@name, 'Primitive'))]/property[@name='RepairTools']/@value">gunBowT1WoodenBowParts</set>
+	<set xpath="/items/item[contains(@name, 'Handgun')]/property[@name='RepairTools']/@value">gunHandgunT1PistolParts</set>
+	<set xpath="/items/item[contains(@name, 'Shotgun')]/property[@name='RepairTools']/@value">gunShotgunT1DoubleBarrelParts</set>
+	<set xpath="/items/item[contains(@name, 'Rifle')]/property[@name='RepairTools']/@value">gunRifleT1HuntingRifleParts</set>
+	<set xpath="/items/item[contains(@name, 'gunMG')]/property[@name='RepairTools']/@value">gunMGT1AK47Parts</set>
+	<set xpath="/items/item[contains(@name, 'RocketLauncher')]/property[@name='RepairTools']/@value">gunExplosivesT3RocketLauncherParts</set>
+	<!-- Repair parts -->
+	<append xpath="/items/item[contains(@name, 'Parts') and not(contains(@name, 'resource')) and not(contains(@name, 'Bot')) and not(contains(@name, 'armor'))]">
+		<property name="RepairAmount" value="32000"/><property name="RepairTime" value="10"/>
+	</append>
 	<set xpath="/items/item/property[@name='DegradationBreaksAfter' and @value='false']/@value">true</set>
 	<insertAfter xpath="/items/item/effect_group/passive_effect[@name='DegradationPerUse']">
 		<passive_effect name="DegradationPerUse" operation="base_add" value="150">			
