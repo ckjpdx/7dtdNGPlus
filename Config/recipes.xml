@@ -4,9 +4,6 @@
     <recipe name="drinkJarGrandpasForgettingElixir" count="1" always_unlocked="true" craft_time="300" craft_area="campfire" craft_tool="toolCookingPot" tags="resourceSilverNugget,drinkJarGrainAlcohol,foodCropBlueberries,resourceCropChrysanthemumPlant,foodCropYuccaFruit">
       <ingredient name="resourceSilverNugget" count="1"/>
       <ingredient name="drinkJarGrainAlcohol" count="1"/>
-      <ingredient name="foodCropBlueberries" count="1"/>
-      <ingredient name="resourceCropChrysanthemumPlant" count="1"/>
-      <ingredient name="foodCropYuccaFruit" count="1"/>
     </recipe>
   </append>
 <!-- foodRawMeat recipes require less meat because its heavier -->
