@@ -7,6 +7,7 @@
 	<set xpath="/items/item[@name='vehicleMotorcyclePlaceable']/effect_group/passive_effect[@name='DegradationMax']/@value">2000</set>
 	<set xpath="/items/item[@name='vehicle4x4TruckPlaceable']/effect_group/passive_effect[@name='DegradationMax']/@value">4000</set>
 	<set xpath="/items/item[@name='vehicleGyrocopterPlaceable']/effect_group/passive_effect[@name='DegradationMax']/@value">1000</set>
+<!-- Stack sizes -->
 	<!-- Heavier material stacks -->
 	<set xpath="/items/item[@name='ammoGasCan']/property[@name='Stacknumber']/@value">2500</set>
 	<set xpath="/items/item[@name='resourceRockSmall']/property[@name='Stacknumber']/@value">500</set>
@@ -32,7 +33,6 @@
 	<set xpath="/items/item[@name='foodRawMeat']/property[@name='Stacknumber']/@value">10</set>
 	<set xpath="/items/item[@name='foodRottingFlesh']/property[@name='Stacknumber']/@value">10</set>
 
-	<!-- Durability -->
 <!-- Items created with parts require parts for repair -->
 	<!-- Items -->
 	<set xpath="/items/item[contains(@name, 'Steel') and contains(@name, 'meleeTool')]/property[@name='RepairTools']/@value">meleeToolAllSteelParts</set>
@@ -55,14 +55,17 @@
 	<append xpath="/items/item[contains(@name, 'Parts') and not(contains(@name, 'resource')) and not(contains(@name, 'Bot')) and not(contains(@name, 'armor'))]">
 		<property name="RepairAmount" value="32000"/><property name="RepairTime" value="10"/>
 	</append>
+<!-- Item Durability -->
+	<!-- kill item at durability 0 -->
 	<set xpath="/items/item/property[@name='DegradationBreaksAfter' and @value='false']/@value">true</set>
+	<!-- random hit -->
 	<insertAfter xpath="/items/item/effect_group/passive_effect[@name='DegradationPerUse']">
 		<passive_effect name="DegradationPerUse" operation="base_add" value="150">			
 			<requirement name="RandomRoll" seed_type="Random" min_max="0,1000" operation="LTE" value="1"/>
 		</passive_effect>
 	</insertAfter>
 
-	<!-- Dysentery for low level meat recipes but increase food amount -->
+<!-- Dysentery for low level meat recipes but increase food amount -->
 	<append xpath='/items/item[@name="foodCharredMeat"]/effect_group'>
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar=".DiseaseRoll" operation="set" value="12"/><display_value name="dDysenteryRisk" value=".12"/>
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar=".DiseaseRoll" operation="add" value="@$MetabolismResist"/>
@@ -90,7 +93,7 @@
 	</append>
 	<set xpath="/items/item[@name='foodBoiledMeat']/effect_group/triggered_effect[@cvar='$foodAmountAdd']/@value">20</set>
 
-	<!-- More calories from recipes! -->
+<!-- More calories from recipes! -->
 	<set xpath="/items/item[@name='foodCornOnTheCob']/effect_group/triggered_effect[@cvar='$foodAmountAdd']/@value">10</set>
 	<set xpath="/items/item[@name='foodCornBread']/effect_group/triggered_effect[@cvar='$foodAmountAdd']/@value">10</set>
 	<set xpath="/items/item[@name='foodShamSandwich']/effect_group/triggered_effect[@cvar='$foodAmountAdd']/@value">30</set>
@@ -113,7 +116,7 @@
 	<set xpath="/items/item[@name='foodBaconAndEggs']/effect_group/triggered_effect[@cvar='$foodAmountAdd']/@value">70</set>
 	<set xpath="/items/item[@name='foodVegetableStew']/effect_group/triggered_effect[@cvar='$foodAmountAdd']/@value">60</set>
 
-	<!-- Dysentery for rotting meat recipes -->
+<!-- Dysentery for rotting meat recipes -->
 	<append xpath='/items/item[@name="foodHoboStew"]/effect_group'>
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar=".DiseaseRoll" operation="set" value="12"/><display_value name="dDysenteryRisk" value=".12"/>
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar=".DiseaseRoll" operation="add" value="@$MetabolismResist"/>
