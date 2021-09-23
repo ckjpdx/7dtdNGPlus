@@ -7,6 +7,8 @@
     </recipe>
   </append>
 <!-- foodRawMeat recipes require less meat because its heavier -->
+  <!-- Reduce creation cost increase with quality -->
+  <remove xpath="/recipes/recipe[contains(@name, 'gun') or contains(@name, 'melee')]/effect_group/passive_effect[@name='CraftingIngredientCount']"/>
   <set xpath="/recipes/recipe[@name='foodCharredMeat']/ingredient[@name='foodRawMeat']/@count">3</set>
   <set xpath="/recipes/recipe[@name='foodGrilledMeat']/ingredient[@name='foodRawMeat']/@count">3</set>
   <set xpath="/recipes/recipe[@name='foodBoiledMeat']/ingredient[@name='foodRawMeat']/@count">3</set>
