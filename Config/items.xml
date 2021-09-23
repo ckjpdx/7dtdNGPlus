@@ -45,9 +45,10 @@
 	<set xpath="/items/item[@name='meleeWpnSledgeT3SteelSledgehammer']/property[@name='RepairTools']/@value">meleeWpnSledgeT3SteelSledgehammerParts</set>
 	<set xpath="/items/item[@name='meleeWpnBatonT2StunBaton']/property[@name='RepairTools']/@value">meleeWpnBatonT2StunBatonParts</set>
 
-	<set xpath="/items/item[contains(@name, 'Bow') and contains(@name, 'Crossbow') and not(contains(@name, 'Primitive'))]/property[@name='RepairTools']/@value">gunBowT1WoodenBowParts</set>
+	<set xpath="/items/item[contains(@name, 'Bow') and not(contains(@name, 'Primitive'))]/property[@name='RepairTools']/@value">gunBowT1WoodenBowParts</set>
+	<set xpath="/items/item[contains(@name, 'Crossbow')]/property[@name='RepairTools']/@value">gunBowT1WoodenBowParts</set>
 	<set xpath="/items/item[contains(@name, 'Handgun')]/property[@name='RepairTools']/@value">gunHandgunT1PistolParts</set>
-	<set xpath="/items/item[contains(@name, 'Shotgun')]/property[@name='RepairTools']/@value">gunShotgunT1DoubleBarrelParts</set>
+	<set xpath="/items/item[contains(@name, 'Shotgun') and not(contains(@name, 'Blunderbuss'))]/property[@name='RepairTools']/@value">gunShotgunT1DoubleBarrelParts</set>
 	<set xpath="/items/item[contains(@name, 'Rifle')]/property[@name='RepairTools']/@value">gunRifleT1HuntingRifleParts</set>
 	<set xpath="/items/item[contains(@name, 'gunMG')]/property[@name='RepairTools']/@value">gunMGT1AK47Parts</set>
 	<set xpath="/items/item[contains(@name, 'RocketLauncher')]/property[@name='RepairTools']/@value">gunExplosivesT3RocketLauncherParts</set>
