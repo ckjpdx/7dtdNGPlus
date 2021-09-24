@@ -65,12 +65,6 @@
 <!-- Item Durability -->
 	<!-- kill item at durability 0 -->
 	<set xpath="/items/item/property[@name='DegradationBreaksAfter' and @value='false']/@value">true</set>
-	<!-- random hit -->
-	<insertAfter xpath="/items/item/effect_group/passive_effect[@name='DegradationPerUse']">
-		<passive_effect name="DegradationPerUse" operation="base_add" value="150">			
-			<requirement name="RandomRoll" seed_type="Random" min_max="0,1000" operation="LTE" value="1"/>
-		</passive_effect>
-	</insertAfter>
 
 <!-- Dysentery for low level meat recipes but increase food amount -->
 	<append xpath='/items/item[@name="foodCharredMeat"]/effect_group'>
