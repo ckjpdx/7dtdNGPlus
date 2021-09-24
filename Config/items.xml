@@ -38,6 +38,9 @@
 	<set xpath="/items/item[contains(@name, 'Steel') and contains(@name, 'meleeTool')]/property[@name='RepairTools']/@value">meleeToolAllSteelParts</set>
 	<set xpath="/items/item[contains(@name, 'T3') and contains(@name, 'meleeTool')]/property[@name='RepairTools']/@value">meleeToolAxeT3ChainsawParts</set>
 
+	<append xpath="/items/item[@name='meleeToolAxeT2SteelAxe']"><property name="RepairTools" value="meleeToolAllSteelParts"/></append>
+	<append xpath="/items/item[@name='meleeToolSalvageT2Ratchet']"><property name="RepairTools" value="meleeToolAllSteelParts"/></append>
+	<!-- Melee -->
 	<set xpath="/items/item[@name='meleeWpnClubT3SteelClub']/property[@name='RepairTools']/@value">meleeWpnClubT3SteelClubParts</set>
 	<append xpath="/items/item[@name='meleeWpnSpearT3SteelSpear']"><property name="RepairTools" value="meleeWpnSpearT3SteelSpearParts"/></append>
 	<set xpath="/items/item[@name='meleeWpnBladeT3Machete']/property[@name='RepairTools']/@value">meleeWpnBladeT3MacheteParts</set>
@@ -52,8 +55,11 @@
 	<set xpath="/items/item[contains(@name, 'Rifle')]/property[@name='RepairTools']/@value">gunRifleT1HuntingRifleParts</set>
 	<set xpath="/items/item[contains(@name, 'gunMG')]/property[@name='RepairTools']/@value">gunMGT1AK47Parts</set>
 	<set xpath="/items/item[contains(@name, 'RocketLauncher')]/property[@name='RepairTools']/@value">gunExplosivesT3RocketLauncherParts</set>
-	<!-- Repair parts -->
-	<append xpath="/items/item[contains(@name, 'Parts') and not(contains(@name, 'resource')) and not(contains(@name, 'Bot')) and not(contains(@name, 'armor'))]">
+	<!-- Armor -->
+	<set xpath="/items/item[@name='armorMilitaryMaster']/property[@name='RepairTools']/@value">armorMilitarySetParts</set>
+	<set xpath="/items/item[@name='armorSteelMaster']/property[@name='RepairTools']/@value">armorSteelSetParts</set>
+	<!-- Item parts must be enabled as repair tools or the game crashes -->
+	<append xpath="/items/item[contains(@name, 'Parts') and not(contains(@name, 'resource')) and not(contains(@name, 'Bot'))]">
 		<property name="RepairAmount" value="32000"/><property name="RepairTime" value="10"/>
 	</append>
 <!-- Item Durability -->
