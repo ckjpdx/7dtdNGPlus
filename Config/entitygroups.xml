@@ -47,7 +47,7 @@
 	<append xpath="/entitygroups/entitygroup[@name='ZombiesAll']">
 		<entity name="animalZombieDog" prob="2"/>
 		<entity name="animalZombieVulture" prob="2"/>
-		<entity name="zombieBurnt"/>
+		<entity name="zombieBurnt" prob="4"/>
 		<entity name="zombieMaleHazmat"/>
 		<entity name="zombieSoldier"/>
 		<entity name="zombieSnow"/>
@@ -94,7 +94,7 @@
 	<set xpath="/entitygroups/entitygroup[@name='ZombiesNight']/entity[@name='zombieNurseFeral']/@prob">.5</set>
 	<set xpath="/entitygroups/entitygroup[@name='ZombiesNight']/entity[@name='zombieFatHawaiianFeral']/@prob">.5</set>
 	<append xpath="/entitygroups/entitygroup[@name='ZombiesNight']">
-		<entity name="zombieBurnt"/>
+		<entity name="zombieBurnt" prob="4"/>
 		<entity name="zombieMaleHazmat"/>
 		<entity name="zombieSnow"/>
 		<entity name="zombieSoldier"/>
