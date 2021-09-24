@@ -34,10 +34,9 @@
 	<set xpath="/items/item[@name='foodRottingFlesh']/property[@name='Stacknumber']/@value">10</set>
 
 <!-- Items created with parts require parts for repair -->
-	<!-- Items -->
+	<!-- Tools -->
 	<set xpath="/items/item[contains(@name, 'Steel') and contains(@name, 'meleeTool')]/property[@name='RepairTools']/@value">meleeToolAllSteelParts</set>
 	<set xpath="/items/item[contains(@name, 'T3') and contains(@name, 'meleeTool')]/property[@name='RepairTools']/@value">meleeToolAxeT3ChainsawParts</set>
-
 	<append xpath="/items/item[@name='meleeToolAxeT2SteelAxe']"><property name="RepairTools" value="meleeToolAllSteelParts"/></append>
 	<append xpath="/items/item[@name='meleeToolSalvageT2Ratchet']"><property name="RepairTools" value="meleeToolAllSteelParts"/></append>
 	<!-- Melee -->
@@ -47,7 +46,7 @@
 	<append xpath="/items/item[@name='meleeWpnKnucklesT3SteelKnuckles']"><property name="RepairTools" value="meleeWpnKnucklesT3SteelKnucklesParts"/></append>
 	<set xpath="/items/item[@name='meleeWpnSledgeT3SteelSledgehammer']/property[@name='RepairTools']/@value">meleeWpnSledgeT3SteelSledgehammerParts</set>
 	<set xpath="/items/item[@name='meleeWpnBatonT2StunBaton']/property[@name='RepairTools']/@value">meleeWpnBatonT2StunBatonParts</set>
-
+	<!-- Projectile -->
 	<set xpath="/items/item[contains(@name, 'Bow') and not(contains(@name, 'Primitive'))]/property[@name='RepairTools']/@value">gunBowT1WoodenBowParts</set>
 	<set xpath="/items/item[contains(@name, 'Crossbow')]/property[@name='RepairTools']/@value">gunBowT1WoodenBowParts</set>
 	<set xpath="/items/item[contains(@name, 'Handgun')]/property[@name='RepairTools']/@value">gunHandgunT1PistolParts</set>
