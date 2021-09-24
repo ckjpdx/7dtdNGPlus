@@ -20,8 +20,8 @@
 	<set xpath="/entity_classes/entity_class[contains(@name, 'zombie') and not(contains(@name, 'animal'))]/property[@name='SmellAlertThreshold']/@value">999</set>
 	<!-- Motion -->
 	<set xpath="/entity_classes/entity_class/property[@name='HasDeathAnim']/@value">false</set>
-	<set xpath="/entity_classes/entity_class[contains(@name, 'zombieTemplateMale') or contains(@name, 'zombieWightRadiated')]/property[@name='KnockdownKneelDamageThreshold']/@value">0.33</set>
-	<set xpath="/entity_classes/entity_class/property[@name='KnockdownKneelStunDuration']/@value">1,3</set>
+	<set xpath="/entity_classes/entity_class[contains(@name, 'zombieTemplateMale') or contains(@name, 'zombieWightRadiated')]/property[@name='KnockdownKneelDamageThreshold']/@value">0.15</set>
+	<set xpath="/entity_classes/entity_class/property[@name='KnockdownKneelStunDuration']/@value">2,4</set>
 	<set xpath="/entity_classes/entity_class[contains(@name, 'zombieTemplateMale') or contains(@name, 'zombieWightRadiated')]/property[@name='KnockdownProneDamageThreshold']/@value">0.75</set>
 	<set xpath="/entity_classes/entity_class/property[@name='KnockdownProneStunDuration']/@value">1,15</set>
 	<!-- Sound -->
