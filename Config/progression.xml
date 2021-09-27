@@ -1,11 +1,11 @@
 <configs>
 <!-- faster progression early game, slower mid to late game -->
-    <set xpath="/progression/level/@exp_to_level">5000</set>
-    <set xpath="/progression/level/@experience_multiplier">1.1</set>
-    <set xpath="/progression/level/@skill_points_per_level">3</set>
-    <set xpath="/progression/level/@clamp_exp_cost_at_level">38</set>
+  <set xpath="/progression/level/@exp_to_level">5000</set>
+  <set xpath="/progression/level/@experience_multiplier">1.1</set>
+  <set xpath="/progression/level/@skill_points_per_level">3</set>
+  <set xpath="/progression/level/@clamp_exp_cost_at_level">38</set>
     
-    <set xpath="/progression/perks/@cost_multiplier_per_level">1.33</set>
+  <set xpath="/progression/perks/@cost_multiplier_per_level">1.33</set>
 
 <!-- remove head damage from base attributes -->
   <set xpath="/progression/attributes/attribute[contains(@name, 'att')]/effect_group/passive_effect[@name='DamageModifier']/@value">0,0</set>
