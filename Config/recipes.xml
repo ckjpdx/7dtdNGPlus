@@ -1,7 +1,8 @@
 <configs>
 <!-- WEAPONS / TOOLS -->
   <!-- Reduce creation cost increase with quality -->
-  <remove xpath="/recipes/recipe[contains(@name, 'gun') or contains(@name, 'melee')]/effect_group/passive_effect[@name='CraftingIngredientCount']"/>
+  <set xpath="/recipes/recipe[not(contains(@name, 'Bot')) and contains(@name, 'gun') or contains(@name, 'melee') or contains(@name, 'armor')]/effect_group/passive_effect[@name='CraftingIngredientCount']/@level">1,6</set>
+  <set xpath="/recipes/recipe[not(contains(@name, 'Bot')) and contains(@name, 'gun') or contains(@name, 'melee') or contains(@name, 'armor')]/effect_group/passive_effect[@name='CraftingIngredientCount']/@value">0.5,0.5</set>
 
 <!-- FOOD -->
   <!-- foodRawMeat recipes require less meat because its heavier -->
