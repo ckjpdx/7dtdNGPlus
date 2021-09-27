@@ -9,7 +9,7 @@
 
 <!-- remove head damage from base attributes -->
   <set xpath="/progression/attributes/attribute[contains(@name, 'att')]/effect_group/passive_effect[@name='DamageModifier']/@value">0,0</set>
-  <set xpath="/progression/attributes/attribute[contains(@name, 'att')]/effect_group/passive_effect[@name='DismemberChance']/@value">0.25,0.65</set>
+  <set xpath="/progression/attributes/attribute[contains(@name, 'att')]/effect_group/passive_effect[@name='DismemberChance']/@value">0.25,0.75</set>
 
 <!-- added recipe levels -->
   <append xpath="/progression/perks/perk[@name='perkMasterChef']/effect_group/passive_effect[@name='RecipeTagUnlocked'][@level='2,5']/@tags">,resourceAnimalFat</append>
@@ -17,6 +17,6 @@
 <!-- stealth improvements to counter zed sight increase -->
   <set xpath="/progression/perks/perk[@name='perkFromTheShadows']/effect_group/passive_effect[@name='LightMultiplier']/@value">-0.4,-0.9</set>
   <set xpath="/progression/perks/perk[@name='perkFromTheShadows']/effect_group/passive_effect[@name='NoiseMultiplier']/@value">-0.4,-0.9</set>
-  <set xpath="/progression/perks/perk[@name='perkHiddenStrike']/effect_group/passive_effect[@name='EntityDamage']/@value">1,2,3,4,5,6</set>
+  <set xpath="/progression/perks/perk[@name='perkHiddenStrike']/effect_group/passive_effect[@name='EntityDamage']/@value">0.5,2,3,4,5,6</set>
 
 </configs>
