@@ -43,7 +43,7 @@
 		
 		<append xpath="/entity_classes/entity_class[contains (@name, 'zombie')]">
 			<effect_group name="one">
-				<passive_effect name="HealthMax" operation="base_add" value="100">
+				<passive_effect name="HealthMax" operation="base_add" value="150">
 					<requirement name="EntityTagCompare" target="self" tags="slow"/>
 					<requirement name="RandomRoll" seed_type="Item" min_max="1,20" operation="GTE" value="10"/>
 				</passive_effect>
@@ -51,7 +51,7 @@
 		</append>
 		<append xpath="/entity_classes/entity_class[contains (@name, 'zombie')]">
 			<effect_group name="two">
-				<passive_effect name="HealthMax" operation="base_add" value="100">
+				<passive_effect name="HealthMax" operation="base_add" value="150">
 					<requirement name="EntityTagCompare" target="self" tags="slow"/>
 					<requirement name="RandomRoll" seed_type="Item" min_max="1,30" operation="GTE" value="15"/>
 				</passive_effect>
@@ -62,7 +62,7 @@
 		
 		<append xpath="/entity_classes/entity_class[contains (@name, 'zombie')]">
 			<effect_group name="one">
-				<passive_effect name="HealthMax" operation="base_add" value="-100">
+				<passive_effect name="HealthMax" operation="base_add" value="-150">
 					<requirement name="EntityTagCompare" target="self" tags="fast"/>
 					<requirement name="RandomRoll" seed_type="Item" min_max="1,20" operation="GTE" value="10"/>
 				</passive_effect>
@@ -70,7 +70,7 @@
 		</append>
 		<append xpath="/entity_classes/entity_class[contains (@name, 'zombie')]">
 			<effect_group name="two">
-				<passive_effect name="HealthMax" operation="base_add" value="100">
+				<passive_effect name="HealthMax" operation="base_add" value="150">
 					<requirement name="EntityTagCompare" target="self" tags="fast"/>
 					<requirement name="RandomRoll" seed_type="Item" min_max="1,30" operation="GTE" value="15"/>
 				</passive_effect>
@@ -81,7 +81,7 @@
 		
 		<append xpath="/entity_classes/entity_class[contains (@name, 'zombie')]">
 			<effect_group name="one">
-				<passive_effect name="HealthMax" operation="base_add" value="-100">
+				<passive_effect name="HealthMax" operation="base_add" value="-150">
 					<requirement name="EntityTagCompare" target="self" tags="green"/>
 					<requirement name="RandomRoll" seed_type="Item" min_max="1,20" operation="GTE" value="10"/>
 				</passive_effect>
@@ -89,7 +89,7 @@
 		</append>
 		<append xpath="/entity_classes/entity_class[contains (@name, 'zombie')]">
 			<effect_group name="two">
-				<passive_effect name="HealthMax" operation="base_add" value="-100">
+				<passive_effect name="HealthMax" operation="base_add" value="-150">
 					<requirement name="EntityTagCompare" target="self" tags="green"/>
 					<requirement name="RandomRoll" seed_type="Item" min_max="1,30" operation="GTE" value="15"/>
 				</passive_effect>
