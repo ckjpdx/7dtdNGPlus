@@ -6,10 +6,6 @@
   <set xpath="/progression/level/@clamp_exp_cost_at_level">33</set>
   <set xpath="/progression/perks/@cost_multiplier_per_level">1.33</set>
 
-<!-- remove head damage from base attributes -->
-  <set xpath="/progression/attributes/attribute[contains(@name, 'att')]/effect_group/passive_effect[@name='DamageModifier']/@value">0,0</set>
-  <set xpath="/progression/attributes/attribute[contains(@name, 'att')]/effect_group/passive_effect[@name='DismemberChance']/@value">0.25,0.75</set>
-
 <!-- added recipe levels -->
   <append xpath="/progression/perks/perk[@name='perkMasterChef']/effect_group/passive_effect[@name='RecipeTagUnlocked'][@level='1,5']/@tags">,resourceAnimalFat</append>
 
