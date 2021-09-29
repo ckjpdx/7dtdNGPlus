@@ -21,7 +21,7 @@
 	<!-- Senses -->
 	<set xpath="/entity_classes/entity_class[contains(@name, 'zombie') and not(contains(@name, 'animal'))]/property[@name='MaxViewAngle']/@value">23</set>
 	<set xpath="/entity_classes/entity_class[contains(@name, 'zombie') or contains(@name, 'animal')]/property[@name='SightRange']/@value">100</set>
-	<set xpath="/entity_classes/entity_class[contains(@name, 'zombie') or contains(@name, 'animal')]/property[@name='SightLightThreshold']/@value">0,100</set>
+	<set xpath="/entity_classes/entity_class[contains(@name, 'zombie') or contains(@name, 'animal')]/property[@name='SightLightThreshold']/@value">-2,100</set>
 	<set xpath="/entity_classes/entity_class[contains(@name, 'zombie') and not(contains(@name, 'animal'))]/property[@name='SmellAlertThreshold']/@value">999</set>
 	<!-- Motion -->
 	<set xpath="/entity_classes/entity_class/property[@name='HasDeathAnim']/@value">false</set>
