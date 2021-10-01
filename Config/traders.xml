@@ -3,7 +3,7 @@
 	<!-- Vehicle Mods -->
 	<insertBefore xpath="/traders/trader_item_groups/trader_item_group[@name='modMeleeT1']">
 		<trader_item_group name="modVehicle" count="1">
-			<item name="modVehicleMega"/>
+			<!-- <item name="modVehicleMega"/> -->
 			<item name="modVehicleFuelSaver"/>
 			<item name="modVehicleHeadlights"/>
 			<item name="modVehicleSpeed"/>
