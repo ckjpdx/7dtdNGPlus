@@ -10,4 +10,8 @@
 		<drop event="Harvest" name="resourceFeather" count="6,10" prob="0.2" tag="allHarvest"/>
 		<drop event="Harvest" name="foodEgg" count="1,5" prob="0.1" tag="allHarvest"/>
 	</append>
+	<append xpath="/blocks/block[contains(@name, 'Frame')]">
+		<property name="Class" value="TrapDoor"/>
+		<property name="TriggerDelay" value="0"/>
+	</append>
 </configs>
