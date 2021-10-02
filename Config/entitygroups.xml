@@ -76,8 +76,8 @@
 		<entity name="zombieFemaleFatFeral" prob="0.5"/>
 		<entity name="zombieCheerleaderFeral" prob="0.5"/>
 		<entity name="zombieWightRadiated" prob="1"/>
-		<entity name="zombieFatCop" prob="0.2"/>
-		<entity name="zombieDemolition" prob="0.1"/>
+		<entity name="zombieFatCop" prob="0.3"/>
+		<entity name="zombieDemolition" prob="0.3"/>
 	</append>
 <!-- ZombiesNight -->
 	<set xpath="/entitygroups/entitygroup[@name='ZombiesNight']/entity[@name='animalZombieDog']/@prob">4</set>
@@ -116,8 +116,8 @@
 		<entity name="zombieWightFeral" prob="10"/>
 		<entity name="zombieCheerleaderFeral" prob="0.5"/>
 		<entity name="zombieWightRadiated" prob="2"/>
-		<entity name="zombieFatCop" prob="0.2"/>
-		<entity name="zombieDemolition" prob="0.1"/>
+		<entity name="zombieFatCop" prob="0.5"/>
+		<entity name="zombieDemolition" prob="0.5"/>
 		<entity name="zombieScreamerFeral" prob="0.5"/>
 		<entity name="zombieFemaleFatFeral" prob="0.5"/>
 	</append>
