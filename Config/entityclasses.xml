@@ -20,9 +20,13 @@
 	</append>
 
 <!-- Zombies -->
+	<set xpath="/entity_classes/entity_class[@name='zombieTemplateMale']/property[@name='AttackTimeoutDay']/@value">1</set>
+	<set xpath="/entity_classes/entity_class[@name='zombieTemplateMale']/property[@name='AttackTimeoutNight']/@value">1</set>
 	<!-- zombieWightFeral enhanced -->
 	<set xpath="/entity_classes/entity_class[@name='zombieWightFeral']/property[@name='JumpMaxDistance']/@value">20, 25</set>
 	<set xpath="/entity_classes/entity_class[@name='zombieWightFeral']/property[@name='MoveSpeedAggro']/@value">1, 2</set>
+	<set xpath="/entity_classes/entity_class[@name='zombieWightFeral']/effect_group/passive_effect[@name='HealthMax'][@operation='base_set']/@value">1000</set>
+	<set xpath="/entity_classes/entity_class[@name='zombieWightRadiated']/effect_group/passive_effect[@name='HealthMax'][@operation='base_set']/@value">1500</set>
 	<!-- Senses -->
 	<set xpath="/entity_classes/entity_class[contains(@name, 'zombie') and not(contains(@name, 'animal'))]/property[@name='MaxViewAngle']/@value">23</set>
 	<set xpath="/entity_classes/entity_class[contains(@name, 'zombie') or contains(@name, 'animal')]/property[@name='SightRange']/@value">100</set>
