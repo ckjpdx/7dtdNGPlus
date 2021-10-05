@@ -21,6 +21,7 @@
 	</append>
 <!-- Zombies -->
 	<!-- zombieWightFeral enhanced -->
+	<set xpath="/entity_classes/entity_class[@name='zombieWightFeral']/property[@name='HandItem']/@value">meleeHandZombieDemolition</set>
 	<set xpath="/entity_classes/entity_class[@name='zombieWightFeral']/property[@name='JumpMaxDistance']/@value">20, 25</set>
 	<set xpath="/entity_classes/entity_class[@name='zombieWightFeral']/property[@name='MoveSpeedAggro']/@value">1, 2</set>
 	<set xpath="/entity_classes/entity_class[@name='zombieWightFeral']/effect_group/passive_effect[@name='HealthMax'][@operation='base_set']/@value">1000</set>
