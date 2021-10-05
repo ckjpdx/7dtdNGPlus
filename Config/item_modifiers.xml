@@ -5,5 +5,5 @@
 	<append xpath="/item_modifiers/item_modifier[starts-with(@name, 'modVehicle')]">
 		<property name="EconomicValue" value="1000" />
 	</append>
-	<set xpath="/item_modifiers/item_modifier[@name='modVehicleFuelSaver']/effect_group/passive_effect[@name='VehicleFuelUsePer']/@value">0.75</set>
+	<set xpath="/item_modifiers/item_modifier[@name='modVehicleFuelSaver']/effect_group/passive_effect[@name='VehicleFuelUsePer']/@value">0.85</set>
 </configs>
