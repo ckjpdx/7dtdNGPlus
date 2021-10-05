@@ -6,7 +6,8 @@
 	<set xpath="/entity_classes/entity_class[@name='playerMale']/effect_group/passive_effect[@name='WalkSpeed'][@operation='base_set']/@value">1</set>
 	<set xpath="/entity_classes/entity_class[@name='playerMale']/effect_group/passive_effect[@name='RunSpeed'][@operation='base_set']/@value">1</set>
 	<set xpath="/entity_classes/entity_class[@name='playerMale']/effect_group/passive_effect[@name='CrouchSpeed'][@operation='base_set']/@value">0.75</set>
-	<!-- Stamina loss on hit -->
+	
+	<!-- player effects when hit -->
 	<append xpath="/entity_classes/entity_class[@name='playerMale']">
 		<effect_group>
 			<triggered_effect trigger="onOtherDamagedSelf" action="ModifyStats" stat="Stamina" operation="subtract" value="17"/>
@@ -18,7 +19,6 @@
 			</triggered_effect>
 		</effect_group>
 	</append>
-
 <!-- Zombies -->
 	<!-- zombieWightFeral enhanced -->
 	<set xpath="/entity_classes/entity_class[@name='zombieWightFeral']/property[@name='JumpMaxDistance']/@value">20, 25</set>
