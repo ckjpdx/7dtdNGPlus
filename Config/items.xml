@@ -2,11 +2,11 @@
 	<!-- No crosshairs on ADS for guns -->
 	<set xpath="/items/item[not(contains(@name, 'Bow'))]/property[@name='CrosshairOnAim']/@value">false</set>
 	<!-- Vehicle durability -->
-	<set xpath="/items/item[@name='vehicleBicyclePlaceable']/effect_group/passive_effect[@name='DegradationMax']/@value">250</set>
-	<set xpath="/items/item[@name='vehicleMinibikePlaceable']/effect_group/passive_effect[@name='DegradationMax']/@value">500</set>
-	<set xpath="/items/item[@name='vehicleMotorcyclePlaceable']/effect_group/passive_effect[@name='DegradationMax']/@value">1000</set>
-	<set xpath="/items/item[@name='vehicle4x4TruckPlaceable']/effect_group/passive_effect[@name='DegradationMax']/@value">2000</set>
-	<set xpath="/items/item[@name='vehicleGyrocopterPlaceable']/effect_group/passive_effect[@name='DegradationMax']/@value">500</set>
+	<set xpath="/items/item[@name='vehicleBicyclePlaceable']/effect_group/passive_effect[@name='DegradationMax']/@value">50</set>
+	<set xpath="/items/item[@name='vehicleMinibikePlaceable']/effect_group/passive_effect[@name='DegradationMax']/@value">200</set>
+	<set xpath="/items/item[@name='vehicleMotorcyclePlaceable']/effect_group/passive_effect[@name='DegradationMax']/@value">500</set>
+	<set xpath="/items/item[@name='vehicle4x4TruckPlaceable']/effect_group/passive_effect[@name='DegradationMax']/@value">1000</set>
+	<set xpath="/items/item[@name='vehicleGyrocopterPlaceable']/effect_group/passive_effect[@name='DegradationMax']/@value">100</set>
 <!-- Stack sizes -->
 	<!-- Heavier material stacks -->
 	<set xpath="/items/item[@name='ammoGasCan']/property[@name='Stacknumber']/@value">2500</set>
