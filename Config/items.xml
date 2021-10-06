@@ -1,6 +1,6 @@
 <configs>
-	<!-- zombies -->
-	<append xpath="/items/item[contains(@name, 'meleeHandZombie01') or contains(@name, 'meleeHandZombieWorker') or contains(@name, 'meleeHandZombieFootballPlayer') or contains(@name, 'meleeHandZombieStripper') or contains(@name, 'meleeHandZombieHazMat') or contains(@name, 'meleeHandZombieStrong') or contains(@name, 'meleeHandZombieCop')]/effect_group">
+<!-- zombies -->
+	<append xpath="/items/item[contains(@name, 'meleeHandZombie')]/effect_group">
 		<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" buff="buffGrabbed"/>
 	</append>
 	<append xpath="/items/item[@name='meleeHandZombieDemolition']/effect_group">
