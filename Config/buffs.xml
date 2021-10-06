@@ -18,6 +18,29 @@
 	<setattribute xpath="/buffs/buff[@name='buffArmBroken']" name="remove_on_death">false</setattribute>
 	<!-- new buffs -->
 	<append xpath="/buffs">
+	<!-- player buffs -->
+		<buff name="buffBerserker" icon="ui_game_symbol_melee" icon_color="255,0,255">
+			<stack_type value="replace"/>
+			<duration value="30"/>
+			<effect_group>
+				<display_value_key value="Berserk"/>
+				<passive_effect name="BuffBlink" operation="base_set" value="1" duration="30"/>
+				<passive_effect name="StaminaChangeOT" operation="perc_add" value="4"/>
+				<passive_effect name="EntityDamage" operation="perc_add" value="4" tags="perkMiner69r,perkSalvageOperations,perkElectrocutioner,perkJavelinMaster,perkPummelPete,perkSkullCrusher,perkDeepCuts,perkBrawler"/>
+				<passive_effect name="HealthMax" operation="base_add" value="200"/>
+
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyScreenEffect" effect_name="Hot" intensity="1" fade="1"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="ModifyScreenEffect" effect_name="Hot" intensity="0" fade="1"/>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="infectionCounter" operation="add" value="3600"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="buffInfectionMain"/>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$dysenteryCounter" operation="add" value="3600"/>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$dysenteryNextPoopAttack" operation="set" value="0"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="buffDysenteryMain">
+					<requirement name="NotHasBuff" buff="buffDysenteryMain"/>
+				</triggered_effect>
+
+			</effect_group>
+		</buff>
 		<buff name="buffWightVenom" icon="ui_game_symbol_skull" icon_color="255,0,0" remove_on_death="false">
 			<stack_type value="replace"/>
 			<duration value="15"/>

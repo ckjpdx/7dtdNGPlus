@@ -8,6 +8,7 @@
 
 <!-- added recipe levels -->
   <append xpath="/progression/perks/perk[@name='perkMasterChef']/effect_group/passive_effect[@name='RecipeTagUnlocked'][@level='1,5']/@tags">,resourceAnimalFat</append>
+  <append xpath="/progression/perks/perk[@name='perkMasterChef']/effect_group/passive_effect[@name='RecipeTagUnlocked'][@level='5,5']/@tags">,foodBerserkerPorridge</append>
 
 <!-- stealth improvements to counter zed sight increase -->
   <remove xpath="/progression/perks/perk[@name='perkFromTheShadows']/effect_group/passive_effect[@name='LightMultiplier']/requirement"/>
