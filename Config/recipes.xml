@@ -23,15 +23,9 @@
       <ingredient name="resourceClayLump" count="1"/>
       <ingredient name="drinkJarBoiledWater" count="1"/>
     </recipe>
-  </append>
-  <append xpath="/recipes">
     <recipe name="resourceAnimalFat" count="1" craft_area="campfire" craft_tool="toolCookingGrill" tags="perkMasterChef">
       <ingredient name="foodRawMeat" count="1"/>
     </recipe>
-  </append>
-  <append xpath="/recipes">
-    <recipe name="foodCanStock" craft_time="40" count="1" craft_area="campfire" craft_tool="toolCookingPot" tags="perkMasterChef">
-      <ingredient name="resourceBone" count="10"/>
       <ingredient name="drinkJarBoiledWater" count="1"/>
       <effect_group>
         <passive_effect name="CraftingIngredientCount" level="2,3" operation="base_add" value="-2" tags="resourceBone"/>
