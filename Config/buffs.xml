@@ -26,7 +26,9 @@
 				<passive_effect name="SpreadMultiplierHip" operation="base_add" value="10"/>
 
 				<triggered_effect trigger="onSelfBuffStart" action="ModifyScreenEffect" effect_name="Distortion" intensity="1" fade="1"/>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyScreenEffect" effect_name="Drunk" intensity="1" fade="1"/>
 				<triggered_effect trigger="onSelfBuffRemove" action="ModifyScreenEffect" effect_name="Distortion" intensity="0" fade="1"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="ModifyScreenEffect" effect_name="Drunk" intensity="0" fade="1"/>
 
 				<triggered_effect trigger="onSelfBuffUpdate" action="Ragdoll" duration=".1">
 					<requirement name="EntityHasMovementTag" tags="running"/>
@@ -43,12 +45,16 @@
 			<effect_group>
 				<passive_effect name="BuffBlink" operation="base_set" value="2" duration="1"/>
 				<passive_effect name="SpreadMultiplierHip" operation="base_add" value="25"/>
-				<passive_effect name="WalkSpeed" operation="base_set" value="0"/>
+				<passive_effect name="WalkSpeed" operation="base_set" value="0.1"/>
 				<passive_effect name="RunSpeed" operation="base_set" value="0"/>
 				<passive_effect name="JumpStrength" operation="base_set" value="0"/>
 
 				<triggered_effect trigger="onSelfBuffStart" action="ModifyScreenEffect" effect_name="Infected" intensity="1" fade="1"/>
 				<triggered_effect trigger="onSelfBuffRemove" action="ModifyScreenEffect" effect_name="Infected" intensity="0" fade="1"/>
+				
+				<triggered_effect trigger="onSelfBuffUpdate" action="Ragdoll" duration=".1">
+					<requirement name="EntityHasMovementTag" tags="running"/>
+				</triggered_effect>
 			</effect_group>
 		</buff>
 	</append>
