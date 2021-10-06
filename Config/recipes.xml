@@ -27,10 +27,6 @@
       <ingredient name="foodRawMeat" count="1"/>
     </recipe>
       <ingredient name="drinkJarBoiledWater" count="1"/>
-      <effect_group>
-        <passive_effect name="CraftingIngredientCount" level="2,3" operation="base_add" value="-2" tags="resourceBone"/>
-        <passive_effect name="CraftingIngredientCount" level="4,5" operation="base_add" value="-4" tags="resourceBone"/>
-      </effect_group>
     </recipe>
   </append>
 </configs>
