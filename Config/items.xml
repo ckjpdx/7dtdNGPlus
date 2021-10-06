@@ -6,7 +6,6 @@
 	<append xpath="/items/item[@name='meleeHandZombieDemolition']/effect_group">
 		<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" buff="buffWightVenom"/>
 	</append>
-
 	<set xpath="/items/item[@name='meleeHandZombieDemolition']/property[@class='Action0']/property[@name='DamageEntity']/@value">40</set>
 	<!-- No crosshairs on ADS for guns -->
 	<set xpath="/items/item[not(contains(@name, 'Bow'))]/property[@name='CrosshairOnAim']/@value">false</set>
@@ -18,30 +17,14 @@
 	<set xpath="/items/item[@name='vehicleGyrocopterPlaceable']/effect_group/passive_effect[@name='DegradationMax']/@value">100</set>
 <!-- Stack sizes -->
 	<!-- Heavier material stacks -->
-	<set xpath="/items/item[@name='ammoGasCan']/property[@name='Stacknumber']/@value">2500</set>
-	<set xpath="/items/item[@name='resourceRockSmall']/property[@name='Stacknumber']/@value">500</set>
-	<set xpath="/items/item[@name='resourceWood']/property[@name='Stacknumber']/@value">500</set>
-	<set xpath="/items/item[@name='resourcePotassiumNitratePowder']/property[@name='Stacknumber']/@value">500</set>
-	<set xpath="/items/item[@name='resourceCoal']/property[@name='Stacknumber']/@value">500</set>
-	<set xpath="/items/item[@name='resourceOilShale']/property[@name='Stacknumber']/@value">500</set>
-	<set xpath="/items/item[@name='resourceCrushedSand']/property[@name='Stacknumber']/@value">500</set>
-	<set xpath="/items/item[@name='resourceBrokenGlass']/property[@name='Stacknumber']/@value">500</set>
-	<set xpath="/items/item[@name='resourceScrapIron']/property[@name='Stacknumber']/@value">500</set>
-	<set xpath="/items/item[@name='resourceScrapBrass']/property[@name='Stacknumber']/@value">500</set>
-	<set xpath="/items/item[@name='resourceScrapLead']/property[@name='Stacknumber']/@value">500</set>
-	<set xpath="/items/item[@name='resourceClayLump']/property[@name='Stacknumber']/@value">500</set>
-	<set xpath="/items/item[@name='resourceYuccaFibers']/property[@name='Stacknumber']/@value">500</set>
-	<set xpath="/items/item[@name='resourceCloth']/property[@name='Stacknumber']/@value">500</set>
-	<set xpath="/items/item[@name='resourceBone']/property[@name='Stacknumber']/@value">500</set>
-	<set xpath="/items/item[@name='resourceLeather']/property[@name='Stacknumber']/@value">500</set>
-	<set xpath="/items/item[@name='resourceFeather']/property[@name='Stacknumber']/@value">500</set>
-	<set xpath="/items/item[@name='resourcePaper']/property[@name='Stacknumber']/@value">500</set>
-	<!-- Heavier meat/water stacks -->
+	<set xpath="/items/item[@name='ammoGasCan']/property[@name='Stacknumber']/@value">2500</set>	
+	<set xpath="/items/item[starts-with(@name, 'resource') and not(contains(@name, 'Bundle'))]/property[@name='Stacknumber']/@value">1000</set>
+	<!-- Very Heavy stacks -->
 	<set xpath="/items/item[@name='resourceSnowBall']/property[@name='Stacknumber']/@value">10</set>
-	<set xpath="/items/item[@name='drinkJarRiverWater']/property[@name='Stacknumber']/@value">10</set>
 	<set xpath="/items/item[@name='foodRawMeat']/property[@name='Stacknumber']/@value">10</set>
 	<set xpath="/items/item[@name='foodRottingFlesh']/property[@name='Stacknumber']/@value">10</set>
-
+	<set xpath="/items/item[@name='resourceRepairKit']/property[@name='Stacknumber']/@value">10</set>
+	
 <!-- Items created with parts require parts for repair -->
 	<!-- Tools -->
 	<set xpath="/items/item[contains(@name, 'Steel') and contains(@name, 'meleeTool')]/property[@name='RepairTools']/@value">meleeToolAllSteelParts</set>
