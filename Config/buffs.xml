@@ -16,7 +16,7 @@
 	<setattribute xpath="/buffs/buff[@name='buffLegBroken']" name="remove_on_death">false</setattribute>
 	<setattribute xpath="/buffs/buff[@name='buffArmSprained']" name="remove_on_death">false</setattribute>
 	<setattribute xpath="/buffs/buff[@name='buffArmBroken']" name="remove_on_death">false</setattribute>
-	<!-- new buffs -->
+<!-- new buffs -->
 	<append xpath="/buffs">
 	<!-- player buffs -->
 		<buff name="buffBerserker" icon="ui_game_symbol_melee" icon_color="255,0,255">
@@ -41,6 +41,7 @@
 
 			</effect_group>
 		</buff>
+	<!-- zombie hexes -->
 		<buff name="buffWightVenom" icon="ui_game_symbol_skull" icon_color="255,0,0" remove_on_death="false">
 			<stack_type value="replace"/>
 			<duration value="15"/>
