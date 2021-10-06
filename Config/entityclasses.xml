@@ -20,6 +20,8 @@
 		</effect_group>
 	</append>
 <!-- Zombies -->
+	<!-- demolition zombie -->
+	<append xpath="/entity_classes/entity_class[@name='zombieDemolition']"><property name="SizeScale" value="1.1"/></append>
 	<!-- zombieWightFeral enhanced -->
 	<set xpath="/entity_classes/entity_class[@name='zombieWightFeral']/property[@name='HandItem']/@value">meleeHandZombieDemolition</set>
 	<set xpath="/entity_classes/entity_class[@name='zombieWightFeral']/property[@name='JumpMaxDistance']/@value">20, 25</set>
