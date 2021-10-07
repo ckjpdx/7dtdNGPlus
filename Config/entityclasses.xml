@@ -35,9 +35,10 @@
 	<!-- demolition zombie -->
 	<append xpath="/entity_classes/entity_class[@name='zombieDemolition']"><property name="SizeScale" value="1.1"/></append>
 	<!-- zombieWightFeral enhanced -->
-	<set xpath="/entity_classes/entity_class[@name='zombieWightFeral']/property[@name='HandItem']/@value">meleeHandZombieDemolition</set>
+	<append xpath="/entity_classes/entity_class[@name='zombieWightFeral']/property[@name='Tags']/@value">,venomous</append>
+	<append xpath="/entity_classes/entity_class[@name='zombieWightRadiated']/property[@name='Tags']/@value">,venomous</append>
 	<set xpath="/entity_classes/entity_class[@name='zombieWightFeral']/property[@name='JumpMaxDistance']/@value">20, 25</set>
-	<set xpath="/entity_classes/entity_class[@name='zombieWightFeral']/property[@name='MoveSpeedAggro']/@value">1, 2</set>
+	<set xpath="/entity_classes/entity_class[@name='zombieWightFeral']/property[@name='MoveSpeedAggro']/@value">1, 1.75</set>
 	<set xpath="/entity_classes/entity_class[@name='zombieWightFeral']/effect_group/passive_effect[@name='HealthMax'][@operation='base_set']/@value">1000</set>
 	<set xpath="/entity_classes/entity_class[@name='zombieWightRadiated']/effect_group/triggered_effect[@cvar='RadiatedRegenAmount']/@value">16</set>
 	<!-- Senses -->
