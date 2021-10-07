@@ -25,6 +25,12 @@
 			</triggered_effect>
 		</effect_group>
 	</append>
+
+<!-- Animals -->
+	<append xpath="/entity_classes/entity_class[@name='animalChicken']">
+		<drop event="Harvest" name="foodEgg" tag="butcherHarvest" count="3"/>
+	</append>
+
 <!-- Zombies -->
 	<!-- demolition zombie -->
 	<append xpath="/entity_classes/entity_class[@name='zombieDemolition']"><property name="SizeScale" value="1.1"/></append>
@@ -68,10 +74,6 @@
 			<property name="AITask-1" value=""/>
 			<property name="AITarget-1" value=""/>
 
-<!-- Animals -->
-	<append xpath="/entity_classes/entity_class[@name='animalChicken']">
-		<drop event="Harvest" name="foodEgg" tag="butcherHarvest" count="3"/>
-	</append>
 			<property name="SoundRandom" value="Animals/Vulture/vultureroam"/>
 			<property name="SoundAlert" value="Animals/Vulture/vulturealert"/>
 			<property name="SoundHurt" value="Animals/Vulture/vulturepain"/>
