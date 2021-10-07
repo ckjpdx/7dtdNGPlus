@@ -8,144 +8,71 @@
 	<set xpath="/entitygroups/entitygroup[@name='WildGameForest']/entity[@name='animalDoe']/@prob">8</set>
 	<set xpath="/entitygroups/entitygroup[@name='WildGameForest']/entity[@name='animalWolf']/@prob">2</set>
 	<append xpath="/entitygroups/entitygroup[@name='WildGameForest']"><entity name="animalBossGrace" prob="1"/></append>
+	<append xpath="/entitygroups/entitygroup[@name='EnemyAnimalsWasteland']"><entity name="animalZombieVultureRadiated" prob="10"/></append>
 
-	<set xpath="/entitygroups/entitygroup[@name='EnemyAnimalsForest']/entity[@name='invisibleAnimalEnemy']/@prob">4</set>
-	<set xpath="/entitygroups/entitygroup[@name='EnemyAnimalsForest']/entity[@name='animalWolf']/@prob">4</set>
-	<set xpath="/entitygroups/entitygroup[@name='EnemyAnimalsForest']/entity[@name='animalBear']/@prob">1</set>
-	<set xpath="/entitygroups/entitygroup[@name='EnemyAnimalsForest']/entity[@name='animalDireWolf']/@prob">2</set>
-
-	<set xpath="/entitygroups/entitygroup[@name='EnemyAnimalsBurntForest']/entity[@name='invisibleAnimalEnemy']/@prob">16</set>
-	<set xpath="/entitygroups/entitygroup[@name='EnemyAnimalsBurntForest']/entity[@name='animalZombieDog']/@prob">4</set>
-	<set xpath="/entitygroups/entitygroup[@name='EnemyAnimalsBurntForest']/entity[@name='animalZombieBear']/@prob">1</set>
-	<set xpath="/entitygroups/entitygroup[@name='EnemyAnimalsBurntForest']/entity[@name='animalDireWolf']/@prob">2</set>
-
-	<set xpath="/entitygroups/entitygroup[@name='EnemyAnimalsWasteland']/entity[@name='animalSnake']/@prob">4</set>
-	<set xpath="/entitygroups/entitygroup[@name='EnemyAnimalsWasteland']/entity[@name='animalZombieVulture']/@prob">4</set>
-	<set xpath="/entitygroups/entitygroup[@name='EnemyAnimalsWasteland']/entity[@name='animalZombieDog']/@prob">4</set>
-	<set xpath="/entitygroups/entitygroup[@name='EnemyAnimalsWasteland']/entity[@name='animalZombieBear']/@prob">2</set>
-	<append xpath="/entitygroups/entitygroup[@name='EnemyAnimalsWasteland']"><entity name="animalZombieVultureRadiated" prob="1"/></append>
-
-	<set xpath="/entitygroups/entitygroup[@name='EnemyAnimalsDesert']/entity[@name='invisibleAnimalEnemy']/@prob">4</set>
-	<set xpath="/entitygroups/entitygroup[@name='EnemyAnimalsDesert']/entity[@name='animalCoyote']/@prob">1</set>
-	<set xpath="/entitygroups/entitygroup[@name='EnemyAnimalsDesert']/entity[@name='animalZombieVulture']/@prob">4</set>
-	<set xpath="/entitygroups/entitygroup[@name='EnemyAnimalsDesert']/entity[@name='animalSnake']/@prob">2</set>
-
-	<set xpath="/entitygroups/entitygroup[@name='EnemyAnimalsSnow']/entity[@name='invisibleAnimalEnemy']/@prob">4</set>
-	<set xpath="/entitygroups/entitygroup[@name='EnemyAnimalsSnow']/entity[@name='animalMountainLion']/@prob">1</set>
-	<set xpath="/entitygroups/entitygroup[@name='EnemyAnimalsSnow']/entity[@name='animalDireWolf']/@prob">4</set>
-	<set xpath="/entitygroups/entitygroup[@name='EnemyAnimalsSnow']/entity[@name='animalBear']/@prob">1</set>
 <!-- ZombiesAll -->
-	<set xpath="/entitygroups/entitygroup[@name='ZombiesAll']/entity[@name='zombieCheerleader']/@prob">1</set>
-	<set xpath="/entitygroups/entitygroup[@name='ZombiesAll']/entity[@name='zombieOldTimer']/@prob">1</set>
-	<set xpath="/entitygroups/entitygroup[@name='ZombiesAll']/entity[@name='zombieBiker']/@prob">1</set>
-	<set xpath="/entitygroups/entitygroup[@name='ZombiesAll']/entity[@name='zombieFarmer']/@prob">1</set>
-	<set xpath="/entitygroups/entitygroup[@name='ZombiesAll']/entity[@name='zombieStripper']/@prob">1</set>
-	<set xpath="/entitygroups/entitygroup[@name='ZombiesAll']/entity[@name='zombieUtilityWorker']/@prob">1</set>
-	<set xpath="/entitygroups/entitygroup[@name='ZombiesAll']/entity[@name='zombieJanitor']/@prob">1</set>
-	<set xpath="/entitygroups/entitygroup[@name='ZombiesAll']/entity[@name='zombieNurse']/@prob">1</set>
-	<set xpath="/entitygroups/entitygroup[@name='ZombiesAll']/entity[@name='zombieFatHawaiian']/@prob">1</set>
+	<setattribute xpath="/entitygroups/entitygroup[@name='ZombiesAll']/entity" name="prob">0.3</setattribute>
 	<append xpath="/entitygroups/entitygroup[@name='ZombiesAll']">
-		<entity name="animalZombieDog" prob="2"/>
-		<entity name="animalZombieVulture" prob="2"/>
-		<entity name="zombieBurnt" prob="4"/>
-		<entity name="zombieMaleHazmat"/>
-		<entity name="zombieSoldier"/>
-		<entity name="zombieSnow"/>
-		<entity name="zombieSpider"/>
-		<entity name="zombieLab"/>
-		<entity name="zombieScreamer" prob="1"/>
-		<entity name="zombieFootballPlayer"/>
-		<entity name="zombieFemaleFat"/>
-		<entity name="zombieSnowFeral" prob="0.5"/>
-		<entity name="zombieSpiderFeral" prob="0.5"/>
-		<entity name="zombieBoeFeral" prob="0.5"/>
-		<entity name="zombieJoeFeral" prob="0.5"/>
-		<entity name="zombieSteveFeral" prob="0.5"/>
-		<entity name="zombieMoeFeral" prob="0.5"/>
-		<entity name="zombieYoFeral" prob="0.5"/>
-		<entity name="zombieBusinessManFeral" prob="0.5"/>
-		<entity name="zombieArleneFeral" prob="0.5"/>
-		<entity name="zombieDarleneFeral" prob="0.5"/>
-		<entity name="zombieMarleneFeral" prob="0.5"/>
-		<entity name="zombieNurseFeral" prob="0.5"/>
-		<entity name="zombieFatHawaiianFeral" prob="0.5"/>
-		<entity name="zombieLabFeral" prob="0.5"/>
-		<entity name="zombieSoldierFeral" prob="0.5"/>
-		<entity name="zombieWightFeral" prob="5"/>
-		<entity name="zombieScreamerFeral" prob="0.5"/>
-		<entity name="zombieFemaleFatFeral" prob="0.5"/>
-		<entity name="zombieCheerleaderFeral" prob="0.5"/>
-		<entity name="zombieWightRadiated" prob="1"/>
+		<entity name="animalZombieDog" prob="1"/>
+		<entity name="animalZombieVulture" prob="1"/>
+		<entity name="zombieBurnt" prob="0.3"/>
+		<entity name="zombieMaleHazmat" prob="0.3"/>
+		<entity name="zombieSoldier" prob="0.3"/>
+		<entity name="zombieSnow" prob="0.3"/>
+		<entity name="zombieSpider" prob="0.3"/>
+		<entity name="zombieLab" prob="0.3"/>
+		<entity name="zombieScreamer" prob="0.3"/>
+		<entity name="zombieFootballPlayer" prob="0.3"/>
+		<entity name="zombieFemaleFat" prob="0.3"/>
+		<entity name="zombieWightFeral" prob="1"/>
+		<entity name="zombieWightRadiated" prob="0.3"/>
 		<entity name="zombieFatCop" prob="0.3"/>
 		<entity name="zombieDemolition" prob="0.3"/>
 	</append>
 <!-- ZombiesNight -->
-	<set xpath="/entitygroups/entitygroup[@name='ZombiesNight']/entity[@name='animalZombieDog']/@prob">4</set>
-	<set xpath="/entitygroups/entitygroup[@name='ZombiesNight']/entity[@name='zombieSpiderFeral']/@prob">.5</set>
-	<set xpath="/entitygroups/entitygroup[@name='ZombiesNight']/entity[@name='zombieBoeFeral']/@prob">.5</set>
-	<set xpath="/entitygroups/entitygroup[@name='ZombiesNight']/entity[@name='zombieJoeFeral']/@prob">.5</set>
-	<set xpath="/entitygroups/entitygroup[@name='ZombiesNight']/entity[@name='zombieSteveFeral']/@prob">.5</set>
-	<set xpath="/entitygroups/entitygroup[@name='ZombiesNight']/entity[@name='zombieMoeFeral']/@prob">.5</set>
-	<set xpath="/entitygroups/entitygroup[@name='ZombiesNight']/entity[@name='zombieYoFeral']/@prob">.5</set>
-	<set xpath="/entitygroups/entitygroup[@name='ZombiesNight']/entity[@name='zombieBusinessManFeral']/@prob">.5</set>
-	<set xpath="/entitygroups/entitygroup[@name='ZombiesNight']/entity[@name='zombieArleneFeral']/@prob">.5</set>
-	<set xpath="/entitygroups/entitygroup[@name='ZombiesNight']/entity[@name='zombieDarleneFeral']/@prob">.5</set>
-	<set xpath="/entitygroups/entitygroup[@name='ZombiesNight']/entity[@name='zombieMarleneFeral']/@prob">.5</set>
-	<set xpath="/entitygroups/entitygroup[@name='ZombiesNight']/entity[@name='zombieNurseFeral']/@prob">.5</set>
-	<set xpath="/entitygroups/entitygroup[@name='ZombiesNight']/entity[@name='zombieFatHawaiianFeral']/@prob">.5</set>
+	<setattribute xpath="/entitygroups/entitygroup[@name='ZombiesNight']/entity[@prob='1']" name="prob">0.3</setattribute>
+	<set xpath="/entitygroups/entitygroup[@name='ZombiesNight']/entity[@name='animalZombieDog']/@prob">1</set>
 	<append xpath="/entitygroups/entitygroup[@name='ZombiesNight']">
-		<entity name="zombieBurnt" prob="4"/>
-		<entity name="zombieMaleHazmat"/>
-		<entity name="zombieSnow"/>
-		<entity name="zombieSoldier"/>
-		<entity name="zombieSkateboarder"/>
-		<entity name="zombieStripper"/>
-		<entity name="zombieBiker"/>
-		<entity name="zombieUtilityWorker"/>
-		<entity name="zombieJanitor"/>
-		<entity name="zombieFarmer"/>
-		<entity name="zombieOldTimer"/>
-		<entity name="zombieCheerleader"/>
-		<entity name="zombieLab"/>
-		<entity name="zombieFootballPlayer"/>
-		<entity name="zombieFemaleFat"/>
-		<entity name="zombieScreamer" prob="1"/>
-		<entity name="zombieLabFeral" prob="0.5"/>
-		<entity name="zombieSoldierFeral" prob="0.5"/>
-		<entity name="zombieSnowFeral" prob="0.5"/>
-		<entity name="zombieWightFeral" prob="10"/>
-		<entity name="zombieCheerleaderFeral" prob="0.5"/>
-		<entity name="zombieWightRadiated" prob="2"/>
-		<entity name="zombieFatCop" prob="0.5"/>
-		<entity name="zombieDemolition" prob="0.5"/>
-		<entity name="zombieScreamerFeral" prob="0.5"/>
-		<entity name="zombieFemaleFatFeral" prob="0.5"/>
+		<entity name="zombieBurnt" prob="0.3"/>
+		<entity name="zombieMaleHazmat" prob="0.3"/>
+		<entity name="zombieSnow" prob="0.3"/>
+		<entity name="zombieSoldier" prob="0.3"/>
+		<entity name="zombieSkateboarder" prob="0.3"/>
+		<entity name="zombieStripper" prob="0.3"/>
+		<entity name="zombieBiker" prob="0.3"/>
+		<entity name="zombieUtilityWorker" prob="0.3"/>
+		<entity name="zombieJanitor" prob="0.3"/>
+		<entity name="zombieFarmer" prob="0.3"/>
+		<entity name="zombieOldTimer" prob="0.3"/>
+		<entity name="zombieCheerleader" prob="0.3"/>
+		<entity name="zombieLab" prob="0.3"/>
+		<entity name="zombieFootballPlayer" prob="0.3"/>
+		<entity name="zombieFemaleFat" prob="0.3"/>
+		<entity name="zombieScreamer" prob="0.3"/>
+		<entity name="zombieLabFeral" prob="0.15"/>
+		<entity name="zombieSoldierFeral" prob="0.15"/>
+		<entity name="zombieSnowFeral" prob="0.15"/>
+		<entity name="zombieCheerleaderFeral" prob="0.15"/>
+		<entity name="zombieScreamerFeral" prob="0.15"/>
+		<entity name="zombieFemaleFatFeral" prob="0.15"/>
+		<entity name="zombieWightFeral" prob="2"/>
+		<entity name="zombieWightRadiated" prob="1"/>
+		<entity name="zombieFatCop" prob="1"/>
+		<entity name="zombieDemolition" prob="1"/>
 	</append>
 <!-- ZombiesWasteland -->
-	<remove xpath="/entitygroups/entitygroup[@name='ZombiesWasteland']"/>
-	<append xpath="/entitygroups">
-		<entitygroup name="ZombiesWasteland">
-			<entity name="zombieBurnt" prob="1"/>
-			<entity name="zombieMaleHazmat" prob="0.5"/>
-			<entity name="zombieSoldier" prob="0.5"/>
-			<entity name="zombieWightFeral" prob="0.5"/>
-			<entity name="zombieWightRadiated" prob="0.3"/>
-			<entity name="zombieFatCop" prob="0.3"/>
-			<entity name="zombieDemolition" prob="0.1"/>
-		</entitygroup>
+	<setattribute xpath="/entitygroups/entitygroup[@name='ZombiesWasteland']/entity" name="prob">1</setattribute>
+	<append xpath="/entitygroups/entitygroup[@name='ZombiesWasteland']">
+		<entity name="zombieSoldier"/>
+		<entity name="zombieWightFeral"/>
+		<entity name="zombieWightRadiated"/>
+		<entity name="zombieDemolition"/>
 	</append>
 <!-- ZombiesWastelandNight -->
-	<remove xpath="/entitygroups/entitygroup[@name='ZombiesWastelandNight']"/>
-	<append xpath="/entitygroups">
-		<entitygroup name="ZombiesWastelandNight">
-			<entity name="zombieBurnt" prob="1"/>
-			<entity name="zombieMaleHazmat" prob="0.5"/>
-			<entity name="zombieSoldier" prob="0.5"/>
-			<entity name="zombieWightFeral" prob="1"/>
-			<entity name="zombieWightRadiated" prob="0.5"/>
-			<entity name="zombieFatCop" prob="0.3"/>
-			<entity name="zombieDemolition" prob="0.1"/>
-		</entitygroup>
+	<setattribute xpath="/entitygroups/entitygroup[@name='ZombiesWastelandNight']/entity" name="prob">1</setattribute>
+	<append xpath="/entitygroups/entitygroup[@name='ZombiesWastelandNight']">
+		<entity name="zombieSoldier"/>
+		<entity name="zombieWightRadiated"/>
+		<entity name="zombieDemolition"/>
 	</append>
-
 </configs>
