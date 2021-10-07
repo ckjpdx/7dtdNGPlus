@@ -50,11 +50,66 @@
 
 	<!-- Duriel's Random Zombie HP (modified) -->
 		<!--========== Adding tag to separate zombie tiers and be able to add random HP based on tiers ==========-->
+<!-- Zombie Animals -->
+	<!-- Vulture Dragon -->
+	<insertAfter xpath="/entity_classes/entity_class[@name='animalZombieVulture']">
+		<entity_class name="animalZombieVultureDragon" extends="animalZombieVulture">
+			<property name="Tags" value="entity,animal,zombie,hostile,vulture"/>
+			<property name="Class" value="EntityVulture"/>
+			<property name="EntityType" value="Zombie"/>
+			<property name="AvatarController" value="AvatarAnimalController"/>
+			<property name="ModelType" value="Standard"/>
+			<property name="HasRagdoll" value="true"/>
+			<property name="PhysicsBody" value="vulture"/>
+			<property name="Mass" value="350"/>
+			<property name="Mesh" value="Animals/Vulture/animalVultureStandardRagdoll"/>
+			<property name="SizeScale" value="5"/>
 
+			<property name="AITask-1" value=""/>
+			<property name="AITarget-1" value=""/>
 
 <!-- Animals -->
 	<append xpath="/entity_classes/entity_class[@name='animalChicken']">
 		<drop event="Harvest" name="foodEgg" tag="butcherHarvest" count="3"/>
 	</append>
+			<property name="SoundRandom" value="Animals/Vulture/vultureroam"/>
+			<property name="SoundAlert" value="Animals/Vulture/vulturealert"/>
+			<property name="SoundHurt" value="Animals/Vulture/vulturepain"/>
+			<property name="SoundDeath" value="Animals/Vulture/vulturedeath"/>
+			<property name="SoundAttack" value="Animals/Vulture/vultureattack"/>
+			<property name="SoundSense" value="Animals/Vulture/vulturesense"/>
+			<property name="SoundGiveUp" value="Animals/Vulture/vulturegiveup"/>
 
+			<!-- Stealth -->
+			<property name="SightRange" value="100"/>
+
+			<!-- Gameplay -->
+			<property name="MoveSpeed" value="3"/>
+			<property name="MoveSpeedAggro" value="3, 4"/> <!-- Used when player in vehicle -->
+			<property name="MaxTurnSpeed" value="250"/>
+
+			<property name="HandItem" value="meleeHandAnimalZombieVulture"/>
+			<property name="ExperienceGain" value="1500"/>
+			<property name="Immunity" value="sickness;disease;wellness"/>
+
+			<property name="DismemberMultiplierLegs" value="0"/>
+			<property name="PainResistPerHit" value="-1"/> <!-- no pain -->
+
+			<property name="DeadBodyHitPoints" value="400"/>
+			<drop event="Harvest" name="foodRawMeat" count="0" tool_category="Butcher"/>
+			<drop event="Harvest" name="foodRottingFlesh" tag="butcherHarvest" count="20"/>
+			<drop event="Harvest" name="resourceFeather" tag="butcherHarvest" count="150"/>
+			<drop event="Harvest" name="resourceBone" tag="butcherHarvest" count="30"/>
+			<drop event="Harvest" name="resourceBone" tag="allToolsHarvest" count="15"/>
+			<drop event="Harvest" name="foodRottingFlesh" count="5" tag="WasteTreasuresCompleteHarvest"/>
+			<drop event="Harvest" name="resourceLeather" count="5" tag="WasteTreasuresCompleteHarvest"/>
+			<drop event="Harvest" name="resourceBone" count="5" tag="WasteTreasuresCompleteHarvest"/>
+
+			<effect_group name="Base Effects">
+				<passive_effect name="HealthMax" operation="base_set" value="700"/>
+				<passive_effect name="HealthMax" operation="perc_set" value="1"/> <!-- Zombie HP scale -->
+				<passive_effect name="EntityDamage" operation="perc_add" value="1"/> <!-- 2x damage -->
+			</effect_group>
+		</entity_class>
+	</insertAfter>
 </configs>
