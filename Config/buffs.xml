@@ -44,9 +44,9 @@
 	<!-- zombie hexes -->
 		<buff name="buffWightVenom" icon="ui_game_symbol_skull" icon_color="255,0,0" remove_on_death="false">
 			<stack_type value="replace"/>
-			<duration value="15"/>
+			<duration value="20"/>
 			<effect_group>
-				<passive_effect name="BuffBlink" operation="base_set" value="2" duration="15"/>
+				<passive_effect name="BuffBlink" operation="base_set" value="2" duration="20"/>
 				<passive_effect name="SpreadMultiplierHip" operation="base_add" value="10"/>
 
 				<triggered_effect trigger="onSelfBuffStart" action="ModifyScreenEffect" effect_name="Distortion" intensity="1" fade="1"/>
@@ -56,7 +56,7 @@
 
 				<triggered_effect trigger="onSelfBuffUpdate" action="Ragdoll" duration=".1">
 					<requirement name="EntityHasMovementTag" tags="running"/>
-					<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="15"/>
+					<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="10"/>
 				</triggered_effect>
 				<triggered_effect trigger="onSelfFallImpact" action="Ragdoll" duration="2">
 					<requirement name="CVarCompare" cvar="_fallSpeed" operation="GTE" value=".02"/>
@@ -65,12 +65,12 @@
 		</buff>
 		<buff name="buffGrabbed" icon="ui_game_symbol_zombie" icon_color="255,0,0" remove_on_death="false">
 			<stack_type value="replace"/>
-			<duration value="1"/>
+			<duration value="0.66"/>
+			<update_rate value="0.3"/>
 			<effect_group>
-				<passive_effect name="BuffBlink" operation="base_set" value="2" duration="1"/>
+				<passive_effect name="BuffBlink" operation="base_set" value="2" duration="0.66"/>
 				<passive_effect name="SpreadMultiplierHip" operation="base_add" value="25"/>
 				<passive_effect name="WalkSpeed" operation="base_set" value="0.1"/>
-				<passive_effect name="RunSpeed" operation="base_set" value="0"/>
 				<passive_effect name="JumpStrength" operation="base_set" value="0"/>
 
 				<triggered_effect trigger="onSelfBuffStart" action="ModifyScreenEffect" effect_name="Infected" intensity="1" fade="1"/>
