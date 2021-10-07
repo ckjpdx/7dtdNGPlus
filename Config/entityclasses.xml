@@ -20,6 +20,9 @@
 			<triggered_effect trigger="onOtherDamagedSelf" action="AddBuff" target="self" buff="buffGrabbed">
 				<requirement name="EntityTagCompare" target="other" tags="entity,zombie"/>
 			</triggered_effect>
+			<triggered_effect trigger="onOtherDamagedSelf" action="AddBuff" target="self" buff="buffWightVenom">
+				<requirement name="EntityTagCompare" target="other" tags="venomous"/>
+			</triggered_effect>
 		</effect_group>
 	</append>
 <!-- Zombies -->

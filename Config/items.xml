@@ -1,9 +1,5 @@
 <configs>
 <!-- zombies -->
-	<append xpath="/items/item[@name='meleeHandZombieDemolition']/effect_group">
-		<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" buff="buffWightVenom"/>
-	</append>
-	<set xpath="/items/item[@name='meleeHandZombieDemolition']/property[@class='Action0']/property[@name='DamageEntity']/@value">40</set>
 	<!-- No crosshairs on ADS for guns -->
 	<set xpath="/items/item[not(contains(@name, 'Bow'))]/property[@name='CrosshairOnAim']/@value">false</set>
 	<!-- Vehicle durability -->
