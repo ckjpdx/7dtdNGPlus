@@ -13,8 +13,9 @@
 <!-- ZombiesAll -->
 	<setattribute xpath="/entitygroups/entitygroup[@name='ZombiesAll']/entity" name="prob">0.3</setattribute>
 	<append xpath="/entitygroups/entitygroup[@name='ZombiesAll']">
-		<entity name="animalZombieDog" prob="1"/>
+		<entity name="animalZombieDog" prob="2"/>
 		<entity name="animalZombieVulture" prob="1"/>
+		<entity name="animalZombieVultureDragon" prob="0.1"/>
 		<entity name="zombieBurnt" prob="0.3"/>
 		<entity name="zombieMaleHazmat" prob="0.3"/>
 		<entity name="zombieSoldier" prob="0.3"/>
@@ -31,7 +32,7 @@
 	</append>
 <!-- ZombiesNight -->
 	<setattribute xpath="/entitygroups/entitygroup[@name='ZombiesNight']/entity[@prob='1']" name="prob">0.3</setattribute>
-	<set xpath="/entitygroups/entitygroup[@name='ZombiesNight']/entity[@name='animalZombieDog']/@prob">1</set>
+	<set xpath="/entitygroups/entitygroup[@name='ZombiesNight']/entity[@name='animalZombieDog']/@prob">2</set>
 	<append xpath="/entitygroups/entitygroup[@name='ZombiesNight']">
 		<entity name="zombieBurnt" prob="0.3"/>
 		<entity name="zombieMaleHazmat" prob="0.3"/>
