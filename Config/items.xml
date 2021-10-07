@@ -1,8 +1,5 @@
 <configs>
 <!-- zombies -->
-	<append xpath="/items/item[contains(@name, 'meleeHandZombie')]/effect_group">
-		<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" buff="buffGrabbed"/>
-	</append>
 	<append xpath="/items/item[@name='meleeHandZombieDemolition']/effect_group">
 		<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" buff="buffWightVenom"/>
 	</append>
