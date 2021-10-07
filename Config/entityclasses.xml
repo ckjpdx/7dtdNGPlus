@@ -54,8 +54,6 @@
 	<!-- Sound -->
 	<remove xpath="/entity_classes/entity_class[not(contains(@name, 'player'))]/property[@name='SoundDeath']"/>
 
-	<!-- Duriel's Random Zombie HP (modified) -->
-		<!--========== Adding tag to separate zombie tiers and be able to add random HP based on tiers ==========-->
 <!-- Zombie Animals -->
 	<!-- Vulture Dragon -->
 	<insertAfter xpath="/entity_classes/entity_class[@name='animalZombieVulture']">
