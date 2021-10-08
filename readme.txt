@@ -7,11 +7,11 @@ Features:
 - Find eggs and feathers in shrubs
 - Find root veggies in soil
 - Make Murky water with Boiled Water + Clay, make Animal Fat by grilling Meat.
-- Leveling curve: 4x faster at level 1, equvilent to vanilla by level 15, clamps at level 28. (level cap is still 300)
+- Leveling curve: 4x faster at level 1, equivalent to vanilla by level 15, clamps at level 28. (level cap is still 300)
 - Injuries remain after near-death (except infection)
 - Berserker porridge recipe added
-- Zombies grab you for a moment immediately after getting hit. You cannot move or jump, and if you try to sprint you will fall over. You must fight them off or sprint between zombie hits if you wish the flee! This makes groups of normal zeds incrediably dangerous because they can overwhelm and immobilize you.
-- Any damage you take will also reduce your stamina. The amount of stamina depends on your health. Someone badly injuried will be easily incapacitated.
+- Zombies grab you for a moment immediately after getting hit. You cannot move or jump, and if you try to sprint you will fall over. You must fight them off or sprint between zombie hits if you wish the flee! This makes groups of normal zeds incredibly dangerous because they can overwhelm and immobilize you.
+- Any damage you take will also reduce your stamina. The amount of stamina depends on your health. Someone badly injured will be easily incapacitated.
 - Wights are faster, more frequent, and have a venomous attack. It doesn't do any damage, but it disorients you and has a chance you make you fall over if you are sprinting. Once a Wight has marked you, good luck escaping!
 - Realistic player walk and sprint speeds
 - Injuries are much more frequent at lower health levels.
@@ -22,13 +22,13 @@ Features:
 - A giant vulture (Jabberwocky) has been added to drive one of my friends, who can't stand vultures, completely insane.
 - All zombie types appear everywhere in the world now, including the less common demolition zombie and fat acid cop.
 - Hordes are always large and now only consist of zombies (no animals).
-- Hidden vehicle modifers are now found in vehicle loot crates.
+- Hidden vehicle modifiers are now found in vehicle loot crates.
 - Max stack size for most resources is now 1000
 - No crosshairs for ADS
 - Vehicle much weaker
 - Meat recipes require less meat and now offer 2x calories.
 - Items made with parts require less parts to make, but also require those parts for repair (not vehicles).
-- Items with durability will now disintergrate when reaching 0.
+- Items with durability will now disintegrate when reaching 0.
 - Any recipe that uses rotting meat (e.g. Sham Stew, Hobo Stew) has Dysentery chance.
 
 Credits: (mods I borrowed from): Toad_VehicleMods, Riles-SeatingPlus, JaxTeller718_ToolsWeaponsBreak.
