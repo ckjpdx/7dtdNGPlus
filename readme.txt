@@ -1,37 +1,36 @@
-This vanilla XML server side only modlet is for advanced/hardcore players familiar with the game who are looking for a greater coop challenge and more biome zombies and wandering hordes. It tweaks game balance to make zombies a constant threat, especially at night. It adds more skill points per level allowing a player to branch out into other skill trees but increases the difficulty in the game everywhere else. There is a harsh limit on carry capacity to create logistical problems, requiring the player to travel light and only take what they absolutely need to survive. Vehicles should be easier to attain from the additional skill points players get each level and are essential for moving large quantities of things. There's also some other small tweaks, see the list below:
+This is the second version of my hardcore "New Game Plus" mod that I made to drive me and my friends insane. What else am I going to do while endlessly applying for web developer jobs that require 3+ years experience for an entry level position? This mod is balanced (in my opinion, not so much my friend's) and is a more intense and more difficult experience than the vanilla game.
 
-Injuries
-- Injuries and infection remain after respawn.
-- Resoawn with low health, low fullness, low hydration (respawning is no escape).
-- Higher chances of infection and injury.
 
-Leveling
-- Progression is faster early game (up to level 17) but slows down drastically thereafter.
-- 3 skill points per level.
-- Forgetting Elixir for respec is craftable.
+Features:
+- Nerd pole prevention (an XML only solution! I am so smart, SMRT)
+- Zombies everywhere! The burnt region has the least amount of zombies. I'd recommend setting all zombie speeds to jogging or running at most, and decrease block damage to 25-50% to balance the constant zombies everywhere. But I left that up to the server settings.
+- Find eggs and feathers in shrubs
+- Find root veggies in soil
+- Make Murky water with Boiled Water + Clay, make Animal Fat by grilling Meat.
+- Leveling curve: 4x faster at level 1, equvilent to vanilla by level 15, clamps at level 28. (level cap is still 300)
+- Injuries remain after near-death (except infection)
+- Berserker porridge recipe added
+- Zombies grab you for a moment immediately after getting hit. You cannot move or jump, and if you try to sprint you will fall over. You must fight them off or sprint between zombie hits if you wish the flee! This makes groups of normal zeds incrediably dangerous because they can overwhelm and immobilize you.
+- Any damage you take will also reduce your stamina. The amount of stamina depends on your health. Someone badly injuried will be easily incapacitated.
+- Wights are faster, more frequent, and have a venomous attack. It doesn't do any damage, but it disorients you and has a chance you make you fall over if you are sprinting. Once a Wight has marked you, good luck escaping!
+- Realistic player walk and sprint speeds
+- Injuries are much more frequent at lower health levels.
+- Carry capacity is limited to 9 unencumbered slots at the start. You need to make pocket mods or use a vehicle to move large amounts.
+- Stealth: Zombies can see you from 100 blocks away now, but have limited peripheral vision. If you run around a lot out in the open you will stir up a lot of zombies! To counter this, stealth has been improved.
+- Removed SmellAlertThreshold
+- Zombies stay stunned longer (play dead)
+- A giant vulture (Jabberwocky) has been added to drive one of my friends, who can't stand vultures, completely insane.
+- All zombie types appear everywhere in the world now, including the less common demolition zombie and fat acid cop.
+- Hordes are always large and now only consist of zombies (no animals).
+- Hidden vehicle modifers are now found in vehicle loot crates.
+- Max stack size for most resources is now 1000
+- No crosshairs for ADS
+- Vehicle much weaker
+- Meat recipes require less meat and now offer 2x calories.
+- Items made with parts require less parts to make, but also require those parts for repair (not vehicles).
+- Items with durability will now disintergrate when reaching 0.
+- Any recipe that uses rotting meat (e.g. Sham Stew, Hobo Stew) has Dysentery chance.
 
-Limitations
-- Base carry capacity set to 0 (player need Pack Mule or Pocket Mods to carry items in backpack without speed penalty).
-- Raw Meat and Rotting Meat stacks limited to 10, but recipes using meat require less now, so it feels less like you need to eat a couple deers to fill up.
-- Stacks size for heavy materials limited to 500 (down from 6000 in some cases) making vehicles essential for transportation.
-- Stack size for lighter materials set to 1000 (such as feathers).
-- Jumping takes more stamina unless player have a stamina buff.
-- 100% Degradation will destroy the item. (Adopted JaxTeller718's ToolsWeaponsBreak modlet).
-- Rare chance an item takes a critical durability hit of 150.
-- Headshot damage increases for base "attribute ranks" have been removed. With the ability to upgrade a character faster and the abundance of skill points zombies are too easily killed. Dismemberment chances untouched.
+Credits: (mods I borrowed from): Toad_VehicleMods, Riles-SeatingPlus, JaxTeller718_ToolsWeaponsBreak.
 
-Zombies
-- Burnt biome has least amount of zombies.
-- Forest, desert, and snow biomes have large amount of ambient zombies.
-- Wandering horde types are all zombies now (no more dog hordes) and much bigger.
-- Night is dangerous everywhere, and early game a player will likely die outside.
-- Feral Wights appear more, are faster, and can jump higher.
-- Wildlife is more common, deer appear more, and boars show up a bit more.
-- All zombie varieties spawn in all biomes, increasing variety (lumberjacks can now visit you in other biomes).
-- Higher chance of feral variety zombie spawns.
-
-Misc
-- Digging has a small chance to find root veggies and mushrooms in soil.
-- Passenger seats added to all vehicle types. (Adopted Xela/TheCreation's Multipassenger modlet. Corrected Minibike Passenger position.)
-
-I would recommend setting zombie block damage to 30% in server settings to compensate for the huge increase in the number of zombies, and running to the Burnt biome in the beginning since it has less zombies.
+Recommended and compatible with 0-CreaturePackZombies, "Zombie Creature Pack Base Modlet", by XythCommunityProject as of Version 19.0.3.5.
