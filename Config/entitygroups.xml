@@ -22,13 +22,13 @@
 		<entity name="zombieSnow" prob="0.3"/>
 		<entity name="zombieSpider" prob="0.3"/>
 		<entity name="zombieLab" prob="0.3"/>
-		<entity name="zombieScreamer" prob="0.3"/>
 		<entity name="zombieFootballPlayer" prob="0.3"/>
 		<entity name="zombieFemaleFat" prob="0.3"/>
-		<entity name="zombieWightFeral" prob="1"/>
+		<entity name="zombieScreamer" prob="0.3"/>
+		<entity name="zombieWightFeral" prob="2"/>
 		<entity name="zombieWightRadiated" prob="0.3"/>
-		<entity name="zombieFatCop" prob="0.3"/>
-		<entity name="zombieDemolition" prob="0.3"/>
+		<entity name="zombieFatCop" prob="1"/>
+		<entity name="zombieDemolition" prob="1"/>
 	</append>
 <!-- ZombiesNight -->
 	<setattribute xpath="/entitygroups/entitygroup[@name='ZombiesNight']/entity[@prob='1']" name="prob">0.3</setattribute>
@@ -54,8 +54,8 @@
 		<entity name="zombieSoldierFeral" prob="0.15"/>
 		<entity name="zombieSnowFeral" prob="0.15"/>
 		<entity name="zombieCheerleaderFeral" prob="0.15"/>
-		<entity name="zombieScreamerFeral" prob="0.15"/>
 		<entity name="zombieFemaleFatFeral" prob="0.15"/>
+		<entity name="zombieScreamerFeral" prob="0.15"/>
 		<entity name="zombieWightFeral" prob="2"/>
 		<entity name="zombieWightRadiated" prob="1"/>
 		<entity name="zombieFatCop" prob="1"/>
