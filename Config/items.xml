@@ -1,7 +1,6 @@
 <configs>
 <!-- zombies -->
 	<!-- No crosshairs on ADS for guns -->
-	<set xpath="/items/item[not(contains(@name, 'Bow'))]/property[@name='CrosshairOnAim']/@value">false</set>
 	<!-- Vehicle durability -->
 	<set xpath="/items/item[@name='vehicleBicyclePlaceable']/effect_group/passive_effect[@name='DegradationMax']/@value">50</set>
 	<set xpath="/items/item[@name='vehicleMinibikePlaceable']/effect_group/passive_effect[@name='DegradationMax']/@value">200</set>
@@ -17,6 +16,36 @@
 	<set xpath="/items/item[@name='foodRawMeat']/property[@name='Stacknumber']/@value">10</set>
 	<set xpath="/items/item[@name='foodRottingFlesh']/property[@name='Stacknumber']/@value">10</set>
 	<set xpath="/items/item[@name='resourceRepairKit']/property[@name='Stacknumber']/@value">10</set>
+<!-- Weapon Handling, Kick,  -->
+	<!-- Pistols -->
+	<set xpath="/items/item[starts-with(@name, 'gunHandgun')]/effect_group/passive_effect[@name='WeaponHandling' and @operation='base_set']/@value">1.2</set>
+	<set xpath="/items/item[starts-with(@name, 'gunHandgun')]/effect_group/passive_effect[@name='KickDegreesVerticalMin' and @operation='base_set']/@value">4</set>
+	<set xpath="/items/item[starts-with(@name, 'gunHandgun')]/effect_group/passive_effect[@name='KickDegreesVerticalMax' and @operation='base_set']/@value">6</set>
+	<!-- SMG -->
+	<set xpath="/items/item[@name='gunHandgunT3SMG5']/effect_group/passive_effect[@name='WeaponHandling' and @operation='base_set']/@value">0.9</set>
+	<set xpath="/items/item[@name='gunHandgunT3SMG5']/effect_group/passive_effect[@name='KickDegreesVerticalMin' and @operation='base_set']/@value">2</set>
+	<set xpath="/items/item[@name='gunHandgunT3SMG5']/effect_group/passive_effect[@name='KickDegreesVerticalMax' and @operation='base_set']/@value">3</set>
+	<!-- Shotguns -->
+	<set xpath="/items/item[starts-with(@name, 'gunShotgun')]/effect_group/passive_effect[@name='WeaponHandling' and @operation='base_set']/@value">0.6</set>
+	<set xpath="/items/item[starts-with(@name, 'gunShotgun')]/effect_group/passive_effect[@name='KickDegreesVerticalMin' and @operation='base_set']/@value">6</set>
+	<set xpath="/items/item[starts-with(@name, 'gunShotgun')]/effect_group/passive_effect[@name='KickDegreesVerticalMax' and @operation='base_set']/@value">10</set>
+	<!-- ARs -->
+	<set xpath="/items/item[starts-with(@name, 'gunMG')]/effect_group/passive_effect[@name='WeaponHandling' and @operation='base_set']/@value">0.6</set>
+	<set xpath="/items/item[starts-with(@name, 'gunMG')]/effect_group/passive_effect[@name='KickDegreesVerticalMin' and @operation='base_set']/@value">2</set>
+	<set xpath="/items/item[starts-with(@name, 'gunMG')]/effect_group/passive_effect[@name='KickDegreesVerticalMax' and @operation='base_set']/@value">3</set>
+	<!-- LMG -->
+	<set xpath="/items/item[@name='gunMGT3M60']/effect_group/passive_effect[@name='WeaponHandling' and @operation='base_set']/@value">0.3</set>
+	<set xpath="/items/item[@name='gunMGT3M60']/effect_group/passive_effect[@name='KickDegreesVerticalMin' and @operation='base_set']/@value">1</set>
+	<set xpath="/items/item[@name='gunMGT3M60']/effect_group/passive_effect[@name='KickDegreesVerticalMax' and @operation='base_set']/@value">2</set>
+	<!-- Rifles -->
+	<set xpath="/items/item[starts-with(@name, 'gunRifle')]/effect_group/passive_effect[@name='WeaponHandling' and @operation='base_set']/@value">0.3</set>
+	<set xpath="/items/item[starts-with(@name, 'gunRifle')]/effect_group/passive_effect[@name='KickDegreesVerticalMin' and @operation='base_set']/@value">6</set>
+	<set xpath="/items/item[starts-with(@name, 'gunRifle')]/effect_group/passive_effect[@name='KickDegreesVerticalMax' and @operation='base_set']/@value">10</set>
+<!-- Magazine sizes -->
+	<set xpath="/items/item[@name='gunMGT3M60']/effect_group/passive_effect[@name='MagazineSize' and @operation='base_set']/@value">100</set>
+	<set xpath="/items/item[@name='gunRifleT1HuntingRifle']/effect_group/passive_effect[@name='MagazineSize' and @operation='base_set']/@value">5</set>
+	<set xpath="/items/item[@name='gunRifleT2MarksmanRifle']/effect_group/passive_effect[@name='MagazineSize' and @operation='base_set']/@value">15</set>
+	<set xpath="/items/item[@name='gunRifleT3SniperRifle']/effect_group/passive_effect[@name='MagazineSize' and @operation='base_set']/@value">10</set>
 	
 <!-- Items created with parts require parts for repair -->
 	<!-- Tools -->

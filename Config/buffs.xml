@@ -4,7 +4,6 @@
 	<set xpath="/buffs/buff[@name='buffDeathFoodDrinkAdjust']/effect_group/triggered_effect[@trigger='onSelfBuffUpdate'][@stat='Water']/@value">40</set>
 	<!-- faster infection -->
 	<set xpath="/buffs/buff[@name='buffStatusCheck01']/effect_group/triggered_effect[@cvar='$infectionMaxDuration']/@value">7200</set>
-
 	<!-- no regen after respawn -->
 	<remove xpath="/buffs/buff[@name='buffNearDeathTraumaTrigger']/effect_group/triggered_effect[@buff='buffNearDeathRegen']"/>
 	<!-- injuries remain after death -->
