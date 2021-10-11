@@ -2,7 +2,7 @@
 <!-- faster progression early game, slower mid to late game -->
   <set xpath="/progression/level/@exp_to_level">2500</set>
   <set xpath="/progression/level/@experience_multiplier">1.15</set>
-  <set xpath="/progression/level/@clamp_exp_cost_at_level">28</set>
+  <set xpath="/progression/level/@clamp_exp_cost_at_level">30</set>
   <set xpath="/progression/level/@skill_points_per_level">3</set>
   <set xpath="/progression/perks/@cost_multiplier_per_level">1.33</set>
 
