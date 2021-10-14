@@ -46,7 +46,6 @@
 			<duration value="20"/>
 			<effect_group>
 				<passive_effect name="BuffBlink" operation="base_set" value="2" duration="20"/>
-				<passive_effect name="SpreadMultiplierHip" operation="base_add" value="10"/>
 
 				<triggered_effect trigger="onSelfBuffStart" action="ModifyScreenEffect" effect_name="Distortion" intensity="1" fade="1"/>
 				<triggered_effect trigger="onSelfBuffStart" action="ModifyScreenEffect" effect_name="Drunk" intensity="1" fade="1"/>
@@ -64,13 +63,13 @@
 		</buff>
 		<buff name="buffGrabbed" icon="ui_game_symbol_zombie" icon_color="255,0,0" remove_on_death="false">
 			<stack_type value="replace"/>
-			<duration value="0.66"/>
+			<duration value="0.67"/>
 			<update_rate value="0.3"/>
 			<effect_group>
-				<passive_effect name="BuffBlink" operation="base_set" value="2" duration="0.66"/>
-				<passive_effect name="SpreadMultiplierHip" operation="base_add" value="25"/>
+				<passive_effect name="BuffBlink" operation="base_set" value="2" duration="0.67"/>
+				<passive_effect name="SpreadMultiplierHip" operation="base_set" value="50"/>
 				<passive_effect name="WalkSpeed" operation="base_set" value="0.1"/>
-				<passive_effect name="JumpStrength" operation="base_set" value="0"/>
+				<passive_effect name="JumpStrength" operation="base_set" value="0.1"/>
 
 				<triggered_effect trigger="onSelfBuffStart" action="ModifyScreenEffect" effect_name="Infected" intensity="1" fade="1"/>
 				<triggered_effect trigger="onSelfBuffRemove" action="ModifyScreenEffect" effect_name="Infected" intensity="0" fade="1"/>

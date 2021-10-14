@@ -18,10 +18,10 @@
 	<set xpath="/items/item[@name='resourceRepairKit']/property[@name='Stacknumber']/@value">10</set>
 <!-- Weapon Handling, Kick,  -->
 	<set xpath="/items/item[starts-with(@name, 'gun')]/effect_group/passive_effect[starts-with(@name, 'SpreadDegrees')]/@value">20</set>
-	<set xpath="/items/item[starts-with(@name, 'gun') and not(contains(@name,'Rifle'))]/effect_group/passive_effect[@name='SpreadMultiplierAiming']/@value">0.125</set>
+	<set xpath="/items/item[starts-with(@name, 'gun') and not(contains(@name,'Rifle'))]/effect_group/passive_effect[@name='SpreadMultiplierAiming']/@value">0.0625</set>
 	<!-- Pistols -->
 	<set xpath="/items/item[starts-with(@name, 'gunHandgun')]/effect_group/passive_effect[@name='WeaponHandling' and @operation='base_set']/@value">1.2</set>
-	<set xpath="/items/item[starts-with(@name, 'gunHandgun')]/effect_group/passive_effect[starts-with(@name, 'SpreadDegrees')]/@value">10</set>
+	<set xpath="/items/item[starts-with(@name, 'gunHandgun')]/effect_group/passive_effect[starts-with(@name, 'SpreadDegrees')]/@value">5</set>
 	<set xpath="/items/item[starts-with(@name, 'gunHandgun')]/effect_group/passive_effect[@name='SpreadMultiplierAiming']/@value">0.5</set>
 	<set xpath="/items/item[starts-with(@name, 'gunHandgun')]/effect_group/passive_effect[contains(@name, 'Crouching') or contains(@name, 'Walking') or contains(@name, 'Running')]/@value">1</set>
 	<set xpath="/items/item[starts-with(@name, 'gunHandgun')]/effect_group/passive_effect[@name='IncrementalSpreadMultiplier']/@value">10</set>
