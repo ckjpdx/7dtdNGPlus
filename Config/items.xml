@@ -27,7 +27,7 @@
 	<set xpath="/items/item[starts-with(@name, 'gunHandgun')]/effect_group/passive_effect[@name='IncrementalSpreadMultiplier']/@value">10</set>
 	<set xpath="/items/item[starts-with(@name, 'gunHandgun')]/effect_group/passive_effect[starts-with(@name, 'KickDegreesVertical')]/@value">5</set>
 	<!-- SMG -->
-	<set xpath="/items/item[@name='gunHandgunT3SMG5']/effect_group/passive_effect[@name='WeaponHandling' and @operation='base_set']/@value">0.9</set>
+	<set xpath="/items/item[@name='gunHandgunT3SMG5']/effect_group/passive_effect[@name='WeaponHandling' and @operation='base_set']/@value">0.6</set>
 	<set xpath="/items/item[@name='gunHandgunT3SMG5']/effect_group/passive_effect[@name='IncrementalSpreadMultiplier']/@value">1.1</set>
 	<set xpath="/items/item[@name='gunHandgunT3SMG5']/effect_group/passive_effect[starts-with(@name, 'KickDegreesVertical')]/@value">2</set>
 	<!-- Shotguns -->
