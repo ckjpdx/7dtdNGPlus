@@ -1,9 +1,16 @@
 <configs>
+	<!-- longer grow times -->
+	<set xpath="/blocks/block[@name='cropsGrowingMaster']/property[@name='PlantGrowing.GrowthRate']/@value">400</set>
+	<set xpath="/blocks/block[@name='treeMasterGrowing']/property[@name='PlantGrowing.GrowthRate']/@value">400</set>
+	<append xpath="/blocks/block[@name='plantedMushroom1']"><property name='PlantGrowing.GrowthRate' value='200'/></append>
 	<!-- root veggies in soil blocks -->
 	<append xpath="/blocks/block[@name='terrDirt']">
 		<drop event="Harvest" name="foodCropMushrooms" prob=".005" count="1,5" tag="wildCropsHarvest"/>
 		<drop event="Harvest" name="foodCropPotato" prob=".005" count="1,5" tag="wildCropsHarvest"/>
 		<drop event="Harvest" name="foodCropPumpkin" prob=".005" count="1,5" tag="wildCropsHarvest"/>
+	</append>
+	<append xpath="/blocks/block[@name='cntMicrowaveOvenVer1Open']">
+		<drop event="Destroy" name="plantedCorn1" prob=".3" count="1,5"/>
 	</append>
 	<!-- eggs and feathers in shrubs -->
 	<append xpath="/blocks/block[@name='treePlainsTree' or @name='treeSnowyDeadBush' or @name='treeDeadPineLeaf']">

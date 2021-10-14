@@ -6,4 +6,7 @@
 		<item name="modVehicleHeadlights"/>
 		<item name="modVehicleSpeed"/>
 	</append>
+	<append xpath="/lootcontainers/lootcontainer[@id='59']">
+		<item group="seeds" count="1,5"/>
+	</append>
 </configs>
