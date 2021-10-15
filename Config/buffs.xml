@@ -75,6 +75,7 @@
 				<triggered_effect trigger="onSelfBuffRemove" action="ModifyScreenEffect" effect_name="Infected" intensity="0" fade="1"/>
 				
 				<triggered_effect trigger="onSelfBuffUpdate" action="Ragdoll" duration=".1">
+					<requirement name="!EntityHasMovementTag" tags="driving"/>
 					<requirement name="EntityHasMovementTag" tags="running"/>
 				</triggered_effect>
 			</effect_group>
