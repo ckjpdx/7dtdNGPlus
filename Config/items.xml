@@ -18,22 +18,31 @@
 	<set xpath="/items/item[@name='resourceRepairKit']/property[@name='Stacknumber']/@value">10</set>
 <!-- Weapon Handling, Kick,  -->
 	<set xpath="/items/item[starts-with(@name, 'gun')]/effect_group/passive_effect[starts-with(@name, 'SpreadDegrees')]/@value">20</set>
+	<append xpath="/items/item[starts-with(@name, 'gunShotgun') and not(contains(@name, 'Blunderbuss'))]/effect_group">
+		<passive_effect name="SpreadDegreesVertical" operation="base_set" value="20" tags="perkBoomstick"/>
+		<passive_effect name="SpreadDegreesHorizontal" operation="base_set" value="20" tags="perkBoomstick"/>
+		<passive_effect name='SpreadMultiplierAiming' operation="base_set" value="0.375" tags="perkBoomstick"/>
+	</append>
 	<set xpath="/items/item[starts-with(@name, 'gun') and not(contains(@name,'Rifle'))]/effect_group/passive_effect[@name='SpreadMultiplierAiming']/@value">0.0625</set>
 	<!-- Pistols -->
 	<set xpath="/items/item[starts-with(@name, 'gunHandgun')]/effect_group/passive_effect[@name='WeaponHandling' and @operation='base_set']/@value">1.2</set>
 	<set xpath="/items/item[starts-with(@name, 'gunHandgun')]/effect_group/passive_effect[starts-with(@name, 'SpreadDegrees')]/@value">5</set>
 	<set xpath="/items/item[starts-with(@name, 'gunHandgun')]/effect_group/passive_effect[@name='SpreadMultiplierAiming']/@value">0.5</set>
-	<set xpath="/items/item[starts-with(@name, 'gunHandgun')]/effect_group/passive_effect[contains(@name, 'Crouching') or contains(@name, 'Walking') or contains(@name, 'Running')]/@value">1</set>
+	<set xpath="/items/item[starts-with(@name, 'gunHandgun') and not(contains(@name, 'SMG5'))]/effect_group/passive_effect[contains(@name, 'Crouching') or contains(@name, 'Walking') or contains(@name, 'Running')]/@value">1</set>
 	<set xpath="/items/item[starts-with(@name, 'gunHandgun')]/effect_group/passive_effect[@name='IncrementalSpreadMultiplier']/@value">10</set>
 	<set xpath="/items/item[starts-with(@name, 'gunHandgun')]/effect_group/passive_effect[starts-with(@name, 'KickDegreesVertical')]/@value">5</set>
 	<!-- SMG -->
 	<set xpath="/items/item[@name='gunHandgunT3SMG5']/effect_group/passive_effect[@name='WeaponHandling' and @operation='base_set']/@value">0.6</set>
 	<set xpath="/items/item[@name='gunHandgunT3SMG5']/effect_group/passive_effect[@name='IncrementalSpreadMultiplier']/@value">1.1</set>
+	<set xpath="/items/item[@name='gunHandgunT3SMG5']/effect_group/passive_effect[@name='SpreadMultiplierAiming']/@value">0.375</set>
 	<set xpath="/items/item[@name='gunHandgunT3SMG5']/effect_group/passive_effect[starts-with(@name, 'KickDegreesVertical')]/@value">2</set>
 	<!-- Shotguns -->
 	<set xpath="/items/item[starts-with(@name, 'gunShotgun')]/effect_group/passive_effect[@name='WeaponHandling' and @operation='base_set']/@value">0.6</set>
 	<set xpath="/items/item[starts-with(@name, 'gunShotgun')]/effect_group/passive_effect[@name='IncrementalSpreadMultiplier']/@value">10</set>
 	<set xpath="/items/item[starts-with(@name, 'gunShotgun')]/effect_group/passive_effect[starts-with(@name, 'KickDegreesVertical')]/@value">10</set>
+	<!-- Double Barrel -->
+	<set xpath="/items/item[@name='gunShotgunT1DoubleBarrel']/effect_group/passive_effect[starts-with(@name, 'SpreadDegrees')]/@value">5</set>
+	<set xpath="/items/item[@name='gunShotgunT1DoubleBarrel']/effect_group/passive_effect[@name='SpreadMultiplierAiming']/@value">0.5</set>
 	<!-- ARs -->
 	<set xpath="/items/item[starts-with(@name, 'gunMG')]/effect_group/passive_effect[@name='WeaponHandling' and @operation='base_set']/@value">0.6</set>
 	<set xpath="/items/item[starts-with(@name, 'gunMG')]/effect_group/passive_effect[@name='IncrementalSpreadMultiplier']/@value">1.3</set>
@@ -47,7 +56,11 @@
 	<set xpath="/items/item[starts-with(@name, 'gunRifle')]/effect_group/passive_effect[@name='SpreadMultiplierAiming']/@value">0.01</set>
 	<set xpath="/items/item[starts-with(@name, 'gunRifle')]/effect_group/passive_effect[@name='IncrementalSpreadMultiplier']/@value">5</set>
 	<set xpath="/items/item[starts-with(@name, 'gunRifle')]/effect_group/passive_effect[starts-with(@name, 'KickDegreesVertical')]/@value">10</set>
-<!-- Magazine sizes -->
+<!-- Weapon Max Range -->
+	<append xpath="/items/item[starts-with(@name, 'gunShotgun')]/effect_group">
+		<passive_effect name="MaxRange" operation="base_set" value="30" tags="perkBoomstick"/>
+	</append>
+<!-- Weapon Magazine sizes -->
 	<set xpath="/items/item[@name='gunMGT3M60']/effect_group/passive_effect[@name='MagazineSize' and @operation='base_set']/@value">100</set>
 	<set xpath="/items/item[@name='gunRifleT1HuntingRifle']/effect_group/passive_effect[@name='MagazineSize' and @operation='base_set']/@value">5</set>
 	<set xpath="/items/item[@name='gunRifleT2MarksmanRifle']/effect_group/passive_effect[@name='MagazineSize' and @operation='base_set']/@value">15</set>
