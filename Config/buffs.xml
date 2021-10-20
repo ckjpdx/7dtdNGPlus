@@ -41,7 +41,7 @@
 			</effect_group>
 		</buff>
 	<!-- zombie hexes -->
-		<buff name="buffWightVenom" icon="ui_game_symbol_skull" icon_color="255,0,0" remove_on_death="false">
+		<buff name="buffWightVenom" icon="ui_game_symbol_skull" icon_color="255,0,0" remove_on_death="false" hidden="true">
 			<stack_type value="replace"/>
 			<duration value="20"/>
 			<effect_group>
