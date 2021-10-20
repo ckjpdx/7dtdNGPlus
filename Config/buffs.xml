@@ -80,5 +80,12 @@
 				</triggered_effect>
 			</effect_group>
 		</buff>
+		<buff name="buffInfectionExposure" name_key="Infection Exposure" icon="ui_game_symbol_infection"  icon_color="0,0,0" hidden="false">
+			<stack_type value="replace"/>
+			<duration value="1"/>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="buffInfectionCatch"/>
+			</effect_group>
+		</buff>
 	</append>
 </configs>
