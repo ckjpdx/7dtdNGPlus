@@ -22,6 +22,6 @@
 		<property name="Class" value="TrapDoor"/>
 		<property name="TriggerDelay" value="0"/>
 	</append>
-	<set xpath="/blocks/block[@name='palletWhiteBagsBase']/drop[@event='Harvest'][@name='resourceCement']/@count">25,150</set>
+	<set xpath="/blocks/block[@name='palletWhiteBagsBase']/drop[@event='Harvest'][@name='resourceCement']/@count">100,200</set>
 	<set xpath="/blocks/block[@name='palletWhiteBagsBase']/drop[@event='Harvest'][@name='resourceCement']/@name">resourceConcreteMix</set>
 </configs>
