@@ -41,7 +41,7 @@
 			</effect_group>
 		</buff>
 	<!-- zombie hexes -->
-		<buff name="buffWightVenom" icon="ui_game_symbol_skull" icon_color="255,0,0" remove_on_death="false" hidden="true">
+		<buff name="buffWightVenom" icon="ui_game_symbol_skull" icon_color="255,0,0" remove_on_death="false" hidden="false">
 			<stack_type value="replace"/>
 			<duration value="20"/>
 			<effect_group>
@@ -77,15 +77,219 @@
 				<triggered_effect trigger="onSelfBuffUpdate" action="Ragdoll" duration=".1">
 					<requirement name="!EntityHasMovementTag" tags="driving"/>
 					<requirement name="EntityHasMovementTag" tags="running"/>
+					<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="25"/>
 				</triggered_effect>
 			</effect_group>
 		</buff>
-		<buff name="buffInfectionExposure" name_key="Infection Exposure" icon="ui_game_symbol_infection"  icon_color="0,0,0" hidden="false">
+		<buff name="buffInfectionExposure" name_key="Infection Exposure" icon="ui_game_symbol_infection" icon_color="191,191,96" hidden="false">
 			<stack_type value="replace"/>
 			<duration value="1"/>
 			<effect_group>
 				<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="buffInfectionCatch"/>
 			</effect_group>
 		</buff>
-	</append>
+		<buff name="buffStress" hidden="false" icon="ui_game_symbol_cardio" icon_color="159,72,110" icon_blink="false" name_key="Stress" description_key="This is your stress level. High stress levels allow you to run faster, but you also shake.">
+			<stack_type value="ignore"/>
+			<duration value="0"/><update_rate value="1"/>
+			<display_value value=".stressLevelPercent"/><display_value_key value="{0:0.0}%"/>
+			<effect_group>
+			<!-- Emitters -->
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" target="selfAOE" target_tags="enemy" range="50" buff="buffStressEcho"/>
+				<triggered_effect trigger="onSelfDied" action="AddBuff" target="selfAOE" target_tags="ally,party" range="30" buff="buffStressTrauma"/>
+			<!-- Stressors -->
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="StressLevel" operation="add" value="1">
+					<requirement name="CVarCompare" cvar="_lightlevel" operation="LTE" value="50"/></triggered_effect>
+			<!-- Movement normalizes effects -->
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="StressLevel" operation="add" value="-3">
+					<requirement name="!EntityHasMovementTag" tags="idle"/>
+					<requirement name="CVarCompare" cvar="StressLevel" operation="GT" value="0"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="StressLevel" operation="add" value="3">
+					<requirement name="!EntityHasMovementTag" tags="idle"/>
+					<requirement name="CVarCompare" cvar="StressLevel" operation="LT" value="0"/>
+				</triggered_effect>
+				<!-- Min / Max -->
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="StressLevel" operation="set" value="100">
+					<requirement name="CVarCompare" cvar="StressLevel" operation="GT" value="100"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="StressLevel" operation="set" value="0">
+					<requirement name="CVarCompare" cvar="StressLevel" operation="LT" value="0"/></triggered_effect>
+
+			<!-- Counter display -->
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="StressLevel" operation="set" value="0"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".stressLevelPercent" operation="set" value="@StressLevel"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".stressLevelPercent" operation="divide" value="10"/>
+			<!-- Stress level effects -->
+				<!-- Shakes -->
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="StressShakeLevel" operation="set" value="@StressLevel"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="StressShakeLevel" operation="add" value="-500"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="StressShakeLevel" operation="divide" value="100"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ShakeCamera" shake_speed="@StressShakeLevel" shake_amplitude="@StressShakeLevel" shake_time="-1">
+					<requirement name="CVarCompare" cvar="StressLevel" operation="GTE" value="500"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ShakeCamera" shake_speed="0" shake_amplitude="0" shake_time="0">
+					<requirement name="CVarCompare" cvar="StressLevel" operation="LT" value="500"/>
+				</triggered_effect>
+				<!-- Speed -->
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="StressSpeedLevel" operation="set" value="@StressLevel"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="StressSpeedLevel" operation="multiply" value="0.0006"/>
+				<passive_effect name="RunSpeed" operation="perc_add" value="@StressSpeedLevel"/>
+			</effect_group>
+		</buff>
+		<buff name="buffStressEcho" hidden="true">
+			<stack_type value="ignore"/>
+			<duration value="0"/><update_rate value="1"/>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" target="selfAOE" target_tags="enemy" range="50" buff="buffStressEchoAffect"/>
+			</effect_group>
+		</buff>
+		<buff name="buffStressEchoAffect" hidden="true">
+			<stack_type value="effect"/>
+			<duration value=".1"/><update_rate value="1"/>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="StressLevel" operation="add" value="1"/>
+				<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="StressLevel" operation="add" value="1"/>
+			</effect_group>
+		</buff>
+		<buff name="buffStressTrauma" hidden="true">
+			<stack_type value="effect"/>
+			<duration value=".1"/><update_rate value="1"/>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="StressLevel" operation="add" value="250"/>
+				<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="StressLevel" operation="add" value="250"/>
+			</effect_group>
+		</buff>
+		<!-- Lunacy -->
+		<buff name="buffLunacy" hidden="false" icon="ui_game_symbol_drunk" icon_color="128,223,255" icon_blink="false" name_key="Lunacy" description_key="Lunacy level. Keep this low or you will go insane.">
+			<stack_type value="ignore"/>
+			<duration value="0"/><update_rate value="1"/>
+			<display_value value=".lunacyLevelPercent"/><display_value_key value="{0:0.0}%"/>
+			<effect_group name="Lunacy main loop">
+				<!-- Normalize over time -->
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="LunacyLevel" operation="add" value="-1">
+					<requirement name="CVarCompare" cvar="LunacyLevel" operation="GT" value="1"/>
+					<requirement name="RandomRoll" seed_type="Random" min_max="0,4" operation="LTE" value="1"/>
+				</triggered_effect>
+				<!-- Min/Max -->
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="LunacyLevel" operation="set" value="100">
+					<requirement name="CVarCompare" cvar="LunacyLevel" operation="GT" value="100"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="LunacyLevel" operation="set" value="0">
+					<requirement name="CVarCompare" cvar="LunacyLevel" operation="LT" value="0"/></triggered_effect>
+				<!-- Stress adds to Lunacy -->
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="StressToLunacy" operation="set" value="@StressLevel"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="StressToLunacy" operation="divide" value="500"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="LunacyLevel" operation="add" value="@StressToLunacy"/>
+				<!-- Counter display -->
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="LunacyLevel" operation="set" value="0"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".lunacyLevelPercent" operation="set" value="@LunacyLevel"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".lunacyLevelPercent" operation="divide" value="10"/>
+			</effect_group>
+			<effect_group name="Lunacy Level 1">
+				<requirement name="RandomRoll" seed_type="Random" min_max="0,5" operation="LTE" value="1"/>
+				<requirement name="CVarCompare" cvar="LunacyLevel" operation="GTE" value="10"/>
+				<requirement name="CVarCompare" cvar="LunacyLevel" operation="LT" value="20"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" fireOneBuff="true" buff="buffLunacyAuditory" weights="1"/>
+			</effect_group>
+			<effect_group name="Lunacy Level 2">
+				<requirement name="RandomRoll" seed_type="Random" min_max="0,5" operation="LTE" value="1"/>
+				<requirement name="CVarCompare" cvar="LunacyLevel" operation="GTE" value="20"/>
+				<requirement name="CVarCompare" cvar="LunacyLevel" operation="LT" value="30"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" fireOneBuff="true" buff="buffLunacyAuditory,buffLunacyFreakout" weights="1,1"/>
+			</effect_group>
+			<effect_group name="Lunacy Level 3">
+				<requirement name="RandomRoll" seed_type="Random" min_max="0,5" operation="LTE" value="1"/>
+				<requirement name="CVarCompare" cvar="LunacyLevel" operation="GTE" value="30"/>
+				<requirement name="CVarCompare" cvar="LunacyLevel" operation="LT" value="40"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" fireOneBuff="true" buff="buffLunacyAuditory,buffLunacyFreakout,buffLunacyHarmSelf" weights="1,1,1"/>
+			</effect_group>
+			<effect_group name="Lunacy Level 4">
+				<requirement name="RandomRoll" seed_type="Random" min_max="0,5" operation="LTE" value="1"/>
+				<requirement name="CVarCompare" cvar="LunacyLevel" operation="GTE" value="40"/>
+				<requirement name="CVarCompare" cvar="LunacyLevel" operation="LT" value="50"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" fireOneBuff="true" buff="buffLunacyAuditory,buffLunacyFreakout,buffLunacyHarmSelf,buffLunacyHysteria" weights="1,1,1,1"/>
+			</effect_group>
+			<effect_group name="Lunacy Level 5">
+				<requirement name="RandomRoll" seed_type="Random" min_max="0,5" operation="LTE" value="1"/>
+				<requirement name="CVarCompare" cvar="LunacyLevel" operation="GTE" value="50"/>
+				<requirement name="CVarCompare" cvar="LunacyLevel" operation="LT" value="60"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" fireOneBuff="true" buff="buffLunacyAuditory,buffLunacyFreakout,buffLunacyHarmSelf,buffLunacyHysteria,buffLunacyCraveTaintedMeat" weights="1,1,1,1,1"/>
+			</effect_group>
+			<effect_group name="Lunacy Level 6">
+				<requirement name="RandomRoll" seed_type="Random" min_max="0,5" operation="LTE" value="1"/>
+				<requirement name="CVarCompare" cvar="LunacyLevel" operation="GTE" value="60"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" fireOneBuff="true" buff="buffLunacyAuditory,buffLunacyFreakout,buffLunacyHarmSelf,buffLunacyHysteria,buffLunacyCraveTaintedMeat,buffLunacyFugueState" weights="1,1,1,1,1,100"/>
+			</effect_group>
+		</buff>
+		<buff name="buffLunacyAuditory" hidden="false">
+			<stack_type value="ignore"/>
+			<duration value="1"/>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="PlaySound" sound="Enemies/Base_Zombie_male/zombiemalepain" play_in_head="true"/>
+			</effect_group>
+		</buff>
+		<buff name="buffLunacyFreakout" hidden="false">
+			<stack_type value="ignore"/>
+			<duration value="1"/>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="ShakeCamera" shake_speed="99" shake_amplitude="99" shake_time="1"/>
+				<triggered_effect trigger="onSelfBuffStart" action="PlaySound" sound="Enemies/Acid_Puking_Hulk/hulkexplodewarning" play_in_head="true"/>
+			</effect_group>
+		</buff>
+		<buff name="buffLunacyHarmSelf" hidden="false" icon="ui_game_symbol_drunk" icon_color="255,200,200" icon_blink="true" name_key="Self Harm" description_key="Cutting is the only way to stay human. The disease - it's inside me. I have to bleed it out.">
+			<stack_type value="ignore"/>
+			<duration value="10"/>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="PlaySound" sound="ImpactSurface/metalhitorganic" play_in_head="false"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="triggerLaceration"/>
+			</effect_group>
+		</buff>
+		<buff name="buffLunacyHysteria" hidden="false" icon="ui_game_symbol_drunk" icon_color="255,255,0" icon_blink="true" name_key="Hysteria" description_key="FIGHTING IS USELESS - I NEED TO GET THE FUCK OUT OF HERE!">
+			<stack_type value="ignore"/>
+			<duration value="30"/>
+			<effect_group>
+				<passive_effect name="DisableItem" operation="base_set" value="1" tags="melee" />
+				<passive_effect name="DisableItem" operation="base_set" value="1" tags="ranged" />
+			</effect_group>
+		</buff>
+		<buff name="buffLunacyCraveTaintedMeat" hidden="false" icon="ui_game_symbol_drunk" icon_color="150,200,150" icon_blink="true" name_key="Tainted Craving" description_key="TAINTED MEAT. I NEED... TAINTED MEAAAT!">
+			<stack_type value="ignore"/>
+			<duration value="300"/>
+			<effect_group>
+				<passive_effect name="StaminaChangeOT" operation="base_set" value="-1"/>
+			</effect_group>
+		</buff>
+		<buff name="buffLunacyFugueState" hidden="false" icon="ui_game_symbol_drunk" icon_color="0,0,0" icon_blink="true" name_key="Fugue State" description_key="I'm a zombie now?">
+			<stack_type value="ignore"/>
+			<duration value="60"/>
+			<effect_group>
+				<requirement name="CVarCompare" cvar="StressLevel" operation="GTE" value="500"/>
+				<requirement name="!EntityHasMovementTag" tags="driving"/>
+				<triggered_effect trigger="onSelfBuffStart" action="Ragdoll" duration="10" />
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="StressLevel" operation="set" value="0"/>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyScreenEffect" effect_name="Infected" intensity="1" fade="1"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="ModifyScreenEffect" effect_name="Infected" intensity="0" fade="1"/>
+				<passive_effect name="RunSpeed" operation="perc_set" value="0"/>
+				<passive_effect name="JumpStrength" operation="perc_set" value="0"/>
+				<passive_effect name="NoiseMultiplier" operation="base_set" value="-10"/>
+				<passive_effect name="LightMultiplier" operation="base_set" value="-10"/>
+				<passive_effect name="DisableItem" operation="base_set" value="1" tags="melee" />
+				<passive_effect name="DisableItem" operation="base_set" value="1" tags="ranged" />
+			</effect_group>
+		</buff>
+		<!-- Healing StressLevel and LunacyLevel -->
+		<buff name="buffStressHealMinor" hidden="false" icon="ui_game_symbol_pills" icon_color="159,72,110" name_key="Depressant" description_key="Treating nerves.">
+			<stack_type value="duration"/>
+			<duration value="15"/><update_rate value="1"/>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="StressLevel" operation="add" value="-10"/>
+			</effect_group>
+		</buff>
+		<buff name="buffLunacyHealMinor" hidden="false" icon="ui_game_symbol_pills" icon_color="159,72,110" name_key="Neuroleptic" description_key="Treating madness.">
+			<stack_type value="duration"/>
+			<duration value="15"/><update_rate value="1"/>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="LunacyLevel" operation="add" value="-10"/>
+			</effect_group>
+		</buff>
+
+</append>
 </configs>
