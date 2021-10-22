@@ -198,5 +198,19 @@
 			</effect_group>
 		</item>
 	</append>
+	<!-- Stress / Lunacy Remedies -->
+	<append xpath="/items/item[@name='drugPainkillers']/effect_group">
+		<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffStressHealMinor"/>
+	</append>
+	<append xpath="/items/item[@name='drinkJarBeer']/effect_group[@name='Drink Tier 3']">
+		<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffStressHealMinor"/>
+	</append>
+	<append xpath="/items/item[@name='drinkJarGrandpasMoonshine']/effect_group[@name='Drink Tier 5']">
+		<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffStressHealMinor"/>
+	</append>
+	<!-- Tainted Meat Craving Buff Remedy -->
+	<append xpath="/items/item[@name='foodRottingFlesh']/effect_group">
+		<triggered_effect trigger="onSelfPrimaryActionEnd" action="RemoveBuff" buff="buffLunacyCraveTaintedMeat"/>
+	</append>
 
 </configs>
