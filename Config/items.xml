@@ -203,6 +203,7 @@
 			<property name="CustomIcon" value="drugVitamins"/><property name="CustomIconTint" value="9F486E"/>
 			<effect_group tiered="false">
 				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffStressRemedy"/>
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="StressLevel" operation="set" value="0"/>
 			</effect_group>
 		</item>
 		<item name="drugLunacyRemedy">
