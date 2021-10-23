@@ -9,4 +9,9 @@
 	<append xpath="/lootcontainers/lootcontainer[@id='59']">
 		<item group="seeds" count="1,5"/>
 	</append>
+	<!-- Medicine -->
+	<append xpath="/lootcontainers/lootgroup[@name='medicine' or @name='rareMedicine' or @name='airdropMedicine']">
+		<item name="drugLunacyRemedy" count="1,2"/>
+		<item name="drugStressRemedy" count="1,2"/>
+	</append>
 </configs>
