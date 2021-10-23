@@ -12,15 +12,8 @@
 	<!-- player effects when hit -->
 	<append xpath="/entity_classes/entity_class[@name='playerMale']">
 		<effect_group>
-			<triggered_effect trigger="onOtherDamagedSelf" action="ModifyStats" stat="Stamina" operation="subtract" value="17"/>
-			<triggered_effect trigger="onOtherDamagedSelf" action="ModifyStats" stat="Stamina" operation="subtract" value="17">
-				<requirement name="StatComparePercCurrentToMax" stat="Health" operation="LTE" value=".75"/>
-			</triggered_effect>
-			<triggered_effect trigger="onOtherDamagedSelf" action="ModifyStats" stat="Stamina" operation="subtract" value="17">
-				<requirement name="StatComparePercCurrentToMax" stat="Health" operation="LTE" value=".5"/>
-			</triggered_effect>
 			<triggered_effect trigger="onOtherDamagedSelf" action="AddBuff" target="self" buff="buffGrabbed">
-				<requirement name="EntityTagCompare" target="other" tags="entity,zombie"/>
+				<requirement name="EntityTagCompare" target="other" tags="zombie,animal,player"/>
 			</triggered_effect>
 			<triggered_effect trigger="onOtherDamagedSelf" action="AddBuff" target="self" buff="buffWightVenom">
 				<requirement name="EntityTagCompare" target="other" tags="venomous"/>
