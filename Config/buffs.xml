@@ -95,8 +95,8 @@
 				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" target="selfAOE" target_tags="enemy" range="100" buff="buffStressEcho"/>
 				<triggered_effect trigger="onSelfDied" action="AddBuff" target="selfAOE" range="30" buff="buffStressTrauma"/>
 				<!-- Environmental Stress -->
-				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="StressLevel" operation="add" value="35">
-					<requirement name="CVarCompare" cvar="_lightlevel" operation="LTE" value="50"/></triggered_effect>
+				<!-- <triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="StressLevel" operation="add" value="35">
+					<requirement name="CVarCompare" cvar="_lightlevel" operation="LTE" value="50"/></triggered_effect> -->
 			<!-- Movement normalizes effects -->
 				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="StressLevel" operation="add" value="-33">
 					<requirement name="!EntityHasMovementTag" tags="idle"/>
