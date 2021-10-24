@@ -1,0 +1,10 @@
+<configs>
+	<append xpath="/ui_display_info/item_display">
+		<item_display_info display_type="drugRemedyStress" display_group="groupConsumables">
+			<display_entry name="drugRemedyStress" title_key="Removes all stress and keeps you sedated." display_type="Time"/>
+		</item_display_info>
+		<item_display_info display_type="drugRemedyLunacy" display_group="groupConsumables">
+			<display_entry name="drugRemedyLunacy" title_key="Reduces lunacy over time. Take as perscribed." display_type="Time"/>
+		</item_display_info>
+	</append>
+</configs>
