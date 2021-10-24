@@ -143,8 +143,15 @@
 			<duration value="1"/><update_rate value="1"/>
 			<effect_group>
 				<requirement name="NotHasBuff" buff="buffRemedyStress"/>
+				<requirement name="CVarCompare" cvar="StressLevel" operation="LTE" value="50"/>
 				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="StressLevel" operation="add" value="11"/>
 				<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="StressLevel" operation="add" value="11"/>
+			</effect_group>
+			<effect_group>
+				<requirement name="NotHasBuff" buff="buffRemedyStress"/>
+				<requirement name="CVarCompare" cvar="StressLevel" operation="GT" value="50"/>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="StressLevel" operation="add" value="3"/>
+				<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="StressLevel" operation="add" value="3"/>
 			</effect_group>
 		</buff>
 		<buff name="buffStressTrauma" hidden="true">
