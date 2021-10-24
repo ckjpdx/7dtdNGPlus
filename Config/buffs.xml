@@ -142,7 +142,7 @@
 			<stack_type value="effect"/>
 			<duration value="1"/><update_rate value="1"/>
 			<effect_group>
-				<requirement name="NotHasBuff" buff="buffStressRemedy"/>
+				<requirement name="NotHasBuff" buff="buffRemedyStress"/>
 				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="StressLevel" operation="add" value="11"/>
 				<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="StressLevel" operation="add" value="11"/>
 			</effect_group>
@@ -273,7 +273,7 @@
 			</effect_group>
 		</buff>
 	<!-- Healing StressLevel and LunacyLevel -->
-		<buff name="buffStressRemedy" hidden="false" icon="ui_game_symbol_pills" icon_color="159,72,110" name_key="Depressant" description_key="Treating neurosis.">
+		<buff name="buffRemedyStress" hidden="false" icon="ui_game_symbol_pills" icon_color="159,72,110" name_key="Depressant" description_key="Treating neurosis.">
 			<stack_type value="duration"/>
 			<duration value="300"/><update_rate value="1"/>
 			<effect_group>
@@ -281,7 +281,7 @@
 				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="StressLevel" operation="add" value="-5"/>
 			</effect_group>
 		</buff>
-		<buff name="buffLunacyRemedy" hidden="false" icon="ui_game_symbol_pills" icon_color="128,223,255" name_key="Neuroleptic" description_key="Treating psychosis.">
+		<buff name="buffRemedyLunacy" hidden="false" icon="ui_game_symbol_pills" icon_color="128,223,255" name_key="Neuroleptic" description_key="Treating psychosis.">
 			<stack_type value="duration"/>
 			<duration value="300"/><update_rate value="1"/>
 			<effect_group>

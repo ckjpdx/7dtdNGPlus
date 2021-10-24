@@ -1,6 +1,6 @@
 <configs>
     <append xpath="/traders/trader_item_groups/trader_item_group[@name='medicine']">
-        <item name="drugLunacyRemedy" count="1,2"/>
-		<item name="drugStressRemedy" count="2,4"/>
+        <item name="drugRemedyLunacy" count="1,2"/>
+		<item name="drugRemedyStress" count="2,4"/>
     </append>
 </configs>

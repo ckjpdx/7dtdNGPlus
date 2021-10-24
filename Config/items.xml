@@ -197,33 +197,33 @@
 				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffBerserker"/>
 			</effect_group>
 		</item>
-		<item name="drugStressRemedy">
+		<item name="drugRemedyStress">
 			<property name="Extends" value="drugVitamins"/>
 			<property name="DisplayType" value="medicalVitamins"/>
 			<property name="CustomIcon" value="drugVitamins"/><property name="CustomIconTint" value="9F486E"/>
 			<effect_group tiered="false">
-				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffStressRemedy"/>
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffRemedyStress"/>
 				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="StressLevel" operation="set" value="0"/>
 			</effect_group>
 		</item>
-		<item name="drugLunacyRemedy">
+		<item name="drugRemedyLunacy">
 			<property name="Extends" value="drugVitamins"/>
 			<property name="DisplayType" value="medicalVitamins"/>
 			<property name="CustomIcon" value="drugVitamins"/><property name="CustomIconTint" value="B20080"/>
 			<effect_group tiered="false">
-				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffLunacyRemedy"/>
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffRemedyLunacy"/>
 			</effect_group>
 		</item>
 	</append>
 	<!-- Stress / Lunacy Remedies -->
 	<append xpath="/items/item[@name='drugPainkillers']/effect_group">
-		<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffStressRemedy"/>
+		<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffRemedyStress"/>
 	</append>
 	<append xpath="/items/item[@name='drinkJarBeer']/effect_group[@name='Drink Tier 3']">
-		<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffStressRemedy"/>
+		<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffRemedyStress"/>
 	</append>
 	<append xpath="/items/item[@name='drinkJarGrandpasMoonshine']/effect_group[@name='Drink Tier 5']">
-		<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffStressRemedy"/>
+		<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffRemedyStress"/>
 	</append>
 	<!-- Tainted Meat Craving Buff Remedy -->
 	<append xpath="/items/item[@name='foodRottingFlesh']/effect_group">

@@ -11,8 +11,8 @@
 	</append>
 	<!-- Medicine -->
 	<append xpath="/lootcontainers/lootgroup[@name='medicine' or @name='rareMedicine' or @name='airdropMedicine']">
-		<item name="drugLunacyRemedy" count="1,2"/>
-		<item name="drugStressRemedy" count="2,4"/>
+		<item name="drugRemedyLunacy" count="1,2"/>
+		<item name="drugRemedyStress" count="2,4"/>
 	</append>
 	<!-- More Meds in containers -->
 	<set xpath="/lootcontainers/lootcontainer[@id='34']/item[@group='airdropMedicine']/@count">3,4</set>
