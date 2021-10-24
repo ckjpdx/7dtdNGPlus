@@ -1,4 +1,5 @@
-drugRemedyStress,items,Medical,,,Sedatives
-drugRemedyDesc,items,Medical,,,"Sedatives reduce stress."
-drugRemedyLunacy,items,Medical,,,Sedatives
-drugRemedyDesc,items,Medical,,,"Neuroleptics reduce psychosis."
+Key,File,Type,UsedInMainMenu,NoTranslate,english
+drugRemedyStress,items,Medical,,,Sedatives,
+drugRemedyStressDesc,items,Medical,,,Sedatives reduce stress.,
+drugRemedyLunacy,items,Medical,,,Neuroleptics,
+drugRemedyLunacyDesc,items,Medical,,,Neuroleptics reduce psychosis.,
