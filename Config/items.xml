@@ -199,8 +199,8 @@
 		</item>
 		<item name="drugRemedyStress">
 			<property name="Extends" value="drugVitamins"/>
-			<property name="DisplayType" value="medicalVitamins"/>
-			<property name="CustomIcon" value="drugVitamins"/><property name="CustomIconTint" value="9F486E"/>
+			<property name="DisplayType" value="drugRemedyStress"/>
+			<property name="CustomIcon" value="drugPainkillers"/><property name="CustomIconTint" value="9F486E"/>
 			<effect_group tiered="false">
 				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffRemedyStress"/>
 				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="StressLevel" operation="set" value="0"/>
@@ -208,8 +208,8 @@
 		</item>
 		<item name="drugRemedyLunacy">
 			<property name="Extends" value="drugVitamins"/>
-			<property name="DisplayType" value="medicalVitamins"/>
-			<property name="CustomIcon" value="drugVitamins"/><property name="CustomIconTint" value="B20080"/>
+			<property name="DisplayType" value="drugRemedyLunacy"/>
+			<property name="CustomIcon" value="drugPainkillers"/><property name="CustomIconTint" value="80dfff"/>
 			<effect_group tiered="false">
 				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffRemedyLunacy"/>
 			</effect_group>
