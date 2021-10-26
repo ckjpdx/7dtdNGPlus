@@ -85,7 +85,7 @@
 				<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="buffInfectionCatch"/>
 			</effect_group>
 		</buff>
-		<buff name="buffStress" hidden="false" icon="ui_game_symbol_cardio" icon_color="159,72,110" name_key="Stress" remove_on_death="false" description_key="High stress levels allow you to run faster, but you also shake. If you are under elevated stress levels for too long, you'll start going insane.">
+		<buff name="buffStress" hidden="false" icon="ui_game_symbol_cardio" icon_color="159,72,110" name_key="Stress" remove_on_death="false" description_key="High stress levels allow you to run faster, but if you're under elevated stress levels for too long you'll go insane.">
 			<stack_type value="ignore"/>
 			<duration value="0"/><update_rate value="1"/>
 			<display_value value=".stressLevelPercent"/><display_value_key value="{0:0.0}%"/>
@@ -146,19 +146,20 @@
 			<display_value value=".lunacyLevelPercent"/><display_value_key value="{0:0.0}%"/>
 			<effect_group name="Lunacy main loop">
 			<!-- Normalize over time -->
+				<triggered_effect trigger="onSelfDied" action="ModifyCVar" cvar="LunacyLevel" operation="divide" value="2"/>
 				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="LunacyLevel" operation="add" value="-1">
 					<requirement name="CVarCompare" cvar="LunacyLevel" operation="GT" value="0"/>
 					<requirement name="RandomRoll" seed_type="Random" min_max="0,36" operation="LTE" value="1"/>
 				</triggered_effect>
+			<!-- Stress adds to Lunacy -->
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="StressToLunacy" operation="set" value="@StressLevel"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="StressToLunacy" operation="divide" value="3600"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="LunacyLevel" operation="add" value="@StressToLunacy"/>
 			<!-- Min/Max limits -->
 				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="LunacyLevel" operation="set" value="1000">
 					<requirement name="CVarCompare" cvar="LunacyLevel" operation="GT" value="1000"/></triggered_effect>
 				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="LunacyLevel" operation="set" value="0">
 					<requirement name="CVarCompare" cvar="LunacyLevel" operation="LT" value="0"/></triggered_effect>
-			<!-- Stress adds to Lunacy -->
-				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="StressToLunacy" operation="set" value="@StressLevel"/>
-				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="StressToLunacy" operation="divide" value="3600"/>
-				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="LunacyLevel" operation="add" value="@StressToLunacy"/>
 			<!-- Counter display -->
 				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="LunacyLevel" operation="set" value="0"/>
 				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".lunacyLevelPercent" operation="set" value="@LunacyLevel"/>
