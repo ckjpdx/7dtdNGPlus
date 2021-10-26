@@ -65,7 +65,8 @@
 	<set xpath="/items/item[@name='gunRifleT1HuntingRifle']/effect_group/passive_effect[@name='MagazineSize' and @operation='base_set']/@value">5</set>
 	<set xpath="/items/item[@name='gunRifleT2MarksmanRifle']/effect_group/passive_effect[@name='MagazineSize' and @operation='base_set']/@value">15</set>
 	<set xpath="/items/item[@name='gunRifleT3SniperRifle']/effect_group/passive_effect[@name='MagazineSize' and @operation='base_set']/@value">10</set>
-	
+<!-- Weapon Rate of fire -->
+	<set xpath="/items/item[@name='gunShotgunT3AutoShotgun']/property[@class='Action0']/property[@name='Delay']/@value">0.5</set>
 <!-- Items created with parts require parts for repair -->
 	<!-- Tools -->
 	<set xpath="/items/item[contains(@name, 'Steel') and contains(@name, 'meleeTool')]/property[@name='RepairTools']/@value">meleeToolAllSteelParts</set>
@@ -197,6 +198,7 @@
 				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffBerserker"/>
 			</effect_group>
 		</item>
+	<!-- Stress / Lunacy Remedies -->
 		<item name="drugRemedyStress">
 			<property name="Extends" value="drugVitamins"/>
 			<property name="DisplayType" value="drugRemedyStress"/>
@@ -214,8 +216,23 @@
 				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffRemedyLunacy"/>
 			</effect_group>
 		</item>
+		<item name="drugBlunt">
+			<property name="Extends" value="drugVitamins"/>
+			<property name="DisplayType" value="drugBlunt"/>
+			<property name="Material" value="Mplants"/>
+			<property name="Weight" value="1"/>
+			<property name="CustomIcon" value="apparelCigar"/><property name="CustomIconTint" value="55aa55"/>
+			<property class="Action0">
+				<property name="Class" value="Eat"/>
+				<property name="Delay" value="1.0"/>
+				<property name="Use_time" value="..."/>
+				<property name="Sound_start" value="cook_meat"/>
+			</property>
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffRemedyStress"/>
+			</effect_group>
+		</item>
 	</append>
-	<!-- Stress / Lunacy Remedies -->
 	<append xpath="/items/item[@name='drugPainkillers']/effect_group">
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffRemedyStress"/>
 	</append>

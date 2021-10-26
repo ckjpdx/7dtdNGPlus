@@ -6,5 +6,8 @@
 		<item_display_info display_type="drugRemedyLunacy" display_group="groupConsumables">
 			<display_entry name="drugRemedyLunacy" title_key="Reduces lunacy over time. Take as perscribed." display_type="Time"/>
 		</item_display_info>
+		<item_display_info display_type="drugBlunt" display_group="groupConsumables">
+			<display_entry name="drugBlunt" title_key="Takes the edge off." display_type="Time"/>
+		</item_display_info>
 	</append>
 </configs>
