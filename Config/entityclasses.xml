@@ -12,8 +12,9 @@
 	<!-- player effects when hit -->
 	<append xpath="/entity_classes/entity_class[@name='playerMale']">
 		<effect_group>
+			<triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" cvar="StressLevel" operation="add" value="100"/>
 			<triggered_effect trigger="onOtherDamagedSelf" action="AddBuff" target="self" buff="buffGrabbed">
-				<requirement name="EntityTagCompare" target="other" tags="zombie,animal,player"/>
+				<requirement name="EntityTagCompare" target="other" tags="zombie,animal"/>
 			</triggered_effect>
 			<triggered_effect trigger="onOtherDamagedSelf" action="AddBuff" target="self" buff="buffWightVenom">
 				<requirement name="EntityTagCompare" target="other" tags="venomous"/>
