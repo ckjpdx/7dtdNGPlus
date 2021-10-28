@@ -99,33 +99,6 @@
 	<!-- kill item at durability 0 -->
 	<set xpath="/items/item/property[@name='DegradationBreaksAfter' and @value='false']/@value">true</set>
 
-<!-- Dysentery for low level meat recipes but increase food amount -->
-	<append xpath='/items/item[@name="foodCharredMeat"]/effect_group'>
-		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar=".DiseaseRoll" operation="set" value="12"/><display_value name="dDysenteryRisk" value=".12"/>
-		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar=".DiseaseRoll" operation="add" value="@$MetabolismResist"/>
-		<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffDysenteryCatchFood">
-				<requirement name="RandomRoll" seed_type="Random" min_max="1,100" operation="LTE" value="@.DiseaseRoll"/>
-		</triggered_effect>
-	</append>
-	<set xpath="/items/item[@name='foodCharredMeat']/effect_group/triggered_effect[@cvar='$foodAmountAdd']/@value">20</set>
-	
-	<append xpath='/items/item[@name="foodGrilledMeat"]/effect_group'>
-		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar=".DiseaseRoll" operation="set" value="12"/><display_value name="dDysenteryRisk" value=".12"/>
-		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar=".DiseaseRoll" operation="add" value="@$MetabolismResist"/>
-		<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffDysenteryCatchFood">
-				<requirement name="RandomRoll" seed_type="Random" min_max="1,100" operation="LTE" value="@.DiseaseRoll"/>
-		</triggered_effect>
-	</append>
-	<set xpath="/items/item[@name='foodGrilledMeat']/effect_group/triggered_effect[@cvar='$foodAmountAdd']/@value">20</set>
-
-	<append xpath='/items/item[@name="foodBoiledMeat"]/effect_group'>
-		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar=".DiseaseRoll" operation="set" value="12"/><display_value name="dDysenteryRisk" value=".12"/>
-		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar=".DiseaseRoll" operation="add" value="@$MetabolismResist"/>
-		<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffDysenteryCatchFood">
-				<requirement name="RandomRoll" seed_type="Random" min_max="1,100" operation="LTE" value="@.DiseaseRoll"/>
-		</triggered_effect>
-	</append>
-	<set xpath="/items/item[@name='foodBoiledMeat']/effect_group/triggered_effect[@cvar='$foodAmountAdd']/@value">20</set>
 
 <!-- More calories from recipes! -->
 	<set xpath="/items/item[@name='foodCornOnTheCob']/effect_group/triggered_effect[@cvar='$foodAmountAdd']/@value">10</set>
