@@ -17,8 +17,8 @@
   <set xpath="/recipes/recipe[@name='foodHoboStew']/ingredient[@name='foodRottingFlesh']/@count">5</set>
   <set xpath="/recipes/recipe[@name='foodCanSham']/ingredient[@name='foodRottingFlesh']/@count">3</set>
   <!-- Ingredient rebalance -->
-  <set xpath="/recipes/recipe[@name='plantedCorn1']/ingredient[@name='foodCropCorn']/@count">3</set>
-  <set xpath="/recipes/recipe[@name='plantedPotato1']/ingredient[@name='foodCropPotato']/@count">3</set>
+  <set xpath="/recipes/recipe[@name='plantedCorn1']/ingredient[@name='foodCropCorn']/@count">2</set>
+  <set xpath="/recipes/recipe[@name='plantedPotato1']/ingredient[@name='foodCropPotato']/@count">2</set>
   <append xpath="/recipes/recipe[@name='plantedCorn1']">
   	<effect_group>
 		  <passive_effect name="CraftingIngredientCount" level="3" operation="base_add" value="-1" tags="foodCropCorn"/>
