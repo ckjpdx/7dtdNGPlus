@@ -171,49 +171,48 @@
 				<requirement name="RandomRoll" seed_type="Random" min_max="0,360" operation="LTE" value="1"/>
 				<requirement name="CVarCompare" cvar="LunacyLevel" operation="GTE" value="140"/>
 				<requirement name="CVarCompare" cvar="LunacyLevel" operation="LT" value="280"/>
-				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="buffLunacyAuditory"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="buffLunacyDespair"/>
 			</effect_group>
 			<effect_group name="Lunacy Level 2">
 				<requirement name="NotHasBuff" buff="buffRemedyLunacy"/>
 				<requirement name="RandomRoll" seed_type="Random" min_max="0,300" operation="LTE" value="1"/>
 				<requirement name="CVarCompare" cvar="LunacyLevel" operation="GTE" value="280"/>
 				<requirement name="CVarCompare" cvar="LunacyLevel" operation="LT" value="420"/>
-				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" fireOneBuff="true" buff="buffLunacyAuditory,buffLunacyPanic" weights="1,1"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" fireOneBuff="true" buff="buffLunacyDespair,buffLunacyPanic" weights="1,1"/>
 			</effect_group>
 			<effect_group name="Lunacy Level 3">
 				<requirement name="NotHasBuff" buff="buffRemedyLunacy"/>
 				<requirement name="RandomRoll" seed_type="Random" min_max="0,240" operation="LTE" value="1"/>
 				<requirement name="CVarCompare" cvar="LunacyLevel" operation="GTE" value="420"/>
 				<requirement name="CVarCompare" cvar="LunacyLevel" operation="LT" value="560"/>
-				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" fireOneBuff="true" buff="buffLunacyAuditory,buffLunacyPanic,buffLunacyFreakout" weights="2,2,1"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" fireOneBuff="true" buff="buffLunacyDespair,buffLunacyPanic,buffLunacyFreakout" weights="2,2,1"/>
 			</effect_group>
 			<effect_group name="Lunacy Level 4">
 				<requirement name="NotHasBuff" buff="buffRemedyLunacy"/>
 				<requirement name="RandomRoll" seed_type="Random" min_max="0,180" operation="LTE" value="1"/>
 				<requirement name="CVarCompare" cvar="LunacyLevel" operation="GTE" value="560"/>
 				<requirement name="CVarCompare" cvar="LunacyLevel" operation="LT" value="700"/>
-				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" fireOneBuff="true" buff="buffLunacyAuditory,buffLunacyPanic,buffLunacyFreakout,buffLunacyHysteria" weights="2,2,1,1"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" fireOneBuff="true" buff="buffLunacyDespair,buffLunacyPanic,buffLunacyFreakout,buffLunacyHysteria" weights="2,2,1,1"/>
 			</effect_group>
 			<effect_group name="Lunacy Level 5">
 				<requirement name="NotHasBuff" buff="buffRemedyLunacy"/>
 				<requirement name="RandomRoll" seed_type="Random" min_max="0,120" operation="LTE" value="1"/>
 				<requirement name="CVarCompare" cvar="LunacyLevel" operation="GTE" value="700"/>
 				<requirement name="CVarCompare" cvar="LunacyLevel" operation="LT" value="840"/>
-				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" fireOneBuff="true" buff="buffLunacyAuditory,buffLunacyPanic,buffLunacyFreakout,buffLunacyHysteria,buffLunacyCraveTaintedMeat" weights="2,2,1,1,1"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" fireOneBuff="true" buff="buffLunacyDespair,buffLunacyPanic,buffLunacyFreakout,buffLunacyHysteria,buffLunacyCraveTaintedMeat" weights="2,2,1,1,1"/>
 			</effect_group>
 			<effect_group name="Lunacy Level 6">
 				<requirement name="NotHasBuff" buff="buffRemedyLunacy"/>
 				<requirement name="RandomRoll" seed_type="Random" min_max="0,60" operation="LTE" value="1"/>
 				<requirement name="CVarCompare" cvar="LunacyLevel" operation="GTE" value="840"/>
-				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" fireOneBuff="true" buff="buffLunacyAuditory,buffLunacyPanic,buffLunacyFreakout,buffLunacyHysteria,buffLunacyCraveTaintedMeat,buffLunacyFugueState" weights="1,1,1,1,1,1"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" fireOneBuff="true" buff="buffLunacyDespair,buffLunacyPanic,buffLunacyFreakout,buffLunacyHysteria,buffLunacyCraveTaintedMeat,buffLunacyFugueState" weights="1,1,1,1,1,1"/>
 			</effect_group>
 		</buff>
-		<buff name="buffLunacyAuditory" hidden="true">
+		<buff name="buffLunacyDespair" hidden="false" icon="ui_game_symbol_drunk" icon_color="0,0,255" icon_blink="true" name_key="Despair" description_key="Loss of hope makes it hard to perform well.">
 			<stack_type value="ignore"/>
-			<duration value="120"/><update_rate value="3"/>
+			<duration value="60"/>
 			<effect_group>
-				<requirement name="RandomRoll" seed_type="Random" min_max="0,3" operation="LTE" value="1"/>
-				<triggered_effect trigger="onSelfBuffUpdate" action="PlaySound" sound="Step/stepglasssmallcreak" play_in_head="true"/>
+				<passive_effect name="AttributeLevel" operation="base_add" value="-1"/>
 			</effect_group>
 		</buff>
 		<buff name="buffLunacyPanic" hidden="false" icon="ui_game_symbol_drunk" icon_color="255,0,128" icon_blink="true" name_key="Panic" description_key="Sudden episode of intense fear and physical symptoms, brought on by past trauma.">
