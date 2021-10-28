@@ -24,9 +24,14 @@
 	</append>
 	<set xpath="/blocks/block[@name='palletWhiteBagsBase']/drop[@event='Harvest'][@name='resourceCement']/@count">100,200</set>
 	<set xpath="/blocks/block[@name='palletWhiteBagsBase']/drop[@event='Harvest'][@name='resourceCement']/@name">resourceConcreteMix</set>
-	<!-- corpse blocks may cause infection when stepped on -->
+	<!-- corpse blocks -->
 	<append xpath="/blocks/block[starts-with(@name, 'goreBlock')]">
+		<!-- may cause infection when stepped on -->
 		<property name="BuffsWhenWalkedOn" value="buffInfectionExposure"/>
+		<!-- trying to rotate on placement -->
+		<property name="AllowAllRotations" value="true"/>
+		<property name="Place" value="TowardsPlacer"/>
+		<property name="CanDecorateOnSlopes" value="false"/>
 	</append>
 
 </configs>
