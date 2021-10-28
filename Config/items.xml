@@ -65,7 +65,8 @@
 	<set xpath="/items/item[@name='gunRifleT1HuntingRifle']/effect_group/passive_effect[@name='MagazineSize' and @operation='base_set']/@value">5</set>
 	<set xpath="/items/item[@name='gunRifleT2MarksmanRifle']/effect_group/passive_effect[@name='MagazineSize' and @operation='base_set']/@value">15</set>
 	<set xpath="/items/item[@name='gunRifleT3SniperRifle']/effect_group/passive_effect[@name='MagazineSize' and @operation='base_set']/@value">10</set>
-	
+<!-- Weapon Rate of fire -->
+	<set xpath="/items/item[@name='gunShotgunT3AutoShotgun']/property[@class='Action0']/property[@name='Delay']/@value">0.5</set>
 <!-- Items created with parts require parts for repair -->
 	<!-- Tools -->
 	<set xpath="/items/item[contains(@name, 'Steel') and contains(@name, 'meleeTool')]/property[@name='RepairTools']/@value">meleeToolAllSteelParts</set>
@@ -98,33 +99,14 @@
 	<!-- kill item at durability 0 -->
 	<set xpath="/items/item/property[@name='DegradationBreaksAfter' and @value='false']/@value">true</set>
 
-<!-- Dysentery for low level meat recipes but increase food amount -->
-	<append xpath='/items/item[@name="foodCharredMeat"]/effect_group'>
-		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar=".DiseaseRoll" operation="set" value="12"/><display_value name="dDysenteryRisk" value=".12"/>
-		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar=".DiseaseRoll" operation="add" value="@$MetabolismResist"/>
-		<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffDysenteryCatchFood">
-				<requirement name="RandomRoll" seed_type="Random" min_max="1,100" operation="LTE" value="@.DiseaseRoll"/>
-		</triggered_effect>
-	</append>
-	<set xpath="/items/item[@name='foodCharredMeat']/effect_group/triggered_effect[@cvar='$foodAmountAdd']/@value">20</set>
-	
-	<append xpath='/items/item[@name="foodGrilledMeat"]/effect_group'>
-		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar=".DiseaseRoll" operation="set" value="12"/><display_value name="dDysenteryRisk" value=".12"/>
-		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar=".DiseaseRoll" operation="add" value="@$MetabolismResist"/>
-		<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffDysenteryCatchFood">
-				<requirement name="RandomRoll" seed_type="Random" min_max="1,100" operation="LTE" value="@.DiseaseRoll"/>
-		</triggered_effect>
-	</append>
-	<set xpath="/items/item[@name='foodGrilledMeat']/effect_group/triggered_effect[@cvar='$foodAmountAdd']/@value">20</set>
-
-	<append xpath='/items/item[@name="foodBoiledMeat"]/effect_group'>
-		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar=".DiseaseRoll" operation="set" value="12"/><display_value name="dDysenteryRisk" value=".12"/>
-		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar=".DiseaseRoll" operation="add" value="@$MetabolismResist"/>
-		<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffDysenteryCatchFood">
-				<requirement name="RandomRoll" seed_type="Random" min_max="1,100" operation="LTE" value="@.DiseaseRoll"/>
-		</triggered_effect>
-	</append>
-	<set xpath="/items/item[@name='foodBoiledMeat']/effect_group/triggered_effect[@cvar='$foodAmountAdd']/@value">20</set>
+<!-- Food/calorie amount rebalance -->
+	<set xpath="/items/item[@name='foodCharredMeat']/effect_group/triggered_effect[@cvar='$foodAmountAdd']/@value">25</set>
+	<set xpath="/items/item[@name='foodGrilledMeat']/effect_group/triggered_effect[@cvar='$foodAmountAdd']/@value">25</set>
+	<set xpath="/items/item[@name='foodBoiledMeat']/effect_group/triggered_effect[@cvar='$foodAmountAdd']/@value">25</set>
+	<set xpath="/items/item[@name='foodCanChicken']/effect_group/triggered_effect[@cvar='$foodAmountAdd']/@value">50</set>
+	<set xpath="/items/item[@name='foodCanBeef']/effect_group/triggered_effect[@cvar='$foodAmountAdd']/@value">35</set>
+	<set xpath="/items/item[@name='foodCanSoup']/effect_group/triggered_effect[@cvar='$foodAmountAdd']/@value">25</set>
+	<set xpath="/items/item[@name='foodCanMiso']/effect_group/triggered_effect[@cvar='$foodAmountAdd']/@value">20</set>
 
 <!-- More calories from recipes! -->
 	<set xpath="/items/item[@name='foodCornOnTheCob']/effect_group/triggered_effect[@cvar='$foodAmountAdd']/@value">10</set>
@@ -197,6 +179,53 @@
 				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffBerserker"/>
 			</effect_group>
 		</item>
+	<!-- Stress / Lunacy Remedies -->
+		<item name="drugRemedyStress">
+			<property name="Extends" value="drugVitamins"/>
+			<property name="DisplayType" value="drugRemedyStress"/>
+			<property name="CustomIcon" value="drugPainkillers"/><property name="CustomIconTint" value="9F486E"/>
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffRemedyStress"/>
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="StressLevel" operation="set" value="0"/>
+			</effect_group>
+		</item>
+		<item name="drugRemedyLunacy">
+			<property name="Extends" value="drugVitamins"/>
+			<property name="DisplayType" value="drugRemedyLunacy"/>
+			<property name="CustomIcon" value="drugPainkillers"/><property name="CustomIconTint" value="80dfff"/>
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffRemedyLunacy"/>
+			</effect_group>
+		</item>
+		<item name="drugBlunt">
+			<property name="Extends" value="drugVitamins"/>
+			<property name="DisplayType" value="drugBlunt"/>
+			<property name="Material" value="Mplants"/>
+			<property name="Weight" value="1"/>
+			<property name="CustomIcon" value="apparelCigar"/><property name="CustomIconTint" value="55aa55"/>
+			<property class="Action0">
+				<property name="Class" value="Eat"/>
+				<property name="Delay" value="1.0"/>
+				<property name="Use_time" value="..."/>
+				<property name="Sound_start" value="cook_meat"/>
+			</property>
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffRemedyStress"/>
+			</effect_group>
+		</item>
+	</append>
+	<append xpath="/items/item[@name='drugPainkillers']/effect_group">
+		<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffRemedyStress"/>
+	</append>
+	<append xpath="/items/item[@name='drinkJarBeer']/effect_group[@name='Drink Tier 3']">
+		<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffRemedyStress"/>
+	</append>
+	<append xpath="/items/item[@name='drinkJarGrandpasMoonshine']/effect_group[@name='Drink Tier 5']">
+		<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffRemedyStress"/>
+	</append>
+	<!-- Tainted Meat Craving Buff Remedy -->
+	<append xpath="/items/item[@name='foodRottingFlesh']/effect_group">
+		<triggered_effect trigger="onSelfPrimaryActionEnd" action="RemoveBuff" buff="buffLunacyCraveTaintedMeat"/>
 	</append>
 
 </configs>

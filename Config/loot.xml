@@ -7,6 +7,17 @@
 		<item name="modVehicleSpeed"/>
 	</append>
 	<append xpath="/lootcontainers/lootcontainer[@id='59']">
-		<item group="seeds" count="1,5"/>
+		<item group="seeds" count="1,10"/>
 	</append>
+	<!-- Medicine -->
+	<append xpath="/lootcontainers/lootgroup[@name='medicine' or @name='rareMedicine' or @name='airdropMedicine']">
+		<item name="drugRemedyLunacy" count="1,2"/>
+		<item name="drugRemedyStress" count="2,4"/>
+	</append>
+	<!-- More Meds in containers -->
+	<set xpath="/lootcontainers/lootcontainer[@id='34']/item[@group='airdropMedicine']/@count">3,4</set>
+	<set xpath="/lootcontainers/lootcontainer[@id='51']/@count">3,4</set>
+	<set xpath="/lootcontainers/lootcontainer[@id='106']/@count">3,4</set>
+	<set xpath="/lootcontainers/lootcontainer[@id='107']/@count">3,4</set>
+	<set xpath="/lootcontainers/lootcontainer[@id='131']/@count">3,4</set>
 </configs>

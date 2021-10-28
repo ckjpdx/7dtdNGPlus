@@ -1,0 +1,7 @@
+Key,File,Type,UsedInMainMenu,NoTranslate,english
+drugRemedyStress,items,Medical,,,Sedatives,
+drugRemedyStressDesc,items,Medical,,,Sedatives reduce stress.,
+drugRemedyLunacy,items,Medical,,,Neuroleptics,
+drugRemedyLunacyDesc,items,Medical,,,Neuroleptics reduce psychosis.,
+drugBlunt,items,Medical,,,Blunt,
+drugBluntDesc,items,Medical,,,Smoking plants is probably the oldest remedy for stress.,
