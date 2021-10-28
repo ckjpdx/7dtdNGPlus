@@ -246,10 +246,11 @@
 		</buff>
 		<buff name="buffLunacyCraveTaintedMeat" hidden="false" icon="ui_game_symbol_hunger" icon_color="150,200,150" icon_blink="true" name_key="Craving Tainted Meat" description_key="Irrational belief that eating zombie meat is the only way to satiate hunger and thirst.">
 			<stack_type value="ignore"/>
-			<duration value="300"/><update_rate value="1"/>
+			<duration value="600"/><update_rate value="5"/>
 			<effect_group>
 				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyStats" stat="Food" operation="add" value="-1"/>
 				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyStats" stat="Water" operation="add" value="-1"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="PlaySound" sound="Player_$/player#sick" play_in_head="true"/>
 			</effect_group>
 		</buff>
 		<buff name="buffLunacyFugueState" hidden="false" icon="ui_game_symbol_drunk" icon_color="0,0,0" icon_blink="true" name_key="Fugue State" description_key="Disassociation and memory loss from extreme trauma. You can only assume you have died and are a zombie now.">
