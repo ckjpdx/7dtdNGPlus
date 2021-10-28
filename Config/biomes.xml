@@ -1,8 +1,25 @@
 <config>
+<!-- Blocks -->
     <!-- add hops to snow areas with blueberries -->
     <insertAfter xpath="/worldgeneration/biomes/biome[@name='snow']/subbiome/decorations/decoration[@blockname='plantedBlueberry3Harvest']">
         <decoration type="block" blockname="plantedHop3Harvest" prob=".001"/>
     </insertAfter>
+    <!-- wasteland blocks! -->
+    <set xpath="/worldgeneration/biomes/biome[@name='wasteland']/decorations/decoration[starts-with(@blockname, 'mine')]/@prob">0.02</set>
+    <append xpath="/worldgeneration/biomes/biome[@name='wasteland']/decorations">
+        <decoration type="block" blockname="goreBlockAnimal" prob=".01" rotatemax="7"/>
+        <decoration type="block" blockname="goreBlockHumanCorpse" prob=".01" rotatemax="7"/>
+        <decoration type="block" blockname="goreBlockHumanCorpse1" prob=".01" rotatemax="7"/>
+        <decoration type="block" blockname="goreBlockHumanCorpse2" prob=".01" rotatemax="7"/>
+        <decoration type="block" blockname="goreBlockHumanCorpse3" prob=".01" rotatemax="7"/>
+        <decoration type="block" blockname="goreBlockHumanBones" prob=".01" rotatemax="7"/>
+    </append>
+    <append xpath="/worldgeneration/biomes/biome[not(contains(@name, 'wasteland'))]/decorations">
+        <decoration type="block" blockname="mineCandyTin" prob="0.005"/>
+        <decoration type="block" blockname="mineHubcap" prob="0.005"/>
+        <decoration type="block" blockname="hubcapNoMine" prob="0.005"/>
+    </append>
+<!-- Weather -->
     <!-- fog -->
     <append xpath="/worldgeneration/biomes/biome[@name='pine_forest']/weather">
         <Fog min="0" max="100" prob=".65"/>
