@@ -99,37 +99,38 @@
 	<!-- kill item at durability 0 -->
 	<set xpath="/items/item/property[@name='DegradationBreaksAfter' and @value='false']/@value">true</set>
 
-<!-- Food/calorie amount rebalance -->
+
+<!-- More calories from recipes! -->
+	<!-- Basic or packaged -->
+	<set xpath="/items/item[@name='foodCornOnTheCob']/effect_group/triggered_effect[@cvar='$foodAmountAdd']/@value">15</set>
+	<set xpath="/items/item[@name='foodCornBread']/effect_group/triggered_effect[@cvar='$foodAmountAdd']/@value">15</set>
+	<set xpath="/items/item[@name='foodBakedPotato']/effect_group/triggered_effect[@cvar='$foodAmountAdd']/@value">15</set>
+	<set xpath="/items/item[@name='foodCanMiso']/effect_group/triggered_effect[@cvar='$foodAmountAdd']/@value">20</set>
+	<set xpath="/items/item[@name='foodEggBoiled']/effect_group/triggered_effect[@cvar='$foodAmountAdd']/@value">20</set>
 	<set xpath="/items/item[@name='foodCharredMeat']/effect_group/triggered_effect[@cvar='$foodAmountAdd']/@value">25</set>
 	<set xpath="/items/item[@name='foodGrilledMeat']/effect_group/triggered_effect[@cvar='$foodAmountAdd']/@value">25</set>
 	<set xpath="/items/item[@name='foodBoiledMeat']/effect_group/triggered_effect[@cvar='$foodAmountAdd']/@value">25</set>
-	<set xpath="/items/item[@name='foodCanChicken']/effect_group/triggered_effect[@cvar='$foodAmountAdd']/@value">50</set>
-	<set xpath="/items/item[@name='foodCanBeef']/effect_group/triggered_effect[@cvar='$foodAmountAdd']/@value">35</set>
 	<set xpath="/items/item[@name='foodCanSoup']/effect_group/triggered_effect[@cvar='$foodAmountAdd']/@value">25</set>
-	<set xpath="/items/item[@name='foodCanMiso']/effect_group/triggered_effect[@cvar='$foodAmountAdd']/@value">20</set>
-
-<!-- More calories from recipes! -->
-	<set xpath="/items/item[@name='foodCornOnTheCob']/effect_group/triggered_effect[@cvar='$foodAmountAdd']/@value">10</set>
-	<set xpath="/items/item[@name='foodCornBread']/effect_group/triggered_effect[@cvar='$foodAmountAdd']/@value">10</set>
+	<set xpath="/items/item[@name='foodCanBeef']/effect_group/triggered_effect[@cvar='$foodAmountAdd']/@value">35</set>
+	<set xpath="/items/item[@name='foodPumpkinBread']/effect_group/triggered_effect[@cvar='$foodAmountAdd']/@value">25</set>
 	<set xpath="/items/item[@name='foodShamSandwich']/effect_group/triggered_effect[@cvar='$foodAmountAdd']/@value">30</set>
+	<set xpath="/items/item[@name='foodCanChicken']/effect_group/triggered_effect[@cvar='$foodAmountAdd']/@value">50</set>
+	<!-- Fancy -->
+	<set xpath="/items/item[@name='foodVegetableStew']/effect_group/triggered_effect[@cvar='$foodAmountAdd']/@value">50</set>
+	<set xpath="/items/item[@name='foodBaconAndEggs']/effect_group/triggered_effect[@cvar='$foodAmountAdd']/@value">50</set>
+	<set xpath="/items/item[@name='foodPumpkinCheesecake']/effect_group/triggered_effect[@cvar='$foodAmountAdd']/@value">60</set>
+	<set xpath="/items/item[@name='foodBlueberryPie']/effect_group/triggered_effect[@cvar='$foodAmountAdd']/@value">70</set>
+	<set xpath="/items/item[@name='foodFishTacos']/effect_group/triggered_effect[@cvar='$foodAmountAdd']/@value">80</set>
 	<set xpath="/items/item[@name='foodMeatStew']/effect_group/triggered_effect[@cvar='$foodAmountAdd']/@value">100</set>
 	<set xpath="/items/item[@name='foodSteakAndPotato']/effect_group/triggered_effect[@cvar='$foodAmountAdd']/@value">100</set>
 	<set xpath="/items/item[@name='foodShamChowder']/effect_group/triggered_effect[@cvar='$foodAmountAdd']/@value">100</set>
-	<set xpath="/items/item[@name='foodHoboStew']/effect_group/triggered_effect[@cvar='$foodAmountAdd']/@value">120</set>
-	<set xpath="/items/item[@name='foodFishTacos']/effect_group/triggered_effect[@cvar='$foodAmountAdd']/@value">90</set>
 	<set xpath="/items/item[@name='foodChiliDog']/effect_group/triggered_effect[@cvar='$foodAmountAdd']/@value">100</set>
-	<set xpath="/items/item[@name='foodBakedPotato']/effect_group/triggered_effect[@cvar='$foodAmountAdd']/@value">10</set>
-	<set xpath="/items/item[@name='foodBlueberryPie']/effect_group/triggered_effect[@cvar='$foodAmountAdd']/@value">90</set>
 	<set xpath="/items/item[@name='foodPumpkinPie']/effect_group/triggered_effect[@cvar='$foodAmountAdd']/@value">100</set>
-	<set xpath="/items/item[@name='foodPumpkinCheesecake']/effect_group/triggered_effect[@cvar='$foodAmountAdd']/@value">80</set>
-	<set xpath="/items/item[@name='foodPumpkinBread']/effect_group/triggered_effect[@cvar='$foodAmountAdd']/@value">25</set>
-	<set xpath="/items/item[@name='foodGumboStew']/effect_group/triggered_effect[@cvar='$foodAmountAdd']/@value">225</set>
-	<set xpath="/items/item[@name='foodShepardsPie']/effect_group/triggered_effect[@cvar='$foodAmountAdd']/@value">200</set>
-	<set xpath="/items/item[@name='foodSpaghetti']/effect_group/triggered_effect[@cvar='$foodAmountAdd']/@value">240</set>
-	<set xpath="/items/item[@name='foodTunaFishGravyToast']/effect_group/triggered_effect[@cvar='$foodAmountAdd']/@value">180</set>
-	<set xpath="/items/item[@name='foodEggBoiled']/effect_group/triggered_effect[@cvar='$foodAmountAdd']/@value">20</set>
-	<set xpath="/items/item[@name='foodBaconAndEggs']/effect_group/triggered_effect[@cvar='$foodAmountAdd']/@value">70</set>
-	<set xpath="/items/item[@name='foodVegetableStew']/effect_group/triggered_effect[@cvar='$foodAmountAdd']/@value">60</set>
+	<set xpath="/items/item[@name='foodHoboStew']/effect_group/triggered_effect[@cvar='$foodAmountAdd']/@value">120</set>
+	<set xpath="/items/item[@name='foodTunaFishGravyToast']/effect_group/triggered_effect[@cvar='$foodAmountAdd']/@value">130</set>
+	<set xpath="/items/item[@name='foodShepardsPie']/effect_group/triggered_effect[@cvar='$foodAmountAdd']/@value">150</set>
+	<set xpath="/items/item[@name='foodGumboStew']/effect_group/triggered_effect[@cvar='$foodAmountAdd']/@value">160</set>
+	<set xpath="/items/item[@name='foodSpaghetti']/effect_group/triggered_effect[@cvar='$foodAmountAdd']/@value">170</set>
 
 <!-- Dysentery for rotting meat recipes -->
 	<append xpath='/items/item[@name="foodHoboStew"]/effect_group'>
