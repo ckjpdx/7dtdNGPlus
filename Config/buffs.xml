@@ -113,10 +113,11 @@
 				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".stressLevelPercent" operation="set" value="@StressLevel"/>
 				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".stressLevelPercent" operation="divide" value="10"/>
 			<!-- Stress level effects -->
-				<!-- Speed -->
+				<!-- Damage scales with stress; -33% at 0, +0% at 500, +33% at 1000 -->
 				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="StressSpeedLevel" operation="set" value="@StressLevel"/>
-				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="StressSpeedLevel" operation="multiply" value="0.0005"/>
-				<passive_effect name="RunSpeed" operation="perc_add" value="@StressSpeedLevel"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="StressSpeedLevel" operation="add" value="-500"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="StressSpeedLevel" operation="multiply" value="0.001"/>
+				<passive_effect name="EntityDamage" operation="perc_add" value="@StressSpeedLevel"/>
 			</effect_group>
 		</buff>
 		<buff name="buffStressEcho" hidden="true">
