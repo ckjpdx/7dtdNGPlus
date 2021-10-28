@@ -85,7 +85,7 @@
 				<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="buffInfectionCatch"/>
 			</effect_group>
 		</buff>
-		<buff name="buffStress" hidden="false" icon="ui_game_symbol_cardio" icon_color="159,72,110" name_key="Stress" remove_on_death="false" description_key="High stress levels allow you to run faster, but if you're under elevated stress levels for too long you'll go insane.">
+		<buff name="buffStress" hidden="false" icon="ui_game_symbol_cardio" icon_color="159,72,110" name_key="Stress" remove_on_death="false" description_key="High stress allow you to hit harder, but if under elevated stress levels for too long you'll go insane.">
 			<stack_type value="ignore"/>
 			<duration value="0"/><update_rate value="1"/>
 			<display_value value=".stressLevelPercent"/><display_value_key value="{0:0.0}%"/>
