@@ -1,0 +1,20 @@
+<config>
+    <!-- add hops to snow areas with blueberries -->
+    <insertAfter xpath="/worldgeneration/biomes/biome[@name='snow']/subbiome/decorations/decoration[@blockname='plantedBlueberry3Harvest']">
+        <decoration type="block" blockname="plantedHop3Harvest" prob=".001"/>
+    </insertAfter>
+    <!-- fog -->
+    <append xpath="/worldgeneration/biomes/biome[@name='pine_forest']/weather">
+        <Fog min="0" max="100" prob=".65"/>
+        <Fog min="100" max="100" prob=".35"/>
+    </append>
+    <append xpath="/worldgeneration/biomes/biome[@name='wasteland']/weather">
+        <Fog min="0" max="100" prob=".35"/>
+        <Fog min="100" max="100" prob=".65"/>
+    </append>
+    <append xpath="/worldgeneration/biomes/biome[@name='burnt_forest']/weather">
+        <Fog min="0" max="100" prob="1"/>
+    </append>
+    <!-- Clouds and rain -->
+    <set xpath="/worldgeneration/biomes/biome/weather/CloudThickness[@max='100']/@prob">.9</set>
+</config>
