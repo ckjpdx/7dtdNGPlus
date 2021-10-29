@@ -219,7 +219,6 @@
 			<stack_type value="ignore"/>
 			<duration value="30"/><update_rate value="0.5"/>
 			<effect_group>
-				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="StressLevel" operation="set" value="1000"/>
 				<triggered_effect trigger="onSelfBuffStart" action="ShakeCamera" shake_speed="99" shake_amplitude="5" shake_time="30"/>
 				<passive_effect name="StaminaChangeOT" operation="perc_add" value="-1.5"/>
 				<passive_effect name="WeaponHandling" operation="perc_add" value="-0.5"/>
