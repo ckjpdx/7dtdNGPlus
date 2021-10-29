@@ -210,7 +210,7 @@
 		</buff>
 		<buff name="buffLunacyDespair" hidden="false" icon="ui_game_symbol_drunk" icon_color="0,0,255" icon_blink="true" name_key="Despair" description_key="Loss of hope makes it hard to perform well.">
 			<stack_type value="ignore"/>
-			<duration value="60"/>
+			<duration value="300"/>
 			<effect_group>
 				<passive_effect name="AttributeLevel" operation="base_add" value="-1"/>
 			</effect_group>
