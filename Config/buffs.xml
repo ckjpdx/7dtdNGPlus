@@ -214,7 +214,6 @@
 			<effect_group>
 				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="DespairNumber" operation="set" value="@LunacyLevel"/>
 				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="DespairNumber" operation="divide" value="200"/>
-				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="DespairNumber" operation="add" value="1"/>
 				<passive_effect name="AttributeLevel" operation="base_subtract" value="@DespairNumber"/>
 			</effect_group>
 		</buff>
