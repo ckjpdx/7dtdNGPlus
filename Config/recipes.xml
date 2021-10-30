@@ -42,7 +42,7 @@
       <ingredient name="drinkJarBoiledWater" count="1"/>
     </recipe>
     <recipe name="drugBlunt" count="1" craft_time="20" tags="perkPhysician">
-      <ingredient name="resourceCropGoldenrodPlant" count="4"/>
+      <ingredient name="resourceCropGoldenrodPlant" count="3"/>
     	<ingredient name="resourceYuccaFibers" count="1"/>
       <effect_group>
         <passive_effect name="CraftingIngredientCount" level="3,4" operation="base_add" value="-1" tags="resourceCropGoldenrodPlant"/>
