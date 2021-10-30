@@ -208,18 +208,22 @@
 				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" fireOneBuff="true" buff="buffLunacyDespair,buffLunacyPanic,buffLunacyFreakout,buffLunacyHysteria,buffLunacyCraveTaintedMeat,buffLunacyFugueState" weights="1,1,1,1,1,1"/>
 			</effect_group>
 		</buff>
-		<buff name="buffLunacyDespair" hidden="false" icon="ui_game_symbol_drunk" icon_color="0,0,255" icon_blink="true" name_key="Despair" description_key="Loss of hope makes it hard to perform well.">
+		<buff name="buffLunacyDespair" hidden="false" icon="ui_game_symbol_drunk" icon_color="0,0,255" icon_blink="true" name_key="Despair" description_key="Loss of hope makes it hard to perform well. Reduces attributes depending on how much lunacy you have.">
 			<stack_type value="ignore"/>
 			<duration value="300"/>
 			<effect_group>
-				<passive_effect name="AttributeLevel" operation="base_add" value="-1"/>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="DespairNumber" operation="set" value="@LunacyLevel"/>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="DespairNumber" operation="divide" value="200"/>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="DespairNumber" operation="add" value="1"/>
+				<passive_effect name="AttributeLevel" operation="base_subtract" value="@DespairNumber"/>
 			</effect_group>
 		</buff>
 		<buff name="buffLunacyPanic" hidden="false" icon="ui_game_symbol_drunk" icon_color="255,0,128" icon_blink="true" name_key="Panic" description_key="Sudden episode of intense fear and physical symptoms, brought on by past trauma.">
 			<stack_type value="ignore"/>
 			<duration value="30"/><update_rate value="0.5"/>
 			<effect_group>
-				<triggered_effect trigger="onSelfBuffStart" action="ShakeCamera" shake_speed="99" shake_amplitude="5" shake_time="30"/>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyScreenEffect" intensity="0.3" fade="1" effect_name="Blur"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="ModifyScreenEffect" intensity="0" fade="1" effect_name="Blur"/>
 				<passive_effect name="StaminaChangeOT" operation="perc_add" value="-1.5"/>
 				<passive_effect name="WeaponHandling" operation="perc_add" value="-0.5"/>
 				<passive_effect name="SpreadMultiplierAiming" operation="base_add" value="1"/>
@@ -229,6 +233,8 @@
 			<stack_type value="ignore"/>
 			<duration value="5"/>
 			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyScreenEffect" intensity="1" fade="1" effect_name="Blur"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="ModifyScreenEffect" intensity="0" fade="1" effect_name="Blur"/>
 				<triggered_effect trigger="onSelfBuffStart" action="ShakeCamera" shake_speed="99" shake_amplitude="99" shake_time="5"/>
 				<triggered_effect trigger="onSelfBuffStart" action="PlaySound" sound="Enemies/Acid_Puking_Hulk/hulkexplodewarning" play_in_head="true"/>
 			</effect_group>
@@ -237,7 +243,8 @@
 			<stack_type value="ignore"/>
 			<duration value="30"/>
 			<effect_group>
-				<triggered_effect trigger="onSelfBuffStart" action="ShakeCamera" shake_speed="99" shake_amplitude="10" shake_time="30"/>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyScreenEffect" intensity="0.5" fade="1" effect_name="Blur"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="ModifyScreenEffect" intensity="0" fade="1" effect_name="Blur"/>
 				<passive_effect name="DisableItem" operation="base_set" value="1" tags="melee" />
 				<passive_effect name="DisableItem" operation="base_set" value="1" tags="ranged" />
 			</effect_group>
@@ -277,7 +284,7 @@
 	<!-- Healing StressLevel and LunacyLevel -->
 		<buff name="buffRemedyStress" hidden="false" icon="ui_game_symbol_pills" icon_color="159,72,110" name_key="Depressant" description_key="Treating neurosis.">
 			<stack_type value="duration"/>
-			<duration value="150"/>
+			<duration value="300"/>
 		</buff>
 		<buff name="buffRemedyLunacy" hidden="false" icon="ui_game_symbol_pills" icon_color="128,223,255" name_key="Neuroleptic" description_key="Treating psychosis.">
 			<stack_type value="duration"/>
