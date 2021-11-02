@@ -229,5 +229,8 @@
 	<append xpath="/items/item[@name='foodRottingFlesh']/effect_group">
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="RemoveBuff" buff="buffLunacyCraveTaintedMeat"/>
 	</append>
+	<append xpath="/items/item[@name='drinkJarCoffee' or @name='drinkJarBlackStrapCoffee' or @name='drinkCanMegaCrush' or @name='drinkYuccaJuiceSmoothie']/effect_group">
+		<triggered_effect trigger="onSelfPrimaryActionEnd" action="RemoveBuff" buff="buffLunacyDespair"/>
+	</append>
 
 </configs>
