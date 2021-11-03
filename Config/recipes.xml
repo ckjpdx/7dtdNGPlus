@@ -1,4 +1,14 @@
 <configs>
+<!-- BUILDING or @name='terrAsphalt' -->
+  <append xpath="/recipes/recipe[@name='pouredConcreteBlockVariantHelper']/@tags">,perkAdvancedEngineering</append> 
+  <append xpath="/recipes/recipe[@name='pouredConcreteBlockVariantHelper']"> 
+  	<effect_group>
+		  <passive_effect name="CraftingIngredientCount" level="0,1,2,3,4" operation="perc_add" value=".2,0,-.2,-.4,-.6"/>
+	  </effect_group>
+  </append>
+  <!-- sets all values -->
+  <set xpath="/recipes/recipe[contains(@name, 'VariantHelper')]/effect_group/passive_effect[@name='CraftingIngredientCount']/@value">.2,0,-.2,-.4,-.6</set>
+
 <!-- WEAPONS / TOOLS -->
   <!-- Reduce creation cost increase with quality -->
   <set xpath="/recipes/recipe[not(contains(@name, 'Bot')) and contains(@name, 'gun') or contains(@name, 'melee') or contains(@name, 'armor')]/effect_group/passive_effect[@name='CraftingIngredientCount']/@level">1,6</set>
