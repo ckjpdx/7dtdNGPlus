@@ -1,4 +1,12 @@
 <configs>
+	<!-- zombies hands -->
+	<set xpath="/items/item[contains(@name, 'meleeHandZombie') 
+	and not(contains(@name, 'Feral')) 
+	and not(contains(@name, 'Cop')) 
+	and not(contains(@name, 'Demolition')) 
+	and not(contains(@name, 'Radiated'))]/property[@class='Action0']/property[@name='DamageBlock']/@value">1</set>
+	<set xpath="/items/item[@name='meleeHandZombieCop']/property[@class='Action0']/property[@name='DamageEntity']/@value">40</set>
+	<set xpath="/items/item[@name='meleeHandZombieDemolition']/property[@class='Action0']/property[@name='DamageEntity']/@value">60</set>
 	<!-- Vehicle durability -->
 	<set xpath="/items/item[@name='vehicleBicyclePlaceable']/effect_group/passive_effect[@name='DegradationMax']/@value">50</set>
 	<set xpath="/items/item[@name='vehicleMinibikePlaceable']/effect_group/passive_effect[@name='DegradationMax']/@value">200</set>
