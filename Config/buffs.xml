@@ -97,7 +97,6 @@
 				<!-- Time -->
 				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="StressLevel" operation="add" value="-10">
 					<requirement name="HasBuff" buff="buffCampfireAOE"/>
-					<requirement name="CVarCompare" cvar="StressLevel" operation="GT" value="500"/>
 				</triggered_effect>
 				<!-- Campfire -->
 				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="StressLevel" operation="add" value="-10">
