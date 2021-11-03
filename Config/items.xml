@@ -180,7 +180,7 @@
 		<item name="foodBerserkerPorridge">
 			<property name="Tags" value="food"/>
 			<property name="HoldType" value="31"/>
-			<property name="CustomIcon" value="foodHoboStew"/><property name="CustomIconTint" value="ff0000"/>
+			<property name="CustomIcon" value="foodHoboStew"/><property name="CustomIconTint" value="aa6600"/>
 			<property name="Meshfile" value="#Other/Items?Misc/parcelPrefab.prefab"/>
 			<property name="DropMeshfile" value="#Other/Items?Misc/sack_droppedPrefab.prefab"/>
 			<property name="Material" value="Morganic"/>
@@ -205,6 +205,7 @@
 			<property name="Extends" value="drugVitamins"/>
 			<property name="DisplayType" value="drugRemedyStress"/>
 			<property name="CustomIcon" value="drugPainkillers"/><property name="CustomIconTint" value="9F486E"/>
+			<property name="EconomicValue" value="130"/>
 			<effect_group tiered="false">
 				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffRemedyStress"/>
 				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="StressLevel" operation="set" value="0"/>
@@ -214,6 +215,7 @@
 			<property name="Extends" value="drugVitamins"/>
 			<property name="DisplayType" value="drugRemedyLunacy"/>
 			<property name="CustomIcon" value="drugPainkillers"/><property name="CustomIconTint" value="80dfff"/>
+			<property name="EconomicValue" value="300"/>
 			<effect_group tiered="false">
 				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffRemedyLunacy"/>
 			</effect_group>
