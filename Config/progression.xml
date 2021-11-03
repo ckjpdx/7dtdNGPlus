@@ -5,6 +5,11 @@
   <set xpath="/progression/level/@clamp_exp_cost_at_level">30</set>
   <set xpath="/progression/level/@skill_points_per_level">3</set>
   <set xpath="/progression/perks/@cost_multiplier_per_level">1.33</set>
+<!-- add crafting tier to physician so we can scale resource costs in recipes! -->
+  <append xpath="/progression/perks/perk[@name='perkPhysician']/effect_group">
+			<passive_effect name="CraftingTier" operation="base_set" level="0,4" value="0,4" tags="perkPhysician"/>
+  </append>
+<!-- added recipe levels / unlocks -->
   <append xpath="/progression/perks/perk[@name='perkMasterChef']/effect_group/passive_effect[@name='RecipeTagUnlocked'][@level='1,5']/@tags">,resourceAnimalFat</append>
   <append xpath="/progression/perks/perk[@name='perkMasterChef']/effect_group/passive_effect[@name='RecipeTagUnlocked'][@level='5,5']/@tags">,foodBerserkerPorridge</append>
   <append xpath="/progression/perks/perk[@name='perkPhysician']/effect_group/passive_effect[@name='RecipeTagUnlocked'][@level='1,4']/@tags">,drugBlunt</append>
