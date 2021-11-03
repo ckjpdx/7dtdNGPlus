@@ -1,6 +1,4 @@
 <configs>
-<!-- zombies -->
-	<!-- No crosshairs on ADS for guns -->
 	<!-- Vehicle durability -->
 	<set xpath="/items/item[@name='vehicleBicyclePlaceable']/effect_group/passive_effect[@name='DegradationMax']/@value">50</set>
 	<set xpath="/items/item[@name='vehicleMinibikePlaceable']/effect_group/passive_effect[@name='DegradationMax']/@value">200</set>
@@ -99,7 +97,6 @@
 	<!-- kill item at durability 0 -->
 	<set xpath="/items/item/property[@name='DegradationBreaksAfter' and @value='false']/@value">true</set>
 
-
 <!-- More calories from recipes! -->
 	<!-- Canned -->
 	<set xpath="/items/item[starts-with(@name, 'foodCan')]/effect_group/triggered_effect[@cvar='$foodAmountAdd']/@value">25</set>
@@ -175,7 +172,6 @@
 				<!-- jar from cooking food <property name="Create_item" value="drinkJarEmpty"/> -->
 			</property>
 			<property name="Group" value="Food/Cooking,CFFood/Cooking"/>
-
 			<effect_group tiered="false" name="Food Tier 3">
 				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$foodAmountAdd" operation="subtract" value="999"/>
 				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffBerserker"/>
