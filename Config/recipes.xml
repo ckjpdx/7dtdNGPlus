@@ -16,24 +16,11 @@
 
 <!-- FOOD -->
   <!-- foodRawMeat recipes require less meat because its heavier -->
-  <set xpath="/recipes/recipe[@name='foodCharredMeat']/ingredient[@name='foodRawMeat']/@count">3</set>
-  <set xpath="/recipes/recipe[@name='foodGrilledMeat']/ingredient[@name='foodRawMeat']/@count">3</set>
-  <set xpath="/recipes/recipe[@name='foodBoiledMeat']/ingredient[@name='foodRawMeat']/@count">3</set>
-  <set xpath="/recipes/recipe[@name='foodBaconAndEggs']/ingredient[@name='foodRawMeat']/@count">3</set>
-  <set xpath="/recipes/recipe[@name='foodMeatStew']/ingredient[@name='foodRawMeat']/@count">3</set>
-  <set xpath="/recipes/recipe[@name='foodSteakAndPotato']/ingredient[@name='foodRawMeat']/@count">3</set>
-  <set xpath="/recipes/recipe[@name='foodChiliDog']/ingredient[@name='foodRawMeat']/@count">3</set>
+  <set xpath="/recipes/recipe/ingredient[@name='foodRawMeat']/@count">3</set>
   <!-- foodRottingFlesh require less also -->
-  <set xpath="/recipes/recipe[@name='foodHoboStew']/ingredient[@name='foodRottingFlesh']/@count">5</set>
-  <set xpath="/recipes/recipe[@name='foodCanSham']/ingredient[@name='foodRottingFlesh']/@count">3</set>
+  <set xpath="/recipes/recipe/ingredient[@name='foodRottingFlesh']/@count">3</set>
   <!-- Ingredient rebalance -->
-  <set xpath="/recipes/recipe[@name='plantedCorn1']/ingredient[@name='foodCropCorn']/@count">2</set>
-  <set xpath="/recipes/recipe[@name='plantedPotato1']/ingredient[@name='foodCropPotato']/@count">2</set>
-  <append xpath="/recipes/recipe[@name='plantedCorn1']">
-  	<effect_group>
-		  <passive_effect name="CraftingIngredientCount" level="3" operation="base_add" value="-1" tags="foodCropCorn"/>
-	  </effect_group>
-  </append>
+  <set xpath="/recipes/recipe[contains(@name, 'planted')]/ingredient/@count">2</set>
 
   <!-- Alternative Recipes -->
   <append xpath="/recipes">
