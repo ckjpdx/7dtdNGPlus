@@ -28,6 +28,8 @@
 	</append>
 
 <!-- Zombies -->
+	<!-- zombieTemplateMale -->
+	<set xpath="/entity_classes/entity_class[@name='zombieTemplateMale']/property[@name='SwimSpeed']/@value">0.33</set>
 	<!-- demolition zombie -->
 	<append xpath="/entity_classes/entity_class[@name='zombieDemolition']"><property name="SizeScale" value="1.1"/></append>
 	<!-- zombieWightFeral enhanced -->
