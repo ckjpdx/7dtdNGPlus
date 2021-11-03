@@ -47,6 +47,14 @@
     <!-- new recipes -->
     <recipe name="foodBerserkerPorridge" count="1"  craft_time="65" craft_area="campfire" craft_tool="toolCookingPot" tags="perkMasterChef,learnable">
       <ingredient name="foodRottingFlesh" count="10"/>
+    <recipe name="thrownSemtex" count="1" craft_time="30" craft_area="workbench" tags="learnable,workbenchCrafting">
+      <ingredient name="resourceScrapIron" count="20"/>
+      <ingredient name="resourceGunPowder" count="20"/>
+      <ingredient name="resourceScrapPolymers" count="5"/>
+      <ingredient name="resourceElectricParts" count="1"/>
+    </recipe>
+   <recipe name="foodBerserkerPorridge" count="1"  craft_time="65" craft_area="campfire" craft_tool="toolCookingPot" tags="perkMasterChef,learnable">
+      <ingredient name="foodRottingFlesh" count="5"/>
       <ingredient name="drugSteroids" count="1"/>
       <ingredient name="resourceCropChrysanthemumPlant" count="10"/>
       <ingredient name="drinkJarBoiledWater" count="1"/>

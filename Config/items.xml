@@ -162,6 +162,21 @@
 	</append>
 	<!-- New items -->
 	<append xpath='/items'>
+		<item name="thrownSemtex">
+			<property name="Extends" value="thrownTimedCharge"/>
+			<property name="CustomIcon" value="thrownTimedCharge"/><property name="CustomIconTint" value="ff8800"/>
+			<property name="FuseTime" value="60"/>
+			<property name="Explosion.RadiusBlocks" value="10"/>
+			<property name="Explosion.RadiusEntities" value="12"/>
+			<property name="Explosion.BlastPower" value="100"/> <!-- (int,100) how far ragdolls and such are flung -->
+			<property name="SoundTick" value="charge_beep,10"/>
+			<effect_group tiered="false">
+				<passive_effect name="BlockDamage" operation="base_set" value="5000"/><display_value name="dExDamageBlock" value="5000"/>
+				<passive_effect name="EntityDamage" operation="base_set" value="1500"/><display_value name="dExDamageEntity" value="1500"/>
+				<display_value name="dExRadius" value="12"/>
+				<display_value name="dFuseTime" value="60"/>
+			</effect_group>
+		</item>
 		<item name="foodBerserkerPorridge">
 			<property name="Tags" value="food"/>
 			<property name="HoldType" value="31"/>
